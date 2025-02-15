@@ -1,0 +1,12 @@
+
+admin
+user: clemenz
+pass: 1234
+
+users
+username: clemenzusergirl
+pass: 1234
+
+username: clemenzuserboy
+pass: 1234
+
