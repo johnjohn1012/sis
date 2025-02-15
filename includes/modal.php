@@ -79,9 +79,13 @@ window.onload = function() {
               <input class="form-control" placeholder="Phone Number" name="phonenumber" required>
             </div>
             <hr>
-            <button type="submit" class="btn btn-success"><i class="fa fa-check fa-fw"></i>Save</button>
-            <button type="reset" class="btn btn-danger"><i class="fa fa-times fa-fw"></i>Reset</button>
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>      
+      
+            <div style="display: flex; justify-content: center; gap: 55px;">
+              <button type="submit" class="btn btn-success" style="flex: 0 0 auto;"><i class="fa fa-check fa-fw"></i>Save</button>
+              <button type="reset" class="btn btn-danger" style="flex: 0 0 auto;"><i class="fa fa-times fa-fw"></i>Reset</button>
+              <button class="btn btn-secondary" type="button" data-dismiss="modal" style="flex: 0 0 auto;">Cancel</button>
+           </div>
+              
           </form>  
         </div>
       </div>
@@ -109,9 +113,12 @@ window.onload = function() {
               <input class="form-control" placeholder="Phone Number" name="phonenumber" required>
             </div>
             <hr>
-            <button type="submit" class="btn btn-success"><i class="fa fa-check fa-fw"></i>Save</button>
-            <button type="reset" class="btn btn-danger"><i class="fa fa-times fa-fw"></i>Reset</button>
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>      
+         
+            <div style="display: flex; justify-content: center; gap: 55px;">
+              <button type="submit" class="btn btn-success" style="flex: 0 0 auto;"><i class="fa fa-check fa-fw"></i>Save</button>
+              <button type="reset" class="btn btn-danger" style="flex: 0 0 auto;"><i class="fa fa-times fa-fw"></i>Reset</button>
+              <button class="btn btn-secondary" type="button" data-dismiss="modal" style="flex: 0 0 auto;">Cancel</button>
+           </div>     
           </form>  
         </div>
       </div>
@@ -163,9 +170,12 @@ window.onload = function() {
                 <select class="form-control" id="city" placeholder="City" name="city" required></select>
               </div>
               <hr>
-            <button type="submit" class="btn btn-success"><i class="fa fa-check fa-fw"></i>Save</button>
-            <button type="reset" class="btn btn-danger"><i class="fa fa-times fa-fw"></i>Reset</button>
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>      
+           
+              <div style="display: flex; justify-content: center; gap: 55px;">
+              <button type="submit" class="btn btn-success" style="flex: 0 0 auto;"><i class="fa fa-check fa-fw"></i>Save</button>
+              <button type="reset" class="btn btn-danger" style="flex: 0 0 auto;"><i class="fa fa-times fa-fw"></i>Reset</button>
+              <button class="btn btn-secondary" type="button" data-dismiss="modal" style="flex: 0 0 auto;">Cancel</button>
+           </div>    
           </form>  
         </div>
       </div>
