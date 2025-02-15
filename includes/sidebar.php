@@ -162,7 +162,7 @@
             <a class="dropdown-item" href="return_list.php">Return List</a>
             <a class="dropdown-item" href="stock.php">Stocks</a>
             <a class="dropdown-item" href="sale_list.php">Sale List</a>
-            <a class="dropdown-item" href="supplier_list.php">Supplier List</a>
+            <a class="dropdown-item" href="supplier.php">Supplier List</a>
             <a class="dropdown-item" href="item_list.php">Item List</a>
             <a class="dropdown-item" href="user_list.php">User List</a>
            

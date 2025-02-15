@@ -36,7 +36,9 @@ include'../includes/sidebar.php';
             <div class="card-header py-3">
               <h4 class="m-2 font-weight-bold text-primary">Edit Supplier</h4>
             </div>
-            <a  type="button" class="btn btn-primary bg-gradient-primary btn-block" href="supplier.php?"> <i class="fas fa-flip-horizontal fa-fw fa-share"></i> Back </a>
+            <a href="supplier.php" type="button" class="btn btn-primary bg-gradient-primary btn-sm" style="width: 150px;"> 
+                <i class="fas fa-flip-horizontal fa-fw fa-share"></i> Back 
+            </a>
             <div class="card-body">
       
             <form role="form" method="post" action="sup_edit1.php">
@@ -75,7 +77,9 @@ include'../includes/sidebar.php';
               </div>
               <hr>
 
-                <button type="submit" class="btn btn-warning btn-block"><i class="fa fa-edit fa-fw"></i>Update</button>    
+              <button type="submit" class="btn btn-warning btn-sm" style="float: right;width: 150px;height: 60px;">
+                  <i class="fa fa-edit fa-fw"></i> Update
+              </button>
               </form>  
             </div>
           </div></center>

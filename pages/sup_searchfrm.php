@@ -24,7 +24,9 @@ include'../includes/sidebar.php';
             <div class="card-header py-3">
               <h4 class="m-2 font-weight-bold text-primary">Supplier's Detail</h4>
             </div>
-            <a href="supplier.php?action=add" type="button" class="btn btn-primary bg-gradient-primary">Back</a>
+            <a href="supplier.php" type="button" class="btn btn-primary bg-gradient-primary btn-sm" style="width: 150px;"> 
+                <i class="fas fa-flip-horizontal fa-fw fa-share"></i> Back 
+            </a>
             <div class="card-body">
           <?php 
             $query = 'SELECT SUPPLIER_ID, COMPANY_NAME, l.PROVINCE, l.CITY, PHONE_NUMBER FROM supplier e join location l on e.LOCATION_ID = l.LOCATION_ID WHERE e.SUPPLIER_ID ='.$_GET['id'];

@@ -49,25 +49,22 @@ include'../includes/sidebar.php';
                 echo '<td>'. $row['PROVINCE'].'</td>';
                 echo '<td>'. $row['CITY'].'</td>';
                 echo '<td>'. $row['PHONE_NUMBER'].'</td>';
-                      echo '<td align="center"> <div class="btn-group">
-                              <a type="button" class="btn btn-primary bg-gradient-primary" href="sup_searchfrm.php?action=edit & id='.$row['SUPPLIER_ID'] . '"><i class="fas fa-fw fa-list-alt"></i> Details</a>
-                            <div class="btn-group">
-                              <a type="button" class="btn btn-primary bg-gradient-primary dropdown no-arrow" data-toggle="dropdown" style="color:white;">
-                              ... <span class="caret"></span></a>
-                            <ul class="dropdown-menu text-center" role="menu">
-                                <li>
-                                  <a type="button" class="btn btn-warning bg-gradient-warning btn-block" style="border-radius: 0px;" href="sup_edit.php?action=edit & id='.$row['SUPPLIER_ID']. '">
-                                    <i class="fas fa-fw fa-edit"></i> Edit
-                                  </a>
-                                </li> 
-                            </ul>
-                            </div>
-                          </div> </td>';
-                      echo '</tr> ';
+                          echo '<td align="center" style="white-space: nowrap;">
+                          <div class="btn-group">
+                              <a type="button" class="btn btn-primary bg-gradient-primary btn-sm" href="sup_searchfrm.php?action=edit&id=' . $row['SUPPLIER_ID'] . '">
+                                  <i class="fas fa-fw fa-list-alt"></i> View
+                              </a>
+                              <a type="button" class="btn btn-warning bg-gradient-warning btn-sm" href="sup_edit.php?action=edit&id=' . $row['SUPPLIER_ID'] . '">
+                                  <i class="fas fa-fw fa-edit"></i> Edit
+                              </a>
+                          </div>
+                        </td>';
+                  echo '</tr>';
                         }
 ?> 
                                     
                                 </tbody>
+            
                             </table>
                         </div>
                     </div>
@@ -99,9 +96,11 @@ include'../includes/sidebar.php';
                 <input class="form-control" placeholder="Phone Number" name="phonenumber" required>
               </div>
             <hr>
-            <button type="submit" class="btn btn-success"><i class="fa fa-check fa-fw"></i>Save</button>
-            <button type="reset" class="btn btn-danger"><i class="fa fa-times fa-fw"></i>Reset</button>
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>      
+            <div style="display: flex; justify-content: center; gap: 55px;">
+              <button type="submit" class="btn btn-success" style="flex: 0 0 auto;"><i class="fa fa-check fa-fw"></i>Save</button>
+              <button type="reset" class="btn btn-danger" style="flex: 0 0 auto;"><i class="fa fa-times fa-fw"></i>Reset</button>
+              <button class="btn btn-secondary" type="button" data-dismiss="modal" style="flex: 0 0 auto;">Cancel</button>
+           </div>    
           </form>  
         </div>
       </div>
