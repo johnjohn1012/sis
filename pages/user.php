@@ -33,7 +33,7 @@ include'../includes/sidebar.php';
                        <th>Name</th>
                        <th>Username</th>
                        <th>Type</th>
-                       <th>Action</th>
+                       <th style="text-align: center;">Action</th>
                    </tr>
                </thead>
           <tbody>
@@ -51,26 +51,21 @@ include'../includes/sidebar.php';
                 echo '<td>'. $row['FIRST_NAME'].' '. $row['LAST_NAME'].'</td>';
                 echo '<td>'. $row['USERNAME'].'</td>';
                 echo '<td>'. $row['TYPE'].'</td>';
-                      echo '<td align="right"> <div class="btn-group">
-                              <a type="button" class="btn btn-primary bg-gradient-primary" href="us_searchfrm.php?action=edit & id='.$row['ID'] . '"><i class="fas fa-fw fa-list-alt"></i> Details</a>
-                            <div class="btn-group">
-                              <a type="button" class="btn btn-primary bg-gradient-primary dropdown no-arrow" data-toggle="dropdown" style="color:white;">
-                              ... <span class="caret"></span></a>
-                            <ul class="dropdown-menu text-center" role="menu">
-                                <li>
-                                  <a type="button" class="btn btn-warning bg-gradient-warning btn-block" style="border-radius: 0px;" href="us_edit.php?action=edit & id='.$row['ID']. '">
-                                    <i class="fas fa-fw fa-edit"></i> Edit
-                                  </a>
-                                </li>
-                                
-                                </li>
-                            </ul>
-                            </div>
-                          </div></td>';
-                echo '</tr> ';
+                        echo '<td align="center" style="white-space: nowrap;">
+                        <div class="btn-group">
+                            <a type="button" class="btn btn-primary bg-gradient-primary btn-sm" href="us_searchfrm.php?action=edit&id=' . $row['ID'] . '">
+                                <i class="fas fa-fw fa-list-alt"></i> View
+                            </a>
+                            <a type="button" class="btn btn-warning bg-gradient-warning btn-sm" href="us_edit.php?action=edit&id=' . $row['ID'] . '">
+                                <i class="fas fa-fw fa-edit"></i> Edit
+                            </a>
+                        </div>
+                      </td>';
+                echo '</tr>';
                         }
 ?>         
                                 </tbody>
+             
                             </table>
                         </div>
                     </div>
@@ -92,7 +87,7 @@ include'../includes/sidebar.php';
                        <th>Name</th>
                        <th>Username</th>
                        <th>Type</th>
-                       <th>Action</th>
+                       <th style="text-align: center;">Action</th>
                    </tr>
                </thead>
           <tbody>
@@ -110,21 +105,17 @@ include'../includes/sidebar.php';
                 echo '<td>'. $row['FIRST_NAME'].' '. $row['LAST_NAME'].'</td>';
                 echo '<td>'. $row['USERNAME'].'</td>';
                 echo '<td>'. $row['TYPE'].'</td>';
-                      echo '<td align="right"> <div class="btn-group">
-                              <a type="button" class="btn btn-primary bg-gradient-primary" href="us_searchfrm.php?action=edit & id='.$row['ID'] . '"><i class="fas fa-fw fa-list-alt"></i> Details</a>
-                            <div class="btn-group">
-                              <a type="button" class="btn btn-primary bg-gradient-primary dropdown no-arrow" data-toggle="dropdown" style="color:white;">
-                              ... <span class="caret"></span></a>
-                            <ul class="dropdown-menu text-center" role="menu">
-                                <li>
-                                  <a type="button" class="btn btn-warning bg-gradient-warning btn-block" style="border-radius: 0px;" href="us_edit.php?action=edit & id='.$row['ID']. '">
-                                    <i class="fas fa-fw fa-edit"></i> Edit
-                                  </a>
-                                </li>
-                            </ul>
-                            </div>
-                          </div></td>';
-                echo '</tr> ';
+                        echo '<td align="center" style="white-space: nowrap;">
+                        <div class="btn-group">
+                            <a type="button" class="btn btn-primary bg-gradient-primary btn-sm" href="us_searchfrm.php?action=edit&id=' . $row['ID'] . '">
+                                <i class="fas fa-fw fa-list-alt"></i> View
+                            </a>
+                            <a type="button" class="btn btn-warning bg-gradient-warning btn-sm" href="us_edit.php?action=edit&id=' . $row['ID'] . '">
+                                <i class="fas fa-fw fa-edit"></i> Edit
+                            </a>
+                        </div>
+                      </td>';
+                echo '</tr>';
                         }
 ?>         
                                 </tbody>
@@ -133,8 +124,11 @@ include'../includes/sidebar.php';
                     </div>
                   </div>
 
+
+
+
 <?php
-include'../includes/footer.php';
+include '../includes/footer.php';
 
 $sql = "SELECT EMPLOYEE_ID, FIRST_NAME, LAST_NAME, j.JOB_TITLE
         FROM employee e

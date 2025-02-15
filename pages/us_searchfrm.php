@@ -50,7 +50,9 @@ include'../includes/sidebar.php';
             <div class="card-header py-3">
               <h4 class="m-2 font-weight-bold text-primary"><?php echo $a; ?>'s Detail</h4>
             </div>
-            <a href="user.php?action=add" type="button" class="btn btn-primary bg-gradient-primary">Back</a>
+            <a href="user.php" type="button" class="btn btn-primary bg-gradient-primary btn-sm" style="width: 150px;"> 
+                <i class="fas fa-flip-horizontal fa-fw fa-share"></i> Back 
+            </a>
             <div class="card-body">
                 
                     <div class="form-group row text-left">
