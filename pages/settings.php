@@ -170,7 +170,9 @@ $opt .= "</select>";
               </div>
               <hr>
 
-                <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-edit fa-fw"></i>Update</button>    
+              <button type="submit" class="btn btn-warning btn-sm" style="float: right;width: 150px;height: 60px;">
+                  <i class="fa fa-edit fa-fw"></i> Update
+              </button>  
               </form>  
             </div>
           </div>        
