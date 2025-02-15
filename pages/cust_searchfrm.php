@@ -38,7 +38,11 @@ if ($Aa=='User'){
             <div class="card-header py-3">
               <h4 class="m-2 font-weight-bold text-primary">Customer's Detail</h4>
             </div>
-            <a href="customer.php" type="button" class="btn btn-primary bg-gradient-primary btn-block"> <i class="fas fa-flip-horizontal fa-fw fa-share"></i> Back </a>
+
+
+            <a href="customer.php" type="button" class="btn btn-primary bg-gradient-primary btn-sm" style="width: 150px;"> 
+                <i class="fas fa-flip-horizontal fa-fw fa-share"></i> Back 
+            </a>
             <div class="card-body">
                 
 
