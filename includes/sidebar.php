@@ -156,7 +156,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: calc(86% + 30px); min-width: 180px;">
     
      
-            <a class="dropdown-item" href="cashier/purchase_order.php">Purchase Order</a>
+            <a class="dropdown-item" href="cashier/purchase_order/index.php">Purchase Order</a>
             <a class="dropdown-item" href="cashier/receiving.php">Receiving</a>
             <a class="dropdown-item" href="back_order.php">Back Order</a>
             <a class="dropdown-item" href="return_list.php">Return List</a>

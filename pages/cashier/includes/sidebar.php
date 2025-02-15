@@ -1,5 +1,5 @@
 <?php
-  require('../session.php');
+  require('session.php');
   confirm_logged_in();
 ?>
 <!DOCTYPE html>
@@ -158,7 +158,7 @@
      
             <a class="dropdown-item" href="purchase_order.php">Purchase Order</a>
             <a class="dropdown-item" href="receiving.php">Receiving</a>
-            <a class="dropdown-item" href="back_order.php">Back Order</a>
+            <a class="dropdown-item" href="purchase_order/index.php">Back Order</a>
             <a class="dropdown-item" href="return_list.php">Return List</a>
             <a class="dropdown-item" href="stock.php">Stocks</a>
             <a class="dropdown-item" href="sale_list.php">Sale List</a>
