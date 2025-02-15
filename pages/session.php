@@ -8,6 +8,7 @@
 		return isset($_SESSION['MEMBER_ID']);
         
 	}
+	
 	//this function if session member is not set then it will be redirected to index.php
 	function confirm_logged_in() {
 		if (!logged_in()) {

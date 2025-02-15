@@ -44,9 +44,9 @@ include 'includes/sidebar.php';
                             Action <span style="font-size: 12px; margin-left: 5px;">▼</span>
                         </button>
                         <div class="dropdown-menu" style="position: absolute; top: 100%; left: 0; background-color: white; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 100%; display: none;">
-                            <a href="#" class="dropdown-item" style="display: block; padding: 8px 10px; color: #333; text-decoration: none; font-size: 14px;">View</a>
-                            <a href="#" class="dropdown-item" style="display: block; padding: 8px 10px; color: #007bff; text-decoration: none; font-size: 14px;">Edit</a>
-                            <a href="#" class="dropdown-item" style="display: block; padding: 8px 10px; color: #dc3545; text-decoration: none; font-size: 14px;">Delete</a>
+                            <a href="receiving.php?page=1" class="dropdown-item" style="display: block; padding: 8px 10px; color: #333; text-decoration: none; font-size: 14px;">View</a>
+                            <a href="receiving.php" class="dropdown-item" style="display: block; padding: 8px 10px; color: #007bff; text-decoration: none; font-size: 14px;">Edit</a>
+                            <a href="receiving.php" class="dropdown-item" style="display: block; padding: 8px 10px; color: #dc3545; text-decoration: none; font-size: 14px;">Delete</a>
                         </div>
                     </div>
                 </td>

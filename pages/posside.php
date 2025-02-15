@@ -68,7 +68,7 @@ $opt .= "</select>";
 
           </div>
           <div class="form-group row mb-2">
-
+            <!--
             <div class="col-sm-5 text-left text-primary py-2">
               <h6>
                 Less VAT
@@ -118,7 +118,7 @@ $opt .= "</select>";
                 </div>
                 <input type="text" class="form-control text-right " value="<?php echo number_format($addvat, 2); ?>" readonly name="addvat">
               </div>
-            </div>
+            </div> -->
 
           </div>
           <div class="form-group row text-left mb-2">

@@ -125,8 +125,8 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: calc(86% + 30px); min-width: 180px;">
     
-          <a class="dropdown-item" href="dashboard.php">Customers</a>
-          <a class="dropdown-item" href="item_list.php">Employee</a>
+          <a class="dropdown-item" href="customer.php">Customers</a>
+          <a class="dropdown-item" href="employee.php">Employee</a>
           
         </div>
       </li>
@@ -141,8 +141,8 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: calc(86% + 30px); min-width: 180px;">
     
-          <a class="dropdown-item" href="dashboard.php">Sales</a>
-          <a class="dropdown-item" href="item_list.php">Transactions</a>
+          <a class="dropdown-item" href="transaction.php">Sales</a>
+          <a class="dropdown-item" href="transaction.php">Transactions</a>
           
         </div>
       </li>
@@ -157,7 +157,7 @@
     
      
             <a class="dropdown-item" href="cashier/purchase_order.php">Purchase Order</a>
-            <a class="dropdown-item" href="receiving.php">Receiving</a>
+            <a class="dropdown-item" href="cashier/receiving.php">Receiving</a>
             <a class="dropdown-item" href="back_order.php">Back Order</a>
             <a class="dropdown-item" href="return_list.php">Return List</a>
             <a class="dropdown-item" href="stock.php">Stocks</a>

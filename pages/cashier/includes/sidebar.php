@@ -112,8 +112,8 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: calc(86% + 30px); min-width: 180px;">
     
-          <a class="dropdown-item" href="pos.php">Pos</a>
-          <a class="dropdown-item" href="transaction.php">Order</a>
+          <a class="dropdown-item" href="../pos.php">Pos</a>
+          <a class="dropdown-item" href="../transaction.php">Order</a>
           
         </div>
       </li>
@@ -125,8 +125,8 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: calc(86% + 30px); min-width: 180px;">
     
-          <a class="dropdown-item" href="dashboard.php">Customers</a>
-          <a class="dropdown-item" href="item_list.php">Employee</a>
+          <a class="dropdown-item" href="../customer.php">Customers</a>
+          <a class="dropdown-item" href="../employee.php">Employee</a>
           
         </div>
       </li>
@@ -141,8 +141,8 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: calc(86% + 30px); min-width: 180px;">
     
-          <a class="dropdown-item" href="dashboard.php">Sales</a>
-          <a class="dropdown-item" href="item_list.php">Transactions</a>
+          <a class="dropdown-item" href="../transaction.php">Sales</a>
+          <a class="dropdown-item" href="../transaction.php">Transactions</a>
           
         </div>
       </li>
