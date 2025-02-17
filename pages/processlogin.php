@@ -1,6 +1,6 @@
 <?php
 
-require('../../includes/connection.php');
+require('../includes/connection.php');
 require('session.php');
 if (isset($_POST['btnlogin'])) {
 
