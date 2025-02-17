@@ -1,6 +1,6 @@
-<?php include 'includes/connection1.php'; 
-include 'includes/connection.php';
-include 'includes/sidebar.php';
+<?php include '../includes/connection1.php'; 
+include '../includes/connection.php';
+include '../includes/sidebar.php';
 
 ?>
 
@@ -183,7 +183,7 @@ if(isset($_GET['id'])){
     </div>
     <div class="card-footer py-1 text-center">
         <button class="btn btn-flat btn-primary" type="submit" form="po-form">Save</button>
-        <a class="btn btn-flat btn-dark" href="<?php echo base_url.'/admin?page=purchase_order' ?>">Cancel</a>
+        <a class="btn btn-flat btn-dark" href="purchase_order.php">Cancel</a>
     </div>
 
 
