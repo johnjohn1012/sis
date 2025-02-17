@@ -1,6 +1,6 @@
 <?php
-include'../includes/connection.php';
-include'../includes/sidebar.php';
+include '../../includes/connection.php';
+include '../../includes/sidebar.php';
 ?><?php 
 
                 $query = 'SELECT ID, t.TYPE
@@ -53,5 +53,5 @@ if ($Aa=='User'){
             </div>
           </div></center>
 <?php
-include'../includes/footer.php';
+include '../../includes/footer.php';
 ?>

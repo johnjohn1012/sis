@@ -1,5 +1,5 @@
 <?php
-  require('session.php');
+  require('../session.php');
   confirm_logged_in();
 ?>
 <!DOCTYPE html>
@@ -91,7 +91,7 @@
       </div>
 
       <li class="nav-item">
-        <a class="nav-link" href="../index.php">
+        <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-home"></i>
           <span>Dashboard</span>
         </a>
@@ -112,8 +112,8 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: calc(86% + 30px); min-width: 180px;">
     
-          <a class="dropdown-item" href="../pos.php">Pos</a>
-          <a class="dropdown-item" href="../transaction.php">Order</a>
+          <a class="dropdown-item" href="pos.php">Pos</a>
+          <a class="dropdown-item" href="transaction.php">Order</a>
           
         </div>
       </li>
@@ -125,8 +125,8 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: calc(86% + 30px); min-width: 180px;">
     
-          <a class="dropdown-item" href="../customer.php">Customers</a>
-          <a class="dropdown-item" href="../employee.php">Employee</a>
+          <a class="dropdown-item" href="dashboard.php">Customers</a>
+          <a class="dropdown-item" href="item_list.php">Employee</a>
           
         </div>
       </li>
@@ -141,8 +141,8 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: calc(86% + 30px); min-width: 180px;">
     
-          <a class="dropdown-item" href="../transaction.php">Sales</a>
-          <a class="dropdown-item" href="../transaction.php">Transactions</a>
+          <a class="dropdown-item" href="dashboard.php">Sales</a>
+          <a class="dropdown-item" href="item_list.php">Transactions</a>
           
         </div>
       </li>
@@ -156,9 +156,9 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: calc(86% + 30px); min-width: 180px;">
     
      
-            <a class="dropdown-item" href="purchase_order.php">Purchase Order</a>
+            <a class="dropdown-item" href="cashier/purchase_order.php">Purchase Order</a>
             <a class="dropdown-item" href="receiving.php">Receiving</a>
-            <a class="dropdown-item" href="purchase_order/index.php">Back Order</a>
+            <a class="dropdown-item" href="back_order.php">Back Order</a>
             <a class="dropdown-item" href="return_list.php">Return List</a>
             <a class="dropdown-item" href="stock.php">Stocks</a>
             <a class="dropdown-item" href="sale_list.php">Sale List</a>

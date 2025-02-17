@@ -1,6 +1,6 @@
 <?php
-include '../includes/connection.php';
-include '../includes/topp.php';
+include 'includes/connection.php';
+include 'includes/topp.php';
 
 // session_start();
 $product_ids = array();

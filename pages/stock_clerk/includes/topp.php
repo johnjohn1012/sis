@@ -1,5 +1,5 @@
 <?php
-  require_once('../session.php');
+  require_once('../../session.php');
   confirm_logged_in();
 ?>
 <!DOCTYPE html>
@@ -78,7 +78,7 @@
 
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
         <div class="sidebar-brand-icon">
-            <img src="../../img/logos.png" alt="Brand Logo" style="width: 76px; height: 76px;">
+            <img src="../../../img/logos.png" alt="Brand Logoss" style="width: 76px; height: 76px;">
         </div>
           
         <div class="sidebar-brand-text mx-4" style="text-align: center; width: 100%; font-weight: bold; color: white;">
@@ -111,9 +111,9 @@
                 <img class="img-profile rounded-circle"
                 <?php
                   if($_SESSION['GENDER']=='Male'){
-                    echo 'src="../../img/boy.png"';
+                    echo 'src="../../../img/boy.png"';
                   }else{
-                    echo 'src="../../img/girl.png"';
+                    echo 'src="../../../img/girl.png"';
                   }
                 ?>>
 

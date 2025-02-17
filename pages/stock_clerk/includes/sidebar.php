@@ -1,5 +1,5 @@
 <?php
-  require('../session.php');
+  require('../../session.php');
   confirm_logged_in();
 ?>
 <!DOCTYPE html>
@@ -47,17 +47,17 @@
   <meta name="author" content="">
 
   <title>Harah Rubina Del Dios Sales and Inventory System</title>
-  <link rel="icon" href="../../img/logos.png" type="image/gif" sizes="16x16">
+  <link rel="icon" href="../../../img/logos.png" type="image/gif" sizes="16x16">
 
   <!-- Custom fonts for this template-->
-  <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="../../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="../../../css/sb-admin-2.min.css" rel="stylesheet">
 
   <!-- Custom styles for this page -->
-  <link href="../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <link href="../../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -112,8 +112,8 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: calc(86% + 30px); min-width: 180px;">
     
-          <a class="dropdown-item" href="pos.php">Pos</a>
-          <a class="dropdown-item" href="transaction.php">Order</a>
+          <a class="dropdown-item" href="admin/pos.php">Pos</a>
+          <a class="dropdown-item" href="admin/transaction.php">Order</a>
           
         </div>
       </li>
@@ -125,8 +125,8 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: calc(86% + 30px); min-width: 180px;">
     
-          <a class="dropdown-item" href="dashboard.php">Customers</a>
-          <a class="dropdown-item" href="item_list.php">Employee</a>
+          <a class="dropdown-item" href="admin/customer.php">Customers</a>
+          <a class="dropdown-item" href="admin/employee.php">Employee</a>
           
         </div>
       </li>
@@ -141,8 +141,8 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: calc(86% + 30px); min-width: 180px;">
     
-          <a class="dropdown-item" href="dashboard.php">Sales</a>
-          <a class="dropdown-item" href="item_list.php">Transactions</a>
+          <a class="dropdown-item" href="admin/transaction.php">Sales</a>
+          <a class="dropdown-item" href="admin/transaction.php">Transactions</a>
           
         </div>
       </li>
@@ -156,13 +156,13 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: calc(86% + 30px); min-width: 180px;">
     
      
-            <a class="dropdown-item" href="cashier/purchase_order.php">Purchase Order</a>
-            <a class="dropdown-item" href="receiving.php">Receiving</a>
-            <a class="dropdown-item" href="back_order.php">Back Order</a>
+            <a class="dropdown-item" href="stock_clerk/purchase_order.php">Purchase Order</a>
+            <a class="dropdown-item" href="stock_clerk/receiving.php">Receiving</a>
+            <a class="dropdown-item" href="stock_clerk/return_order.php">Back Order</a>
             <a class="dropdown-item" href="return_list.php">Return List</a>
             <a class="dropdown-item" href="stock.php">Stocks</a>
             <a class="dropdown-item" href="sale_list.php">Sale List</a>
-            <a class="dropdown-item" href="supplier_list.php">Supplier List</a>
+            <a class="dropdown-item" href="supplier.php">Supplier List</a>
             <a class="dropdown-item" href="item_list.php">Item List</a>
             <a class="dropdown-item" href="user_list.php">User List</a>
            

@@ -1,3 +1,6 @@
+
+
+
 <?php
  $conn = mysqli_connect('localhost', 'root', '') or
         die ('Unable to connect. Check your connection parameters.');

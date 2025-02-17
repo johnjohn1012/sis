@@ -1,6 +1,6 @@
 <?php
 
-require('../includes/connection.php');
+require('../../includes/connection.php');
 require('session.php');
 if (isset($_POST['btnlogin'])) {
 
@@ -46,6 +46,7 @@ if ($upass == ''){
                 $AAA = $_SESSION['MEMBER_ID'];
 
         //this part is the verification if admin or user ka
+        
         if ($_SESSION['TYPE']=='Admin'){
            
              ?>    <script type="text/javascript">
@@ -55,7 +56,14 @@ if ($upass == ''){
                   </script>
              <?php        
            
-        }elseif ($_SESSION['TYPE']=='User'){
+        }
+        
+        
+        
+        
+        
+        
+        elseif ($_SESSION['TYPE']=='User'){
            
              ?>    <script type="text/javascript">
                       //then it will be redirected to index.php

@@ -1,12 +1,6 @@
-<?php include('../includes/connection1.php'); ?>
-
-
-
-
-
 <?php 
 if(isset($_GET['id'])){
-    $qry = $conn->query("SELECT p.*,s.name as supplier FROM purchase_order_list p inner join supplier_list s on p.supplier_id = s.id  where p.id = '{$_GET['id']}'");
+    $qry = $conn->query("SELECT r.*,s.name as supplier FROM return_list r inner join supplier_list s on r.supplier_id = s.id  where r.id = '{$_GET['id']}'");
     if($qry->num_rows >0){
         foreach($qry->fetch_array() as $k => $v){
             $$k = $v;
@@ -27,26 +21,18 @@ if(isset($_GET['id'])){
         box-shadow: none;
     }
 </style>
-
-<!-- Include Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Include FontAwesome CSS for icons -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-
-
 <div class="card card-outline card-primary">
     <div class="card-header">
-        <h4 class="card-title"><?php echo isset($id) ? "Purchase Order Details - ".$po_code : 'Create New Purchase Order' ?></h4>
+        <h4 class="card-title"><?php echo isset($id) ? "Return Details - ".$return_code : 'Create New Return Record' ?></h4>
     </div>
     <div class="card-body">
-        <form action="" id="po-form">
+        <form action="" id="return-form">
             <input type="hidden" name="id" value="<?php echo isset($id) ? $id : '' ?>">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6">
-                        <label class="control-label text-info">P.O. Code</label>
-                        <input type="text" class="form-control form-control-sm rounded-0" value="<?php echo isset($po_code) ? $po_code : '' ?>" readonly>
+                        <label class="control-label text-info">Return Code</label>
+                        <input type="text" class="form-control form-control-sm rounded-0" value="<?php echo isset($return_code) ? $return_code : '' ?>" readonly>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
@@ -126,7 +112,7 @@ if(isset($_GET['id'])){
                         <?php 
                         $total = 0;
                         if(isset($id)):
-                        $qry = $conn->query("SELECT p.*,i.name,i.description FROM `po_items` p inner join item_list i on p.item_id = i.id where p.po_id = '{$id}'");
+                        $qry = $conn->query("SELECT s.*,i.name,i.description FROM `stock_list` s inner join item_list i on s.item_id = i.id where s.id in ({$stock_ids})");
                         while($row = $qry->fetch_assoc()):
                             $total += $row['total']
                         ?>
@@ -161,22 +147,6 @@ if(isset($_GET['id'])){
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th class="text-right py-1 px-2" colspan="5">Sub Total</th>
-                            <th class="text-right py-1 px-2 sub-total">0</th>
-                        </tr>
-                        <tr>
-                            <th class="text-right py-1 px-2" colspan="5">Discount <input style="width:40px !important" name="discount_perc" class='' type="number" min="0" max="100" value="<?php echo isset($discount_perc) ? $discount_perc : 0 ?>">%
-                                <input type="hidden" name="discount" value="<?php echo isset($discount) ? $discount : 0 ?>">
-                            </th>
-                            <th class="text-right py-1 px-2 discount"><?php echo isset($discount) ? number_format($discount) : 0 ?></th>
-                        </tr>
-                        <tr>
-                            <th class="text-right py-1 px-2" colspan="5">Tax <input style="width:40px !important" name="tax_perc" class='' type="number" min="0" max="100" value="<?php echo isset($tax_perc) ? $tax_perc : 0 ?>">%
-                                <input type="hidden" name="tax" value="<?php echo isset($discount) ? $discount : 0 ?>">
-                            </th>
-                            <th class="text-right py-1 px-2 tax"><?php echo isset($tax) ? number_format($tax) : 0 ?></th>
-                        </tr>
-                        <tr>
                             <th class="text-right py-1 px-2" colspan="5">Total
                                 <input type="hidden" name="amount" value="<?php echo isset($discount) ? $discount : 0 ?>">
                             </th>
@@ -196,8 +166,8 @@ if(isset($_GET['id'])){
         </form>
     </div>
     <div class="card-footer py-1 text-center">
-        <button class="btn btn-flat btn-primary" type="submit" form="po-form">Save</button>
-        <a class="btn btn-flat btn-dark" href="<?php echo base_url.'/admin?page=purchase_order' ?>">Cancel</a>
+        <button class="btn btn-flat btn-primary" type="submit" form="return-form">Save</button>
+        <a class="btn btn-flat btn-dark" href="<?php echo base_url.'/admin?page=return' ?>">Cancel</a>
     </div>
 </div>
 <table id="clone_list" class="d-none">
@@ -223,7 +193,6 @@ if(isset($_GET['id'])){
         </td>
     </tr>
 </table>
-
 <script>
     var items = $.parseJSON('<?php echo json_encode($item_arr) ?>')
     var costs = $.parseJSON('<?php echo json_encode($cost_arr) ?>')
@@ -314,13 +283,13 @@ if(isset($_GET['id'])){
             })
             $('#supplier_id').attr('readonly','readonly')
         })
-        $('#po-form').submit(function(e){
+        $('#return-form').submit(function(e){
 			e.preventDefault();
             var _this = $(this)
 			 $('.err-msg').remove();
 			start_loader();
 			$.ajax({
-				url:_base_url_+"Master.php?f=save_po",
+				url:_base_url_+"classes/Master.php?f=save_return",
 				data: new FormData($(this)[0]),
                 cache: false,
                 contentType: false,
@@ -335,7 +304,7 @@ if(isset($_GET['id'])){
 				},
 				success:function(resp){
 					if(resp.status == 'success'){
-						location.replace(_base_url_+"purchase_order.php?page/view_po&id="+resp.id);
+						location.replace(_base_url_+"admin/?page=return/view_return&id="+resp.id);
 					}else if(resp.status == 'failed' && !!resp.msg){
                         var el = $('<div>')
                             el.addClass("alert alert-danger err-msg").text(resp.msg)
@@ -369,23 +338,12 @@ if(isset($_GET['id'])){
 
     }
     function calc(){
-        var sub_total = 0;
         var grand_total = 0;
-        var discount = 0;
-        var tax = 0;
         $('table#list tbody input[name="total[]"]').each(function(){
-            sub_total += parseFloat($(this).val())
+            grand_total += parseFloat($(this).val())
             
         })
-        $('table#list tfoot .sub-total').text(parseFloat(sub_total).toLocaleString('en-US',{style:'decimal',maximumFractionDigit:2}))
-        var discount =   sub_total * (parseFloat($('[name="discount_perc"]').val()) /100)
-        sub_total = sub_total - discount;
-        var tax =   sub_total * (parseFloat($('[name="tax_perc"]').val()) /100)
-        grand_total = sub_total + tax
-        $('.discount').text(parseFloat(discount).toLocaleString('en-US',{style:'decimal',maximumFractionDigit:2}))
-        $('[name="discount"]').val(parseFloat(discount))
-        $('.tax').text(parseFloat(tax).toLocaleString('en-US',{style:'decimal',maximumFractionDigit:2}))
-        $('[name="tax"]').val(parseFloat(tax))
+       
         $('table#list tfoot .grand-total').text(parseFloat(grand_total).toLocaleString('en-US',{style:'decimal',maximumFractionDigit:2}))
         $('[name="amount"]').val(parseFloat(grand_total))
 
