@@ -1,5 +1,5 @@
 <?php
-  require_once('session.php');
+  require_once('../login/session.php');
   confirm_logged_in();
 ?>
 <!DOCTYPE html>
