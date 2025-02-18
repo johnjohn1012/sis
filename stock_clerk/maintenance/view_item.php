@@ -1,4 +1,17 @@
-<?php require_once('./../../config.php') ?>
+<?php 
+
+
+include '../includes/connection.php';
+
+include '../includes/connection1.php';
+
+include '../includes/sidebar.php';
+
+
+
+
+?>
+
 <?php 
  $qry = $conn->query("SELECT i.*,s.name as supplier FROM `item_list` i inner join supplier_list s on i.supplier_id = s.id where  i.id = '{$_GET['id']}' ");
  if($qry->num_rows > 0){
@@ -48,6 +61,9 @@
         </div>
     </div>
 </div>
+
+
+<?php include '../includes/footer.php'; ?>
     
 
 <script>

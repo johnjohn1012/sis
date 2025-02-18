@@ -1,3 +1,14 @@
+<?php 
+include '../includes/connection.php';
+
+include '../includes/connection1.php';
+
+include '../includes/sidebar.php';
+
+?>
+
+
+
 <div class="card card-outline card-primary">
 	<div class="card-header">
 		<h3 class="card-title">List of Item</h3>
@@ -45,18 +56,15 @@
                                     <span class="badge badge-danger rounded-pill">Inactive</span>
                                 <?php endif; ?>
                             </td>
-							<td align="center">
-								 <button type="button" class="btn btn-flat btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
-				                  		Action
-				                    <span class="sr-only">Toggle Dropdown</span>
-				                  </button>
-				                  <div class="dropdown-menu" role="menu">
-				                    <a class="dropdown-item view_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-eye text-dark"></span> View</a>
+							<td class="center">
+							
+				        
+				                    <a class="dropdown-item view_data" href="view_item.php" data-id="<?php echo $row['id'] ?>"><span class="fa fa-eye text-dark"></span> View</a>
 				                    <div class="dropdown-divider"></div>
 				                    <a class="dropdown-item edit_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-edit text-primary"></span> Edit</a>
 				                    <div class="dropdown-divider"></div>
 				                    <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-trash text-danger"></span> Delete</a>
-				                  </div>
+				                
 							</td>
 						</tr>
 					<?php endwhile; ?>
@@ -66,6 +74,10 @@
 		</div>
 	</div>
 </div>
+
+<?php include '../includes/footer.php'; ?>
+
+
 <script>
 	$(document).ready(function(){
 		$('.delete_data').click(function(){

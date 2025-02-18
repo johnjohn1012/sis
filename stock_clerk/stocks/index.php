@@ -1,4 +1,7 @@
-<?php include '../includes/connection1.php'; 
+<?php 
+
+
+include '../includes/connection1.php'; 
 include '../includes/connection.php';
 include '../includes/sidebar.php';
 
@@ -11,9 +14,9 @@ include '../includes/sidebar.php';
 <div class="card card-outline card-primary">
 	<div class="card-header">
 		<h3 class="card-title">List of Stocks</h3>
-        <!-- <div class="card-tools">
-			<a href="<?php echo base_url ?>admin/?page=purchase_order/manage_po" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Create New</a>
-		</div> -->
+         <div class="card-tools">
+			<a href="../purchase_order/manage_po.php" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Create New</a>
+		</div> 
 	</div>
 	<div class="card-body">
 		<div class="container-fluid">
@@ -58,6 +61,11 @@ include '../includes/sidebar.php';
 		</div>
 	</div>
 </div>
+
+<?php include '../includes/footer.php';?>
+
+
+
 <script>
 	$(document).ready(function(){
 		$('.delete_data').click(function(){

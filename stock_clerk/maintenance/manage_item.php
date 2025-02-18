@@ -1,5 +1,14 @@
 <?php
-require_once('../../config.php');
+
+
+
+include '../includes/connection.php';
+
+include '../includes/connection1.php';
+
+include '../includes/sidebar.php';
+
+
 if(isset($_GET['id']) && $_GET['id'] > 0){
     $qry = $conn->query("SELECT * from `item_list` where id = '{$_GET['id']}' ");
     if($qry->num_rows > 0){
@@ -45,6 +54,8 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 		</div>
 	</form>
 </div>
+
+
 <script>
   
 	$(document).ready(function(){
