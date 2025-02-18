@@ -1,7 +1,7 @@
 <?php 
-include 'includes/connection1.php' ;
-include 'includes/connection.php';
-include 'includes/sidebar.php';
+include '../includes/connection1.php' ;
+include '../includes/connection.php';
+include '../includes/sidebar.php';
 
 ?>
 
@@ -121,7 +121,7 @@ if($qry->num_rows > 0){
 </div>
 
 <?php
-include 'includes/footer.php';
+include '../includes/footer.php';
 ?>
 
 <script>
