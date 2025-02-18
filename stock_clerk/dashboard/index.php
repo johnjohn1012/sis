@@ -194,7 +194,7 @@ include '../includes/connection1.php';
 
     <div class="row mt-4">
     <div class="col-md-12">
-        <div class="card shadow mb-4 custom-card">
+        <div class="card shadow mb-4 ">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Business Analytics</h6>
             </div>
