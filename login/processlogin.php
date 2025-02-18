@@ -45,15 +45,22 @@ if (isset($_POST['btnlogin'])) {
 
             // Redirect users based on their TYPE
             if ($_SESSION['TYPE'] == 'Admin') {
-                header("Location: http://localhost/sis/admin/purchaseorder/purchase_order.php");
+                header("Location: http://localhost/sis/admin/index.php");
                 exit();
+
+
             } elseif ($_SESSION['TYPE'] == 'Stock Clerk') {
-                header("Location: http://localhost/sis/stock_clerk/index.php");
+                header("Location: stock_clerk_dashboard.php");
                 exit();
+
+
             } elseif ($_SESSION['TYPE'] == 'Cashier') {
                 header("Location: cashier_dashboard.php");
                 exit();
-            } else {
+            } 
+            
+            
+            else {
                 header("Location: pages/index.php"); // Default for other users
                 exit();
             }
