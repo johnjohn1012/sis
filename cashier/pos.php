@@ -1,6 +1,7 @@
 <?php
-include '../includes/connection.php';
-include '../includes/topp.php';
+include './includes/connection.php';
+include './includes/sidebar.php';
+
 
 // session_start();
 $product_ids = array();
@@ -178,10 +179,21 @@ function pre_r($array){
         endif;
         ?>  
         </table> 
+        
+
+
          </div>
+
+
+
        </div> 
 
-<?php
+         
+       <?php
 include 'posside.php';
+
+?>
+<?php
+
 include '../includes/footer.php';
 ?>

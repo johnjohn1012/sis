@@ -44,17 +44,17 @@
   <meta name="author" content="">
 
   <title>Harah Rubina Del Dios Sales and Inventory System</title>
-  <link rel="icon" href="../../img/logos.png" type="image/gif" sizes="16x16">
+  <link rel="icon" href="../img/logos.png" type="image/gif" sizes="16x16">
 
   <!-- Custom fonts for this template-->
-  <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
   <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
 
   <!-- Custom styles for this page -->
-  <link href="../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <link href="../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
   <link rel="stylesheet" href="cart.css" />
 </head>
@@ -78,7 +78,7 @@
 
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
         <div class="sidebar-brand-icon">
-            <img src="../../img/logos.png" alt="Brand Logo" style="width: 76px; height: 76px;">
+            <img src="../img/logos.png" alt="Brand Logo" style="width: 76px; height: 76px;">
         </div>
           
         <div class="sidebar-brand-text mx-4" style="text-align: center; width: 100%; font-weight: bold; color: white;">
@@ -111,9 +111,9 @@
                 <img class="img-profile rounded-circle"
                 <?php
                   if($_SESSION['GENDER']=='Male'){
-                    echo 'src="../../img/boy.png"';
+                    echo 'src="../img/boy.png"';
                   }else{
-                    echo 'src="../../img/girl.png"';
+                    echo 'src="../img/girl.png"';
                   }
                 ?>>
 
