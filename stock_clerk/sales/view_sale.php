@@ -1,3 +1,11 @@
+<?php include '../includes/connection1.php'; 
+include '../includes/connection.php';
+include '../includes/sidebar.php';
+
+?>
+
+
+
 <?php 
 $qry = $conn->query("SELECT * FROM sales_list r  where id = '{$_GET['id']}'");
 if($qry->num_rows >0){
@@ -82,10 +90,19 @@ if($qry->num_rows >0){
     </div>
     <div class="card-footer py-1 text-center">
         <button class="btn btn-flat btn-success" type="button" id="print">Print</button>
-        <a class="btn btn-flat btn-primary" href="<?php echo base_url.'/admin?page=sales/manage_sale&id='.(isset($id) ? $id : '') ?>">Edit</a>
-        <a class="btn btn-flat btn-dark" href="<?php echo base_url.'/admin?page=sales' ?>">Back To List</a>
+
+        <a class="btn btn-flat btn-primary" href="manage_sale.php?id=<?php echo isset($id) ? $id : ''; ?>">Edit</a>
+            <a class="btn btn-flat btn-dark" href="index.php">Back To List</a>
+
+
+
     </div>
 </div>
+
+<?php include '../includes/footer.php'; ?>
+
+
+
 <table id="clone_list" class="d-none">
     <tr>
         <td class="py-1 px-2 text-center">

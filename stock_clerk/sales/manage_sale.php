@@ -1,3 +1,11 @@
+<?php include '../includes/connection1.php'; 
+include '../includes/connection.php';
+include '../includes/sidebar.php';
+
+?>
+
+
+
 <?php 
 if(isset($_GET['id'])){
     $qry = $conn->query("SELECT * FROM sales_list where id = '{$_GET['id']}'");
@@ -162,9 +170,11 @@ if(isset($_GET['id'])){
     </div>
     <div class="card-footer py-1 text-center">
         <button class="btn btn-flat btn-primary" type="submit" form="sale-form">Save</button>
-        <a class="btn btn-flat btn-dark" href="<?php echo base_url.'/admin?page=sale' ?>">Cancel</a>
+        <a class="btn btn-flat btn-dark" href="index.php">Cancel</a>
     </div>
 </div>
+
+<?php include '../includes/footer.php'; ?>
 <table id="clone_list" class="d-none">
     <tr>
         <td class="py-1 px-2 text-center">

@@ -10,7 +10,7 @@ include '../includes/sidebar.php';
 	<div class="card-header">
 		<h3 class="card-title">List of Sales</h3>
         <div class="card-tools">
-			<a href="<?php echo base_url ?>admin/?page=sales/manage_sale" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Create New</a>
+			<a href="manage_sale.php" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Create New</a>
 		</div>
 	</div>
 	<div class="card-body">
@@ -52,17 +52,16 @@ include '../includes/sidebar.php';
                                 <td class="text-right"><?php echo number_format($row['items']) ?></td>
                                 <td class="text-right"><?php echo number_format($row['amount'],2) ?></td>
                                 <td class="center">
-                                    <button type="button" class="btn btn-flat btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
-                                            Action
-                                        <span class="sr-only">Toggle Dropdown</span>
-                                    </button>
-                                    <div class="dropdown-menu" role="menu">
-                                        <a class="dropdown-item" href="<?php echo base_url.'admin?page=sales/view_sale&id='.$row['id'] ?>" data-id="<?php echo $row['id'] ?>"><span class="fa fa-eye text-dark"></span> View</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="<?php echo base_url.'admin?page=sales/manage_sale&id='.$row['id'] ?>" data-id="<?php echo $row['id'] ?>"><span class="fa fa-edit text-primary"></span> Edit</a>
-                                        <div class="dropdown-divider"></div>
+
+                                <a class="dropdown-item view_data" href="view_sale.php?id=<?php echo $row['id']; ?>" data-id="<?php echo $row['id']; ?>"><span class="fa fa-eye text-dark"></span> View</a>
+
+
+                                        
+                                <a class="dropdown-item view_data" href="manage_sale.php?id=<?php echo $row['id']; ?>" data-id="<?php echo $row['id']; ?>"><span class="fa fa-eye text-primary"></span> Edit</a>
+                                
+                    
                                         <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-trash text-danger"></span> Delete</a>
-                                    </div>
+                               
                                 </td>
                             </tr>
                         <?php endwhile; ?>
@@ -72,6 +71,9 @@ include '../includes/sidebar.php';
 		</div>
 	</div>
 </div>
+
+
+<?php include '../includes/footer.php';?>
 <script>
 	$(document).ready(function(){
 		$('.delete_data').click(function(){
