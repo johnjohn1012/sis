@@ -183,7 +183,7 @@ if(isset($_GET['id'])){
     </div>
     <div class="card-footer py-1 text-center">
         <button class="btn btn-flat btn-primary" type="submit" form="po-form">Save</button>
-        <a class="btn btn-flat btn-dark" href="purchase_order.php">Cancel</a>
+        <a class="btn btn-flat btn-dark" href="index.php">Cancel</a>
     </div>
 
 
@@ -384,4 +384,3 @@ if(isset($_GET['id'])){
 
     }
 </script>
-

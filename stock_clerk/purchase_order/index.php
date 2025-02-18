@@ -64,10 +64,10 @@ include '../includes/connection1.php';
                                     <span class="badge badge-danger rounded-pill">N/A</span>
                                 <?php endif; ?>
                             </td>
-                            <td align="center">
+                            <td class="center">
                                 <div class="d-flex justify-content-center">
                                     <?php if ($row['status'] == 0): ?>
-                                        <a class="btn btn-sm btn-primary mr-1" href="receiving/manage_receiving.php?po_id=<?php echo $row['id']; ?>" data-id="<?php echo $row['id']; ?>"><span class="fa fa-boxes text-dark"></span> Receive</a>
+                                        <a class="btn btn-sm btn-primary mr-1" href="../receiving/manage_receiving.php?po_id=<?php echo $row['id']; ?>" data-id="<?php echo $row['id']; ?>"><span class="fa fa-boxes text-dark"></span> Receive</a>
                                     <?php endif; ?>
                                     <a class="btn btn-sm btn-info mr-1" href="view_po.php?id=<?php echo $row['id']; ?>" data-id="<?php echo $row['id']; ?>"><span class="fa fa-eye text-dark"></span> View</a>
                                     <a class="btn btn-sm btn-warning mr-1" href="manage_po.php?id=<?php echo $row['id']; ?>" data-id="<?php echo $row['id']; ?>"><span class="fa fa-edit text-primary"></span> Edit</a>

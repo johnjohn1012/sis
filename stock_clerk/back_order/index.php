@@ -1,9 +1,24 @@
+
+<?php
+include '../includes/connection.php';
+
+include '../includes/sidebar.php';
+
+include '../includes/connection1.php';
+
+?>
+
+
+
+
+
+
 <div class="card card-outline card-primary">
 	<div class="card-header">
 		<h3 class="card-title">List of Back Orders</h3>
-        <!-- <div class="card-tools">
-			<a href="<?php echo base_url ?>admin/?page=back_order/manage_bo" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Create New</a>
-		</div> -->
+   <div class="card-tools">
+			<a href="manage_bo.php" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Create New</a>
+		</div>
 	</div>
 	<div class="card-body">
 		<div class="container-fluid">
@@ -75,6 +90,9 @@
 		</div>
 	</div>
 </div>
+
+
+<?php include '../includes/footer.php'; ?>
 <script>
 	$(document).ready(function(){
 		$('.delete_data').click(function(){

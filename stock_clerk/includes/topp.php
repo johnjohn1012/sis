@@ -1,5 +1,5 @@
 <?php
-  require_once('session.php');
+  require_once('../login/session.php');
   confirm_logged_in();
 ?>
 <!DOCTYPE html>
@@ -21,7 +21,6 @@
   cursor: pointer;
 }
 #text{
-  
   position: absolute;
   top: 50%;
   left: 50%;
@@ -45,7 +44,7 @@
   <meta name="author" content="">
 
   <title>Harah Rubina Del Dios Sales and Inventory System</title>
-  <link rel="icon" href="img/logos.png" type="image/gif" sizes="16x16">
+  <link rel="icon" href="../../img/logos.png" type="image/gif" sizes="16x16">
 
   <!-- Custom fonts for this template-->
   <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -79,7 +78,7 @@
 
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
         <div class="sidebar-brand-icon">
-            <img src="../../../img/logos.png" alt="Brand Logoss" style="width: 76px; height: 76px;">
+            <img src="../../../img/logos.png" alt="Brand Logo" style="width: 76px; height: 76px;">
         </div>
           
         <div class="sidebar-brand-text mx-4" style="text-align: center; width: 100%; font-weight: bold; color: white;">
@@ -112,9 +111,9 @@
                 <img class="img-profile rounded-circle"
                 <?php
                   if($_SESSION['GENDER']=='Male'){
-                    echo 'src="./img/boy.png"';
+                    echo 'src="../img/boy.png"';
                   }else{
-                    echo 'src="./img/girl.png"';
+                    echo 'src="../img/girl.png"';
                   }
                 ?>>
 
@@ -146,7 +145,7 @@
                   Settings
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="" data-toggle="modal" data-target="#logoutModal">
+                <a class="dropdown-item" href="../login/logout.php" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>

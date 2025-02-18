@@ -1,3 +1,13 @@
+<?php include '../includes/connection1.php'; 
+include '../includes/connection.php';
+include '../includes/sidebar.php';
+
+?>
+
+
+
+
+
 <?php 
 if(isset($_GET['id'])){
     $qry = $conn->query("SELECT p.*,s.name as supplier FROM purchase_order_list p inner join supplier_list s on p.supplier_id = s.id  where p.id = '{$_GET['id']}'");
@@ -8,19 +18,9 @@ if(isset($_GET['id'])){
     }
 }
 ?>
-<style>
-    select[readonly].select2-hidden-accessible + .select2-container {
-        pointer-events: none;
-        touch-action: none;
-        background: #eee;
-        box-shadow: none;
-    }
 
-    select[readonly].select2-hidden-accessible + .select2-container .select2-selection {
-        background: #eee;
-        box-shadow: none;
-    }
-</style>
+
+
 <div class="card card-outline card-primary">
     <div class="card-header">
         <h4 class="card-title"><?php echo isset($id) ? "Purchase Order Details - ".$po_code : 'Create New Purchase Order' ?></h4>
@@ -111,6 +111,7 @@ if(isset($_GET['id'])){
                     <tbody>
                         <?php 
                         $total = 0;
+                        if(isset($id)):
                         $qry = $conn->query("SELECT p.*,i.name,i.description FROM `po_items` p inner join item_list i on p.item_id = i.id where p.po_id = '{$id}'");
                         while($row = $qry->fetch_assoc()):
                             $total += $row['total']
@@ -142,6 +143,7 @@ if(isset($_GET['id'])){
                             </td>
                         </tr>
                         <?php endwhile; ?>
+                        <?php endif; ?>
                     </tbody>
                     <tfoot>
                         <tr>
@@ -181,9 +183,15 @@ if(isset($_GET['id'])){
     </div>
     <div class="card-footer py-1 text-center">
         <button class="btn btn-flat btn-primary" type="submit" form="po-form">Save</button>
-        <a class="btn btn-flat btn-dark" href="<?php echo base_url.'/admin?page=purchase_order' ?>">Cancel</a>
+        <a class="btn btn-flat btn-dark" href="index.php">Cancel</a>
     </div>
+
+
 </div>
+
+<?php include '../includes/footer.php' ?>
+
+
 <table id="clone_list" class="d-none">
     <tr>
         <td class="py-1 px-2 text-center">
@@ -207,6 +215,8 @@ if(isset($_GET['id'])){
         </td>
     </tr>
 </table>
+
+
 <script>
     var items = $.parseJSON('<?php echo json_encode($item_arr) ?>')
     var costs = $.parseJSON('<?php echo json_encode($cost_arr) ?>')
@@ -303,7 +313,7 @@ if(isset($_GET['id'])){
 			 $('.err-msg').remove();
 			start_loader();
 			$.ajax({
-				url:_base_url_+"classes/Master.php?f=save_po",
+				url:_base_url_+"Master.php?f=save_po",
 				data: new FormData($(this)[0]),
                 cache: false,
                 contentType: false,
@@ -318,7 +328,7 @@ if(isset($_GET['id'])){
 				},
 				success:function(resp){
 					if(resp.status == 'success'){
-						location.replace(_base_url_+"admin/?page=purchase_order/view_po&id="+resp.id);
+						location.replace(_base_url_+"purchase_order.php?page/view_po&id="+resp.id);
 					}else if(resp.status == 'failed' && !!resp.msg){
                         var el = $('<div>')
                             el.addClass("alert alert-danger err-msg").text(resp.msg)

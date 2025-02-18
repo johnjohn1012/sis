@@ -1,3 +1,16 @@
+
+<?php
+include '../includes/connection.php';
+
+include '../includes/sidebar.php';
+
+include '../includes/connection1.php';
+
+?>
+
+
+
+
 <?php 
 if(isset($_GET['id'])){
     $qry = $conn->query("SELECT p.* FROM receiving_list p where p.id = '{$_GET['id']}'");
@@ -204,9 +217,14 @@ if(isset($_GET['bo_id'])){
     </div>
     <div class="card-footer py-1 text-center">
         <button class="btn btn-flat btn-primary" type="submit" form="receive-form">Save</button>
-        <a class="btn btn-flat btn-dark" href="<?php echo base_url.'/admin?page=purchase_order' ?>">Cancel</a>
+        <a class="btn btn-flat btn-dark" href="index.php">Cancel</a>
     </div>
 </div>
+
+
+<?php include '../includes/footer.php' ?>
+
+
 <script>
     $(function(){
         $('.select2').select2({

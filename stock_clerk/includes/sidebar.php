@@ -1,7 +1,8 @@
 <?php
-  require('session.php');
+  require('../../login/session.php');
   confirm_logged_in();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,7 +48,7 @@
   <meta name="author" content="">
 
   <title>Harah Rubina Del Dios Sales and Inventory System</title>
-  <link rel="icon" href="./img/logos.png" type="image/gif" sizes="16x16">
+  <link rel="icon" href="../../img/logos.png" type="image/gif" sizes="16x16">
 
   <!-- Custom fonts for this template-->
   <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -66,128 +67,138 @@
 
     <!-- Sidebar structure -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" style="width: 100px;">
-
-      <!-- Sidebar Brand -->
-      <a class="sidebar-brand d-flex align-items-center" href="index.php" style="display: flex; flex-direction: row; gap: 40px;">
+    <!-- Sidebar Brand -->
+    <a class="sidebar-brand d-flex align-items-center" href="index.php" style="display: flex; flex-direction: row; gap: 40px;">
         <!-- Logo -->
         <div class="sidebar-brand-icon">
-          <img src="../../img/logos.png" alt="Brand Logo" style="width: 76px; height: 76px;">
+            <img src="../../img/logos.png" alt="Brand Logo" style="width: 76px; height: 76px;">
         </div>
 
         <!-- Text -->
         <div class="sidebar-brand-text" style="display: flex; align-items: center; font-size: larger; font-weight: bold; white-space: nowrap;">
-          Harah Rubina Del Dios SIS
+            Harah Rubina Del Dios SIS
         </div>
-      </a>
-      <br>
+    </a>
+    <br>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
-      <br>
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+    <br>
 
-  
-      <div class="sidebar-heading">
+    <div class="sidebar-heading">
         HOME
-      </div>
+    </div>
 
-      <li class="nav-item">
-        <a class="nav-link" href="index.php">
-          <i class="fas fa-fw fa-home"></i>
-          <span>Dashboard</span>
+    <li class="nav-item">
+        <a class="nav-link" href="../dashboard/index.php">
+            <i class="fas fa-fw fa-home"></i>
+            <span>Dashboard</span>
         </a>
-      </li>
+    </li>
 
-      <hr class="sidebar-divider">
+    <hr class="sidebar-divider">
 
- 
-      <div class="sidebar-heading">
+    <div class="sidebar-heading">
         MASTER LIST
-      </div>
-      <!--
-          
-               <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-fw fa-archive"></i>
-          <span>Pos & Orders</span>
+    </div>
+
+    <!-- Individual links with icons -->
+    <?php
+        // Switch to handle active pages dynamically
+        $currentPage = isset($_GET['page']) ? $_GET['page'] : 'dashboard'; // default to 'dashboard'
+
+        switch ($currentPage) {
+            case 'purchase_order':
+                $activePO = 'active';
+                break;
+            case 'receiving':
+                $activeReceiving = 'active';
+                break;
+            case 'back_order':
+                $activeBackOrder = 'active';
+                break;
+            case 'return_list':
+                $activeReturnList = 'active';
+                break;
+            case 'stock':
+                $activeStock = 'active';
+                break;
+            case 'sale_list':
+                $activeSaleList = 'active';
+                break;
+            case 'supplier':
+                $activeSupplier = 'active';
+                break;
+            case 'item_list':
+                $activeItemList = 'active';
+                break;
+            case 'user_list':
+                $activeUserList = 'active';
+                break;
+            default:
+                $activeDashboard = 'active';
+        }
+    ?>
+
+    <li class="nav-item <?php echo isset($activePO) ? $activePO : ''; ?>">
+        <a class="nav-link" href="../purchase_order/index.php?page=purchase_order">
+            <i class="fas fa-fw fa-shopping-cart"></i>
+            <span>Purchase Order</span>
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: calc(86% + 30px); min-width: 180px;">
-    
-          <a class="dropdown-item" href="admin/pos.php">Pos</a>
-          <a class="dropdown-item" href="admin/transaction.php">Order</a>
-          
-        </div>
-      </li>
-
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-fw fa-archive"></i>
-          <span>Customers & Employee</span>
+    </li>
+    <li class="nav-item <?php echo isset($activeReceiving) ? $activeReceiving : ''; ?>">
+        <a class="nav-link" href="../receiving/index.php?page=receiving">
+            <i class="fas fa-fw fa-box-open"></i>
+            <span>Receiving</span>
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: calc(86% + 30px); min-width: 180px;">
-    
-          <a class="dropdown-item" href="admin/customer.php">Customers</a>
-          <a class="dropdown-item" href="admin/employee.php">Employee</a>
-          
-        </div>
-      </li>
-  
-    
-
-
-                 <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-fw fa-archive"></i>
-          <span>Sales & Transactions</span>
+    </li>
+    <li class="nav-item <?php echo isset($activeBackOrder) ? $activeBackOrder : ''; ?>">
+        <a class="nav-link" href="../back_order/index.php?page=back_order">
+            <i class="fas fa-fw fa-reply"></i>
+            <span>Back Order</span>
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: calc(86% + 30px); min-width: 180px;">
-    
-          <a class="dropdown-item" href="admin/transaction.php">Sales</a>
-          <a class="dropdown-item" href="admin/transaction.php">Transactions</a>
-          
-        </div>
-      </li>
-  -->
-
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-fw fa-archive"></i>
-          <span>Stock Inventory</span>
+    </li>
+    <li class="nav-item <?php echo isset($activeReturnList) ? $activeReturnList : ''; ?>">
+        <a class="nav-link" href="../return/index.php?page=return_list">
+            <i class="fas fa-fw fa-undo"></i>
+            <span>Return List</span>
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: calc(86% + 30px); min-width: 180px;">
-    
-     
-            <a class="dropdown-item" href="../purchaseorder/purchase_order.php">Purchase Order</a>
-            <a class="dropdown-item" href="receiving.php">Receiving</a>
-            <a class="dropdown-item" href="../back_order/index.php">Back Order</a>
-            <a class="dropdown-item" href="return_list.php">Return List</a>
-            <a class="dropdown-item" href="../stocks/index.php">Stocks</a>
-            <a class="dropdown-item" href="sale_list.php">Sale List</a>
-            <a class="dropdown-item" href="supplier.php">Supplier List</a>
-            <a class="dropdown-item" href="item_list.php">Item List</a>
-            <a class="dropdown-item" href="user_list.php">User List</a>
-           
-        </div>
-      </li>
-
-      <hr class="sidebar-divider d-none d-md-block">
-
-      <!-- Maintenance Section -->
-      <div class="sidebar-heading">
-        MAINTENANCE
-      </div>
-      <li class="nav-item">
-        <a class="nav-link" href="user.php">
-          <i class="fas fa-fw fa-users"></i>
-          <span>Accounts</span>
+    </li>
+    <li class="nav-item <?php echo isset($activeStock) ? $activeStock : ''; ?>">
+        <a class="nav-link" href="../stocks/index.php?page=stock">
+            <i class="fas fa-fw fa-cogs"></i>
+            <span>Stocks</span>
         </a>
-      </li>
+    </li>
+    <li class="nav-item <?php echo isset($activeSaleList) ? $activeSaleList : ''; ?>">
+        <a class="nav-link" href="../sales/index.php?page=sale_list">
+            <i class="fas fa-fw fa-tags"></i>
+            <span>Sale List</span>
+        </a>
+    </li>
+    <li class="nav-item <?php echo isset($activeSupplier) ? $activeSupplier : ''; ?>">
+        <a class="nav-link" href="../maintenance/supplier.php?page=supplier">
+            <i class="fas fa-fw fa-truck"></i>
+            <span>Supplier List</span>
+        </a>
+    </li>
+    <li class="nav-item <?php echo isset($activeItemList) ? $activeItemList : ''; ?>">
+    <a class="nav-link" href="../maintenance/item.php?page=supplier">
+            <i class="fas fa-fw fa-box"></i>
+            <span>Item List</span>
+        </a>
+    </li>
 
-      <!-- Sidebar Toggler -->
-      <div class="text-center d-none d-md-inline">
+
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <!-- Sidebar Toggler -->
+    <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
-      </div>
+    </div>
 
-    </ul>
+</ul>
 
-    <!-- End of Sidebar -->
-    <?php include_once 'topbar.php'; ?>
+<!-- End of Sidebar -->
+<?php include_once 'topbar.php'; ?>
+

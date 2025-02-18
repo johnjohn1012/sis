@@ -1,12 +1,7 @@
-<?php 
-
+<?php include '../includes/connection1.php'; 
 include '../includes/connection.php';
-include '../includes/connection1.php';
 include '../includes/sidebar.php';
-
 ?>
-
-
 
 <?php 
 $qry = $conn->query("SELECT * FROM receiving_list where id = '{$_GET['id']}'");
@@ -134,11 +129,13 @@ if($qry->num_rows >0){
     </div>
     <div class="card-footer py-1 text-center">
         <button class="btn btn-flat btn-success" type="button" id="print">Print</button>
-        <a class="btn btn-flat btn-primary" href="<?php echo base_url.'/admin?page=receiving/manage_receiving&id='.(isset($id) ? $id : '') ?>">Edit</a>
-        <a class="btn btn-flat btn-dark" href="<?php echo base_url.'/admin?page=receiving' ?>">Back To List</a>
+        <a class="btn btn-flat btn-primary" href="manage_receiving.php?id=<?php echo isset($id) ? $id : ''; ?>">Edit</a>
+
+        <a class="btn btn-flat btn-dark" href="index.php">Back To List</a>
     </div>
 </div>
-<?php include '../includes/footer.php' ?>
+
+<?php include '../includes/footer.php'; ?>
 
 <table id="clone_list" class="d-none">
     <tr>
@@ -164,10 +161,7 @@ if($qry->num_rows >0){
     </tr>
 </table>
 
-
-
 <script>
-    
     $(function(){
         $('#print').click(function(){
             start_loader()
@@ -179,7 +173,7 @@ if($qry->num_rows >0){
             _el.append(_head)
             _el.append('<div class="d-flex justify-content-center">'+
                       '<div class="col-1 text-right">'+
-                  //    '<img src="<?php echo validate_image($_settings->info('logo')) ?>" width="65px" height="65px" />'+
+                      '<img src="<?php echo validate_image($_settings->info('logo')) ?>" width="65px" height="65px" />'+
                       '</div>'+
                       '<div class="col-10">'+
                       '<h4 class="text-center"><?php echo $_settings->info('name') ?></h4>'+

@@ -115,7 +115,7 @@ if($qry->num_rows > 0){
     <div class="card-footer py-1 text-center">
         <button class="btn btn-flat btn-success no-print" type="button" id="print">Print</button>
         <a class="btn btn-flat btn-primary no-print" href="manage_po.php?id=<?php echo isset($id) ? $id : ''; ?>">Edit</a>
-        <a class="btn btn-flat btn-dark no-print" href="purchase_order.php">Back To List</a>
+        <a class="btn btn-flat btn-dark no-print" href="index.php">Back To List</a>
 
     </div>
 </div>

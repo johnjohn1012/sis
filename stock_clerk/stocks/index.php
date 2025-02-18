@@ -1,3 +1,13 @@
+<?php include '../includes/connection1.php'; 
+include '../includes/connection.php';
+include '../includes/sidebar.php';
+
+?>
+
+
+
+
+
 <div class="card card-outline card-primary">
 	<div class="card-header">
 		<h3 class="card-title">List of Stocks</h3>

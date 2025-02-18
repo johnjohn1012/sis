@@ -1,3 +1,16 @@
+
+<?php
+include '../includes/connection.php';
+
+include '../includes/sidebar.php';
+
+include '../includes/connection1.php';
+
+?>
+
+
+
+
 <?php 
 $qry = $conn->query("SELECT b.*,s.name as supplier,p.po_code FROM back_order_list b inner join supplier_list s on b.supplier_id = s.id inner join purchase_order_list p on b.po_id = p.id  where b.id = '{$_GET['id']}'");
 if($qry->num_rows >0){

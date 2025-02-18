@@ -6,11 +6,12 @@ include '../includes/sidebar.php';
 
 
 
+
 <div class="card card-outline card-primary">
 	<div class="card-header">
-		<h3 class="card-title">List of Sales</h3>
+		<h3 class="card-title">List of Return</h3>
         <div class="card-tools">
-			<a href="<?php echo base_url ?>admin/?page=sales/manage_sale" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Create New</a>
+			<a href="<?php echo base_url ?>admin/?page=return/manage_return" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Create New</a>
 		</div>
 	</div>
 	<div class="card-body">
@@ -20,9 +21,8 @@ include '../includes/sidebar.php';
                     <colgroup>
                         <col width="5%">
                         <col width="15%">
-                        <col width="20%">
-                        <col width="20%">
-                        <col width="10%">
+                        <col width="25%">
+                        <col width="25%">
                         <col width="10%">
                         <col width="10%">
                     </colgroup>
@@ -30,36 +30,34 @@ include '../includes/sidebar.php';
                         <tr>
                             <th>#</th>
                             <th>Date Created</th>
-                            <th>Sale Code</th>
-                            <th>Client</th>
+                            <th>Return Code</th>
+                            <th>Supplier</th>
                             <th>Items</th>
-                            <th>Amount</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php 
                         $i = 1;
-                        $qry = $conn->query("SELECT * FROM `sales_list` order by `date_created` desc");
+                        $qry = $conn->query("SELECT r.*, s.name as supplier FROM `return_list` r inner join supplier_list s on r.supplier_id = s.id order by r.`date_created` desc");
                         while($row = $qry->fetch_assoc()):
                             $row['items'] = count(explode(',',$row['stock_ids']));
                         ?>
                             <tr>
                                 <td class="text-center"><?php echo $i++; ?></td>
                                 <td><?php echo date("Y-m-d H:i",strtotime($row['date_created'])) ?></td>
-                                <td><?php echo $row['sales_code'] ?></td>
-                                <td><?php echo $row['client'] ?></td>
+                                <td><?php echo $row['return_code'] ?></td>
+                                <td><?php echo $row['supplier'] ?></td>
                                 <td class="text-right"><?php echo number_format($row['items']) ?></td>
-                                <td class="text-right"><?php echo number_format($row['amount'],2) ?></td>
                                 <td align="center">
                                     <button type="button" class="btn btn-flat btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
                                             Action
                                         <span class="sr-only">Toggle Dropdown</span>
                                     </button>
                                     <div class="dropdown-menu" role="menu">
-                                        <a class="dropdown-item" href="<?php echo base_url.'admin?page=sales/view_sale&id='.$row['id'] ?>" data-id="<?php echo $row['id'] ?>"><span class="fa fa-eye text-dark"></span> View</a>
+                                        <a class="dropdown-item" href="<?php echo base_url.'admin?page=return/view_return&id='.$row['id'] ?>" data-id="<?php echo $row['id'] ?>"><span class="fa fa-eye text-dark"></span> View</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="<?php echo base_url.'admin?page=sales/manage_sale&id='.$row['id'] ?>" data-id="<?php echo $row['id'] ?>"><span class="fa fa-edit text-primary"></span> Edit</a>
+                                        <a class="dropdown-item" href="<?php echo base_url.'admin?page=return/manage_return&id='.$row['id'] ?>" data-id="<?php echo $row['id'] ?>"><span class="fa fa-edit text-primary"></span> Edit</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-trash text-danger"></span> Delete</a>
                                     </div>
@@ -72,18 +70,20 @@ include '../includes/sidebar.php';
 		</div>
 	</div>
 </div>
+
+<?php include '../includes/footer.php';?>
 <script>
 	$(document).ready(function(){
 		$('.delete_data').click(function(){
-			_conf("Are you sure to delete this Sales Record permanently?","delete_sale",[$(this).attr('data-id')])
+			_conf("Are you sure to delete this Return Record permanently?","delete_return",[$(this).attr('data-id')])
 		})
 		$('.table td,.table th').addClass('py-1 px-2 align-middle')
 		$('.table').dataTable();
 	})
-	function delete_sale($id){
+	function delete_return($id){
 		start_loader();
 		$.ajax({
-			url:_base_url_+"classes/Master.php?f=delete_sale",
+			url:_base_url_+"classes/Master.php?f=delete_return",
 			method:"POST",
 			data:{id: $id},
 			dataType:"json",

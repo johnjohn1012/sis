@@ -68,8 +68,9 @@ if (isset($_POST['btnlogin'])) {
             echo "<script>alert('Username or Password Not Registered! Contact your administrator.'); window.location = 'login.php';</script>";
             exit();
         }
-        $stmt->close();
+       
     }
 }
 $db->close();
+$stmt->close();
 ?>
