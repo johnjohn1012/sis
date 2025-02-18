@@ -1,23 +1,14 @@
 <?php 
- require('../login/session.php'); ?>
-
-
-
-
-<?php if(logged_in()){ ?>
-    <script type="text/javascript">
-        window.location = "login.php";
-    </script>
-<?php } ?>
-
-
-
-
+    require('../login/session.php'); 
+    if (logged_in()) {
+        header("Location: login.php"); // Redirect to the appropriate page
+        exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -43,7 +34,7 @@
       justify-content: center;
       align-items: center;
     }
-    
+
     .card {
       width: 100%;
       max-width: 800px;
@@ -89,11 +80,8 @@
 <body>
 
   <div class="container">
-
     <div class="row justify-content-center">
-
       <div class="col-xl-10 col-lg-12 col-md-9">
-
         <div class="card o-hidden border-0 shadow-lg my-5">
           <div class="card-body p-0">
             <div class="row shadow">
@@ -103,63 +91,44 @@
                     <h1 class="h4 text-gray-900 mb-4">Welcome to Harah Rubina Del Dios Sales and Inventory!</h1>
                   </div>
                   <form class="user" role="form" action="processlogin.php" method="post">
-                        <div class="form-group">
-                            <input class="form-control form-control-user" placeholder="Username" name="user" type="text" id="username" autofocus>
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control form-control-user" placeholder="Password" name="password" type="password" id="password">
-                        </div>
-                        <div class="form-group" style="display: flex; align-items: center; gap: 8px; font-size: 19px; color: #333; flex-direction: row;">
-                               <label for="showPassword" style="cursor: pointer; font-weight: 500; margin-bottom: 0;">Show Password</label>
-                              <input type="checkbox" id="showPassword" style="width: 20px; height: 20px; cursor: pointer;">
-                   
-                          </div>
-
-                        <br>
-                        <div class="d-flex justify-content-between">
-                                  <button class="btn btn-secondary btn-user w-50 me-2" type="button" id="clearFields">Clear Fields</button>
-                                  <button class="btn btn-primary btn-user w-50" type="submit" name="btnlogin">Login</button>
-                              </div>
-
-
-
-                        <hr>
-                    </form>
-
-
-
-
-
-
-                    <!-- <div class="text-center">
-                      <a class="small" href="register.php">Create an Account!</a>
-                    </div> -->
-                
-
-
-
+                    <div class="form-group">
+                      <input class="form-control form-control-user" placeholder="Username" name="user" type="text" id="username" autofocus required>
+                    </div>
+                    <div class="form-group">
+                      <input class="form-control form-control-user" placeholder="Password" name="password" type="password" id="password" required>
+                    </div>
+                    <div class="form-group" style="display: flex; align-items: center; gap: 8px; font-size: 19px; color: #333; flex-direction: row;">
+                      <label for="showPassword" style="cursor: pointer; font-weight: 500; margin-bottom: 0;">Show Password</label>
+                      <input type="checkbox" id="showPassword" style="width: 20px; height: 20px; cursor: pointer;">
+                    </div>
+                    <br>
+                    <div class="d-flex justify-content-between">
+                      <button class="btn btn-secondary btn-user w-50 me-2" type="button" id="clearFields">Clear Fields</button>
+                      <button class="btn btn-primary btn-user w-50" type="submit" name="btnlogin">Login</button>
+                    </div>
+                    <hr>
+                  </form>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
-
     </div>
-
   </div>
+
   <script>
     document.getElementById('showPassword').addEventListener('change', function () {
-        let passwordField = document.getElementById('password');
-        passwordField.type = this.checked ? 'text' : 'password';
+      let passwordField = document.getElementById('password');
+      passwordField.type = this.checked ? 'text' : 'password';
     });
 
     document.getElementById('clearFields').addEventListener('click', function () {
-        document.getElementById('username').value = '';
-        document.getElementById('password').value = '';
+      document.getElementById('username').value = '';
+      document.getElementById('password').value = '';
     });
-</script>
+  </script>
+
   <!-- Bootstrap core JavaScript-->
   <script src="../vendor/jquery/jquery.min.js"></script>
   <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -173,7 +142,3 @@
 </body>
 
 </html>
-
-
-
-

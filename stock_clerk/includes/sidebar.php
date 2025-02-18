@@ -156,11 +156,11 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: calc(86% + 30px); min-width: 180px;">
     
      
-            <a class="dropdown-item" href="stock_clerk/purchase_order.php">Purchase Order</a>
-            <a class="dropdown-item" href="stock_clerk/receiving.php">Receiving</a>
-            <a class="dropdown-item" href="stock_clerk/return_order.php">Back Order</a>
+            <a class="dropdown-item" href="../purchaseorder/purchase_order.php">Purchase Order</a>
+            <a class="dropdown-item" href="receiving.php">Receiving</a>
+            <a class="dropdown-item" href="../back_order/index.php">Back Order</a>
             <a class="dropdown-item" href="return_list.php">Return List</a>
-            <a class="dropdown-item" href="stock.php">Stocks</a>
+            <a class="dropdown-item" href="../stocks/index.php">Stocks</a>
             <a class="dropdown-item" href="sale_list.php">Sale List</a>
             <a class="dropdown-item" href="supplier.php">Supplier List</a>
             <a class="dropdown-item" href="item_list.php">Item List</a>

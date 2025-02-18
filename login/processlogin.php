@@ -55,13 +55,13 @@ if (isset($_POST['btnlogin'])) {
 
 
             } elseif ($_SESSION['TYPE'] == 'Cashier') {
-                header("Location: cashier_dashboard.php");
+                header("Location: http://localhost/sis/cashier/pos.php");
                 exit();
             } 
             
             
             else {
-                header("Location: pages/index.php"); // Default for other users
+                header("Location: ../login/login.php"); // Default for other users
                 exit();
             }
         } else {
