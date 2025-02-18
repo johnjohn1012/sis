@@ -1,5 +1,5 @@
 <?php
-  require_once('../../session.php');
+  require_once('session.php');
   confirm_logged_in();
 ?>
 <!DOCTYPE html>
@@ -45,7 +45,7 @@
   <meta name="author" content="">
 
   <title>Harah Rubina Del Dios Sales and Inventory System</title>
-  <link rel="icon" href="../../img/logos.png" type="image/gif" sizes="16x16">
+  <link rel="icon" href="img/logos.png" type="image/gif" sizes="16x16">
 
   <!-- Custom fonts for this template-->
   <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -112,9 +112,9 @@
                 <img class="img-profile rounded-circle"
                 <?php
                   if($_SESSION['GENDER']=='Male'){
-                    echo 'src="../../../img/boy.png"';
+                    echo 'src="./img/boy.png"';
                   }else{
-                    echo 'src="../../../img/girl.png"';
+                    echo 'src="./img/girl.png"';
                   }
                 ?>>
 
