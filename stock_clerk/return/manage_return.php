@@ -1,12 +1,31 @@
-<?php 
-if(isset($_GET['id'])){
-    $qry = $conn->query("SELECT r.*,s.name as supplier FROM return_list r inner join supplier_list s on r.supplier_id = s.id  where r.id = '{$_GET['id']}'");
-    if($qry->num_rows >0){
-        foreach($qry->fetch_array() as $k => $v){
+<?php
+// Include necessary files for connection and sidebar
+include '../includes/connection1.php'; 
+include '../includes/connection.php';
+include '../includes/sidebar.php'; 
+
+// Debugging start
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+// Retrieve return details if 'id' is set in the URL
+if (isset($_GET['id'])) {
+    $qry = $conn->query("SELECT r.*, s.name AS supplier FROM return_list r 
+                         INNER JOIN supplier_list s ON r.supplier_id = s.id 
+                         WHERE r.id = '{$_GET['id']}'");
+
+    // Debugging SQL query result
+    if ($qry->num_rows > 0) {
+        // Fetch row and assign it to variables dynamically
+        foreach ($qry->fetch_array() as $k => $v) {
             $$k = $v;
         }
+    } else {
+        echo "No records found for the provided ID.";
     }
 }
+
+// Adding style for readonly select fields
 ?>
 <style>
     select[readonly].select2-hidden-accessible + .select2-container {
@@ -21,9 +40,12 @@ if(isset($_GET['id'])){
         box-shadow: none;
     }
 </style>
+
 <div class="card card-outline card-primary">
     <div class="card-header">
-        <h4 class="card-title"><?php echo isset($id) ? "Return Details - ".$return_code : 'Create New Return Record' ?></h4>
+        <h4 class="card-title">
+            <?php echo isset($id) ? "Return Details - " . $return_code : 'Create New Return Record' ?>
+        </h4>
     </div>
     <div class="card-body">
         <form action="" id="return-form">
@@ -32,19 +54,23 @@ if(isset($_GET['id'])){
                 <div class="row">
                     <div class="col-md-6">
                         <label class="control-label text-info">Return Code</label>
-                        <input type="text" class="form-control form-control-sm rounded-0" value="<?php echo isset($return_code) ? $return_code : '' ?>" readonly>
+                        <input type="text" class="form-control form-control-sm rounded-0" 
+                               value="<?php echo isset($return_code) ? $return_code : '' ?>" readonly>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="supplier_id" class="control-label text-info">Supplier</label>
                             <select name="supplier_id" id="supplier_id" class="custom-select select2">
-                            <option <?php echo !isset($supplier_id) ? 'selected' : '' ?> disabled></option>
-                            <?php 
-                            $supplier = $conn->query("SELECT * FROM `supplier_list` where status = 1 order by `name` asc");
-                            while($row=$supplier->fetch_assoc()):
-                            ?>
-                            <option value="<?php echo $row['id'] ?>" <?php echo isset($supplier_id) && $supplier_id == $row['id'] ? "selected" : "" ?> ><?php echo $row['name'] ?></option>
-                            <?php endwhile; ?>
+                                <option <?php echo !isset($supplier_id) ? 'selected' : '' ?> disabled></option>
+                                <?php 
+                                $supplier = $conn->query("SELECT * FROM `supplier_list` WHERE status = 1 ORDER BY `name` ASC");
+                                while ($row = $supplier->fetch_assoc()):
+                                ?>
+                                    <option value="<?php echo $row['id'] ?>" 
+                                            <?php echo isset($supplier_id) && $supplier_id == $row['id'] ? "selected" : "" ?>>
+                                        <?php echo $row['name'] ?>
+                                    </option>
+                                <?php endwhile; ?>
                             </select>
                         </div>
                     </div>
@@ -53,19 +79,19 @@ if(isset($_GET['id'])){
                 <fieldset>
                     <legend class="text-info">Item Form</legend>
                     <div class="row justify-content-center align-items-end">
-                            <?php 
-                                $item_arr = array();
-                                $cost_arr = array();
-                                $item = $conn->query("SELECT * FROM `item_list` where status = 1 order by `name` asc");
-                                while($row=$item->fetch_assoc()):
-                                    $item_arr[$row['supplier_id']][$row['id']] = $row;
-                                    $cost_arr[$row['id']] = $row['cost'];
-                                endwhile;
-                            ?>
+                        <?php 
+                            $item_arr = array();
+                            $cost_arr = array();
+                            $item = $conn->query("SELECT * FROM `item_list` WHERE status = 1 ORDER BY `name` ASC");
+                            while ($row = $item->fetch_assoc()):
+                                $item_arr[$row['supplier_id']][$row['id']] = $row;
+                                $cost_arr[$row['id']] = $row['cost'];
+                            endwhile;
+                        ?>
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="item_id" class="control-label">Item</label>
-                                <select  id="item_id" class="custom-select ">
+                                <select id="item_id" class="custom-select">
                                     <option disabled selected></option>
                                 </select>
                             </div>
@@ -87,6 +113,7 @@ if(isset($_GET['id'])){
                                 <button type="button" class="btn btn-flat btn-sm btn-primary" id="add_to_list">Add to List</button>
                             </div>
                         </div>
+                    </div>
                 </fieldset>
                 <hr>
                 <table class="table table-striped table-bordered" id="list">
@@ -111,10 +138,12 @@ if(isset($_GET['id'])){
                     <tbody>
                         <?php 
                         $total = 0;
-                        if(isset($id)):
-                        $qry = $conn->query("SELECT s.*,i.name,i.description FROM `stock_list` s inner join item_list i on s.item_id = i.id where s.id in ({$stock_ids})");
-                        while($row = $qry->fetch_assoc()):
-                            $total += $row['total']
+                        if (isset($id)):
+                            $qry = $conn->query("SELECT s.*, i.name, i.description FROM `stock_list` s 
+                                                 INNER JOIN item_list i ON s.item_id = i.id 
+                                                 WHERE s.id IN ({$stock_ids})");
+                            while ($row = $qry->fetch_assoc()):
+                                $total += $row['total'];
                         ?>
                         <tr>
                             <td class="py-1 px-2 text-center">
@@ -128,29 +157,18 @@ if(isset($_GET['id'])){
                                 <input type="hidden" name="price[]" value="<?php echo $row['price']; ?>">
                                 <input type="hidden" name="total[]" value="<?php echo $row['total']; ?>">
                             </td>
-                            <td class="py-1 px-2 text-center unit">
-                            <?php echo $row['unit']; ?>
-                            </td>
-                            <td class="py-1 px-2 item">
-                            <?php echo $row['name']; ?> <br>
-                            <?php echo $row['description']; ?>
-                            </td>
-                            <td class="py-1 px-2 text-right cost">
-                            <?php echo number_format($row['price']); ?>
-                            </td>
-                            <td class="py-1 px-2 text-right total">
-                            <?php echo number_format($row['total']); ?>
-                            </td>
+                            <td class="py-1 px-2 text-center unit"><?php echo $row['unit']; ?></td>
+                            <td class="py-1 px-2 item"><?php echo $row['name']; ?> <br><?php echo $row['description']; ?></td>
+                            <td class="py-1 px-2 text-right cost"><?php echo number_format($row['price']); ?></td>
+                            <td class="py-1 px-2 text-right total"><?php echo number_format($row['total']); ?></td>
                         </tr>
                         <?php endwhile; ?>
                         <?php endif; ?>
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th class="text-right py-1 px-2" colspan="5">Total
-                                <input type="hidden" name="amount" value="<?php echo isset($discount) ? $discount : 0 ?>">
-                            </th>
-                            <th class="text-right py-1 px-2 grand-total">0</th>
+                            <th class="text-right py-1 px-2" colspan="5">Total</th>
+                            <th class="text-right py-1 px-2 grand-total"><?php echo number_format($total); ?></th>
                         </tr>
                     </tfoot>
                 </table>
@@ -167,9 +185,13 @@ if(isset($_GET['id'])){
     </div>
     <div class="card-footer py-1 text-center">
         <button class="btn btn-flat btn-primary" type="submit" form="return-form">Save</button>
-        <a class="btn btn-flat btn-dark" href="<?php echo base_url.'/admin?page=return' ?>">Cancel</a>
+        <a class="btn btn-flat btn-dark" href="index.php">Cancel</a>
     </div>
 </div>
+
+
+<?php include '../includes/footer.php'; ?>
+
 <table id="clone_list" class="d-none">
     <tr>
         <td class="py-1 px-2 text-center">
@@ -183,16 +205,18 @@ if(isset($_GET['id'])){
             <input type="hidden" name="price[]">
             <input type="hidden" name="total[]">
         </td>
-        <td class="py-1 px-2 text-center unit">
-        </td>
-        <td class="py-1 px-2 item">
-        </td>
-        <td class="py-1 px-2 text-right cost">
-        </td>
-        <td class="py-1 px-2 text-right total">
-        </td>
+        <td class="py-1 px-2 text-center unit"></td>
+        <td class="py-1 px-2 item"></td>
+        <td class="py-1 px-2 text-right cost"></td>
+        <td class="py-1 px-2 text-right total"></td>
     </tr>
 </table>
+
+
+
+
+
+
 <script>
     var items = $.parseJSON('<?php echo json_encode($item_arr) ?>')
     var costs = $.parseJSON('<?php echo json_encode($cost_arr) ?>')

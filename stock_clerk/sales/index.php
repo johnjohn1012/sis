@@ -51,7 +51,7 @@ include '../includes/sidebar.php';
                                 <td><?php echo $row['client'] ?></td>
                                 <td class="text-right"><?php echo number_format($row['items']) ?></td>
                                 <td class="text-right"><?php echo number_format($row['amount'],2) ?></td>
-                                <td align="center">
+                                <td class="center">
                                     <button type="button" class="btn btn-flat btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
                                             Action
                                         <span class="sr-only">Toggle Dropdown</span>

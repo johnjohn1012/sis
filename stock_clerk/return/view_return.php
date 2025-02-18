@@ -1,3 +1,9 @@
+<?php
+include '../includes/connection1.php'; 
+include '../includes/connection.php';
+include '../includes/sidebar.php';
+?>
+
 <?php 
 $qry = $conn->query("SELECT r.*,s.name as supplier FROM return_list r inner join supplier_list s on r.supplier_id = s.id  where r.id = '{$_GET['id']}'");
 if($qry->num_rows >0){
@@ -111,37 +117,53 @@ if($qry->num_rows >0){
 </table>
 <script>
     
-    $(function(){
-        $('#print').click(function(){
-            start_loader()
-            var _el = $('<div>')
-            var _head = $('head').clone()
-                _head.find('title').text("Return Record - Print View")
-            var p = $('#print_out').clone()
-            p.find('tr.text-light').removeClass("text-light bg-navy")
-            _el.append(_head)
-            _el.append('<div class="d-flex justify-content-center">'+
-                      '<div class="col-1 text-right">'+
-                      '<img src="<?php echo validate_image($_settings->info('logo')) ?>" width="65px" height="65px" />'+
-                      '</div>'+
-                      '<div class="col-10">'+
-                      '<h4 class="text-center"><?php echo $_settings->info('name') ?></h4>'+
-                      '<h4 class="text-center">Return Record</h4>'+
-                      '</div>'+
-                      '<div class="col-1 text-right">'+
-                      '</div>'+
-                      '</div><hr/>')
-            _el.append(p.html())
-            var nw = window.open("","","width=1200,height=900,left=250,location=no,titlebar=yes")
-                     nw.document.write(_el.html())
-                     nw.document.close()
-                     setTimeout(() => {
-                         nw.print()
-                         setTimeout(() => {
-                            nw.close()
-                            end_loader()
-                         }, 200);
-                     }, 500);
-        })
-    })
+    $(function() {
+    $('#print').click(function() {
+        start_loader(); // Start loading to show a loading spinner during the print preparation.
+
+        // Create a new container for the print content
+        var _el = $('<div>');
+        
+        // Clone the head and modify the title for the print view
+        var _head = $('head').clone();
+        _head.find('title').text("Return Record - Print View");
+
+        // Clone the content to be printed
+        var p = $('#print_out').clone();
+        p.find('tr.text-light').removeClass("text-light bg-navy"); // Remove any background colors or styles for printing.
+
+        // Prepare the header for the print page
+        _el.append(_head);
+        _el.append('<div class="d-flex justify-content-center">' +
+                  '<div class="col-1 text-right">' +
+                  '</div>' +
+                  '<div class="col-10">' +
+                  '<h4 class="text-center"><?php echo $_settings->info('name'); ?></h4>' +
+                  '<h4 class="text-center">Return Record</h4>' +
+                  '</div>' +
+                  '<div class="col-1 text-right">' +
+                  '</div>' +
+                  '</div><hr/>');
+
+        // Append the cloned content (the table and other content to print)
+        _el.append(p.html());
+
+        // Open a new window to print the content
+        var nw = window.open("", "", "width=1200,height=900,left=250,location=no,titlebar=yes");
+
+        // Write the generated HTML content to the new window
+        nw.document.write(_el.html());
+        nw.document.close();
+
+        // After loading the content, trigger the print dialog and close the window after printing
+        setTimeout(() => {
+            nw.print(); // Trigger the print dialog
+            setTimeout(() => {
+                nw.close(); // Close the print window after the print job is finished
+                end_loader(); // Stop the loading spinner
+            }, 200);
+        }, 500); // Wait a little before printing to allow the page to load properly
+    });
+});
+
 </script>

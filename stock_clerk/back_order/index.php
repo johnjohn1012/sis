@@ -57,6 +57,8 @@ include '../includes/connection1.php';
                                 <td><?php echo $row['bo_code'] ?></td>
                                 <td><?php echo $row['supplier'] ?></td>
                                 <td class="text-right"><?php echo number_format($row['items']) ?></td>
+
+
                                 <td class="text-center">
                                     <?php if($row['status'] == 0): ?>
                                         <span class="badge badge-primary rounded-pill">Pending</span>
@@ -68,20 +70,22 @@ include '../includes/connection1.php';
                                         <span class="badge badge-danger rounded-pill">N/A</span>
                                     <?php endif; ?>
                                 </td>
+
+
                                 <td align="center">
-                                    <button type="button" class="btn btn-flat btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
-                                            Action
-                                        <span class="sr-only">Toggle Dropdown</span>
-                                    </button>
+                               
                                     <div class="dropdown-menu" role="menu">
                                     <?php if($row['status'] == 0): ?>
 
                                         <a class="dropdown-item" href="<?php echo base_url.'admin?page=receiving/manage_receiving&bo_id='.$row['id'] ?>" data-id="<?php echo $row['id'] ?>"><span class="fa fa-boxes text-dark"></span> Receive</a>
                                         <div class="dropdown-divider"></div>
                                     <?php endif; ?>
+                                    
                                         <a class="dropdown-item" href="<?php echo base_url.'admin?page=back_order/view_bo&id='.$row['id'] ?>" data-id="<?php echo $row['id'] ?>"><span class="fa fa-eye text-dark"></span> View</a>
                                     </div>
                                 </td>
+
+
                             </tr>
                         <?php endwhile; ?>
                     </tbody>
