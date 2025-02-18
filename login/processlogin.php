@@ -50,7 +50,7 @@ if (isset($_POST['btnlogin'])) {
 
 
             } elseif ($_SESSION['TYPE'] == 'Stock Clerk') {
-                header("Location: stock_clerk_dashboard.php");
+                header("Location: stock_clerk_dashboard.php");// need landing page
                 exit();
 
 
