@@ -1,3 +1,8 @@
+<?php
+include '../includes/connection.php';
+include '../includes/sidebar.php';
+include '../includes/connection1.php';
+?>
 
 <div class="card card-outline card-primary">
 	<div class="card-header">
@@ -46,18 +51,20 @@
                                     <span class="badge badge-danger rounded-pill">Inactive</span>
                                 <?php endif; ?>
                             </td>
-							<td align="center">
-								 <button type="button" class="btn btn-flat btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
-				                  		Action
-				                    <span class="sr-only">Toggle Dropdown</span>
-				                  </button>
-				                  <div class="dropdown-menu" role="menu">
-				                    <a class="dropdown-item view_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-eye text-dark"></span> View</a>
+							<td class="center">
+								
+				                <a class="dropdown-item view_data" href="view_supplier.php?id=<?php echo $row['id']; ?>" data-id="<?php echo $row['id']; ?>"><span class="fa fa-eye text-dark"></span> View</a>
+
 				                    <div class="dropdown-divider"></div>
-				                    <a class="dropdown-item edit_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-edit text-primary"></span> Edit</a>
+
+									<a class="dropdown-item view_data" href="manage_supplier.php?id=<?php echo $row['id']; ?>" data-id="<?php echo $row['id']; ?>"><span class="fa fa-eye text-primary"></span> Edit</a>
+
+				             
+
+
 				                    <div class="dropdown-divider"></div>
 				                    <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-trash text-danger"></span> Delete</a>
-				                  </div>
+				                  
 							</td>
 						</tr>
 					<?php endwhile; ?>
@@ -67,6 +74,9 @@
 		</div>
 	</div>
 </div>
+
+<?php include '../includes/footer.php';?>
+
 <script>
 	$(document).ready(function(){
 		$('.delete_data').click(function(){

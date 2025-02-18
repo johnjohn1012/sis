@@ -1,5 +1,10 @@
 <?php
-require_once('../../config.php');
+
+include '../includes/connection.php';
+include '../includes/sidebar.php';
+include '../includes/connection1.php';
+
+
 if(isset($_GET['id']) && $_GET['id'] > 0){
     $qry = $conn->query("SELECT * from `supplier_list` where id = '{$_GET['id']}' ");
     if($qry->num_rows > 0){
@@ -45,6 +50,10 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 		</div>
 	</form>
 </div>
+
+
+<?php include '../includes/footer.php'; ?>
+
 <script>
 	$(document).ready(function(){
 		$('#supplier-form').submit(function(e){
@@ -53,7 +62,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 			 $('.err-msg').remove();
 			start_loader();
 			$.ajax({
-				url:_base_url_+"classes/Master.php?f=save_supplier",
+				url:_base_url_+"../includes/Master.php?f=save_supplier",
 				data: new FormData($(this)[0]),
                 cache: false,
                 contentType: false,

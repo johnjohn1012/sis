@@ -116,9 +116,13 @@ if($qry->num_rows >0){
     </div>
     <div class="card-footer py-1 text-center">
         <button class="btn btn-flat btn-success" type="button" id="print">Print</button>
-        <a class="btn btn-flat btn-dark" href="<?php echo base_url.'/admin?page=back_order' ?>">Back To List</a>
+        <a class="btn btn-flat btn-dark" href="index.php">Back To List</a>
     </div>
 </div>
+
+<?php include '../includes/footer.php';?>
+
+
 <table id="clone_list" class="d-none">
     <tr>
         <td class="py-1 px-2 text-center">
