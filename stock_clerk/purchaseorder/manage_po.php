@@ -189,6 +189,8 @@ if(isset($_GET['id'])){
 
 </div>
 
+<?php include '../includes/footer.php' ?>
+
 
 <table id="clone_list" class="d-none">
     <tr>
