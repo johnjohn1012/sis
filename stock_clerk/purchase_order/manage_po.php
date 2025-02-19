@@ -1,9 +1,9 @@
-<?php include '../includes/connection1.php'; 
+<?php 
+
 include '../includes/connection.php';
 include '../includes/sidebar.php';
 
 ?>
-
 
 
 

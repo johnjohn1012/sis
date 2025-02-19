@@ -254,34 +254,34 @@ if ($Aa=='User'){
         </a>
         </div>
 
-<!-- Total Sales record -->
-<div class="col-md-3 mb-3">
-    <div class="card border-left-info shadow h-100 py-2 custom-card">
-        <div class="card-body">
-            <div class="row no-gutters align-items-center">
-                <div class="col mr-0">
-                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total Sales</div>
-                    <div class="h6 mb-0 font-weight-bold text-gray-800">
-                        <?php 
-                            // Query to sum the GRANDTOTAL from the transaction table
-                            $query = "SELECT SUM(GRANDTOTAL) AS total_sales FROM transaction";
-                            $result = mysqli_query($db, $query) or die(mysqli_error($db));
-                            $row = mysqli_fetch_assoc($result);
-                            
-                            // Display the total sales, formatted as currency
-                            echo "₱ " . number_format($row['total_sales'], 2);
-                        ?>
+        <!-- Total Sales record -->
+        <div class="col-md-3 mb-3">
+            <div class="card border-left-info shadow h-100 py-2 custom-card">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-0">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total Sales</div>
+                            <div class="h6 mb-0 font-weight-bold text-gray-800">
+                                <?php 
+                                    // Query to sum the GRANDTOTAL from the transaction table
+                                    $query = "SELECT SUM(GRANDTOTAL) AS total_sales FROM transaction";
+                                    $result = mysqli_query($db, $query) or die(mysqli_error($db));
+                                    $row = mysqli_fetch_assoc($result);
+                                    
+                                    // Display the total sales, formatted as currency
+                                    echo "₱ " . number_format($row['total_sales'], 2);
+                                ?>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-money-bill fa-3x" style="color:rgb(137, 77, 216);"></i> <!-- Green icon for total sales -->
+                        </div>
                     </div>
                 </div>
-                <div class="col-auto">
-                    <i class="fas fa-money-bill fa-3x" style="color:rgb(137, 77, 216);"></i> <!-- Green icon for total sales -->
-                </div>
             </div>
-        </div>
-    </div>
-</div>
+            </div>
 
-    </div>
+        </div>
 
     <div class="row mt-4">
         <div class="col-md-12">

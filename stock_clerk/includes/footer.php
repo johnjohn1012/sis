@@ -99,7 +99,7 @@ function isNumberKey(evt)
   include 'modal.php';
 // JOB SELECT OPTION TAB
 $sql = "SELECT DISTINCT TYPE, TYPE_ID FROM type";
-$result = mysqli_query($db, $sql) or die ("Bad SQL: $sql");
+$result = mysqli_query($conn, $sql) or die ("Bad SQL: $sql");
 
 $opt = "<select class='form-control' name='type'>";
   while ($row = mysqli_fetch_assoc($result)) {
@@ -115,7 +115,7 @@ $opt .= "</select>";
                       join location l on e.LOCATION_ID=l.LOCATION_ID
                       join type t on u.TYPE_ID=t.TYPE_ID
                       WHERE ID =".$_SESSION['MEMBER_ID'];
-        $result = mysqli_query($db, $query) or die(mysqli_error($db));
+        $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
           while($row = mysqli_fetch_array($result))
           {  
                 $zz= $row['ID'];

@@ -1,7 +1,7 @@
 <?php
 include '../includes/connection.php';
 include '../includes/sidebar.php';
-include '../includes/connection1.php';
+
 
 // Check if 'id' is set in the URL query string
 if (isset($_GET['id']) && !empty($_GET['id'])) {

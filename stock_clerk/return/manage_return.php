@@ -1,6 +1,6 @@
 <?php
 // Include necessary files for connection and sidebar
-include '../includes/connection1.php'; 
+
 include '../includes/connection.php';
 include '../includes/sidebar.php'; 
 

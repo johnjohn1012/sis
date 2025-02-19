@@ -5,7 +5,7 @@ include '../includes/connection.php';
 
 include '../includes/sidebar.php';
 
-include '../includes/connection1.php';
+
 
 ?>
 
@@ -82,6 +82,8 @@ include '../includes/connection1.php';
 		</div>
 	</div>
 </div>
+
+<?php include '../includes/footer.php';?>
 <script>
 	$(document).ready(function(){
 		$('.delete_data').click(function(){

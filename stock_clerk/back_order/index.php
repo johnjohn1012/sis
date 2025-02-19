@@ -1,7 +1,7 @@
 <?php
 include '../includes/connection.php';
 include '../includes/sidebar.php';
-include '../includes/connection1.php';
+
 ?>
 
 <div class="card card-outline card-primary">
