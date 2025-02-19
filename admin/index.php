@@ -6,7 +6,7 @@ include '../includes/sidebar.php';
                 $query = 'SELECT ID, t.TYPE
                           FROM users u
                           JOIN type t ON t.TYPE_ID=u.TYPE_ID WHERE ID = '.$_SESSION['MEMBER_ID'].'';
-                $result = mysqli_query($db, $query) or die (mysqli_error($db));
+                $result = mysqli_query($conn, $query) or die (mysqli_error($conn));
       
                 while ($row = mysqli_fetch_assoc($result)) {
                           $Aa = $row['TYPE'];
@@ -74,7 +74,7 @@ if ($Aa=='User'){
                                         <div class="h6 mb-0 font-weight-bold text-gray-800">
                                             <?php 
                                             $query = "SELECT COUNT(*) FROM customer";
-                                            $result = mysqli_query($db, $query) or die(mysqli_error($db));
+                                            $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
                                             while ($row = mysqli_fetch_array($result)) {
                                                 echo "$row[0]";
                                             }
@@ -101,7 +101,7 @@ if ($Aa=='User'){
                                 <div class="h6 mb-0 font-weight-bold text-gray-800">
                                     <?php 
                                     $query = "SELECT COUNT(*) FROM supplier";
-                                    $result = mysqli_query($db, $query) or die(mysqli_error($db));
+                                    $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
                                     while ($row = mysqli_fetch_array($result)) {
                                         echo "$row[0]";
                                     }
@@ -128,7 +128,7 @@ if ($Aa=='User'){
                             <div class="h6 mb-0 font-weight-bold text-gray-800">
                                 <?php 
                                 $query = "SELECT COUNT(*) FROM employee";
-                                $result = mysqli_query($db, $query) or die(mysqli_error($db));
+                                $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
                                 while ($row = mysqli_fetch_array($result)) {
                                     echo "$row[0]";
                                 }
@@ -155,7 +155,7 @@ if ($Aa=='User'){
                             <div class="h6 mb-0 font-weight-bold text-gray-800">
                                 <?php 
                                 $query = "SELECT COUNT(*) FROM users WHERE TYPE_ID=2";
-                                $result = mysqli_query($db, $query) or die(mysqli_error($db));
+                                $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
                                 while ($row = mysqli_fetch_array($result)) {
                                     echo "$row[0]";
                                 }
@@ -184,7 +184,7 @@ if ($Aa=='User'){
                             <div class="h6 mb-0 font-weight-bold text-gray-800">
                                 <?php 
                                 $query = "SELECT COUNT(*) FROM product";
-                                $result = mysqli_query($db, $query) or die(mysqli_error($db));
+                                $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
                                 while ($row = mysqli_fetch_array($result)) {
                                     echo "$row[0]";
                                 }
@@ -211,7 +211,7 @@ if ($Aa=='User'){
                             <div class="h6 mb-0 font-weight-bold text-gray-800">
                                 <?php 
                                 $query = "SELECT COUNT(*) FROM transaction";
-                                $result = mysqli_query($db, $query) or die(mysqli_error($db));
+                                $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
                                 while ($row = mysqli_fetch_array($result)) {
                                     echo "$row[0]";
                                 }
@@ -238,7 +238,7 @@ if ($Aa=='User'){
                             <div class="h6 mb-0 font-weight-bold text-gray-800">
                             <?php 
                                 $query = "SELECT COUNT(*) FROM transaction";
-                                $result = mysqli_query($db, $query) or die(mysqli_error($db));
+                                $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
                                 while ($row = mysqli_fetch_array($result)) {
                                     echo "$row[0]";
                                 }
@@ -265,7 +265,7 @@ if ($Aa=='User'){
                                 <?php 
                                     // Query to sum the GRANDTOTAL from the transaction table
                                     $query = "SELECT SUM(GRANDTOTAL) AS total_sales FROM transaction";
-                                    $result = mysqli_query($db, $query) or die(mysqli_error($db));
+                                    $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
                                     $row = mysqli_fetch_assoc($result);
                                     
                                     // Display the total sales, formatted as currency

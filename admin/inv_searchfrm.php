@@ -4,7 +4,7 @@ include'../includes/sidebar.php';
   $query = 'SELECT ID, t.TYPE
             FROM users u
             JOIN type t ON t.TYPE_ID=u.TYPE_ID WHERE ID = '.$_SESSION['MEMBER_ID'].'';
-  $result = mysqli_query($db, $query) or die (mysqli_error($db));
+  $result = mysqli_query($conn, $query) or die (mysqli_error($conn));
   
   while ($row = mysqli_fetch_assoc($result)) {
             $Aa = $row['TYPE'];
@@ -21,7 +21,7 @@ include'../includes/sidebar.php';
 }
     
 $query2 = 'SELECT NAME FROM product p join category c on p.CATEGORY_ID=c.CATEGORY_ID where PRODUCT_CODE ='.$_GET['id'].' limit 1';
-        $result2 = mysqli_query($db, $query2) or die (mysqli_error($db));
+        $result2 = mysqli_query($conn, $query2) or die (mysqli_error($conn));
 ?>
             
             <div class="card shadow mb-4">
@@ -47,7 +47,7 @@ $query2 = 'SELECT NAME FROM product p join category c on p.CATEGORY_ID=c.CATEGOR
 
 <?php   
 $query = 'SELECT PRODUCT_ID, PRODUCT_CODE, NAME, QTY_STOCK, ON_HAND, CNAME, COMPANY_NAME, DATE_STOCK_IN FROM product p join category c on p.CATEGORY_ID=c.CATEGORY_ID JOIN supplier s ON p.SUPPLIER_ID=s.SUPPLIER_ID where PRODUCT_CODE ='.$_GET['id'];
-        $result = mysqli_query($db, $query) or die (mysqli_error($db));
+        $result = mysqli_query($conn, $query) or die (mysqli_error($conn));
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '<tr>';
                 echo '<td>'. $row['PRODUCT_CODE'].'</td>';

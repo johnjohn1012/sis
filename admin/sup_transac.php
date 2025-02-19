@@ -14,12 +14,12 @@ include'../includes/connection.php';
                     $query = "INSERT INTO location
                               (LOCATION_ID, PROVINCE, CITY)
                               VALUES (Null,'{$prov}','{$cit}')";
-                    mysqli_query($db,$query)or die ('Error in updating location in Database');
+                    mysqli_query($conn,$query)or die ('Error in updating location in Database');
 
                     $query2 = "INSERT INTO supplier
                               (SUPPLIER_ID, COMPANY_NAME, LOCATION_ID, PHONE_NUMBER)
                               VALUES (Null,'{$name}',(SELECT MAX(LOCATION_ID) FROM location),'".$phone."')";
-                    mysqli_query($db,$query2)or die ('Error in updating supplier in Database');
+                    mysqli_query($conn,$query2)or die ('Error in updating supplier in Database');
                 break;
               }
             ?>

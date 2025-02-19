@@ -4,7 +4,7 @@ include'../includes/sidebar.php';
   $query = 'SELECT ID, t.TYPE
             FROM users u
             JOIN type t ON t.TYPE_ID=u.TYPE_ID WHERE ID = '.$_SESSION['MEMBER_ID'].'';
-  $result = mysqli_query($db, $query) or die (mysqli_error($db));
+  $result = mysqli_query($conn, $query) or die (mysqli_error($conn));
   
   while ($row = mysqli_fetch_assoc($result)) {
             $Aa = $row['TYPE'];
@@ -20,7 +20,7 @@ include'../includes/sidebar.php';
   }           
 }
 $sql = "SELECT DISTINCT CNAME, CATEGORY_ID FROM category order by CNAME asc";
-$result = mysqli_query($db, $sql) or die ("Bad SQL: $sql");
+$result = mysqli_query($conn, $sql) or die ("Bad SQL: $sql");
 
 $aaa = "<select class='form-control' name='category' required>
         <option disabled selected hidden>Select Category</option>";
@@ -31,7 +31,7 @@ $aaa = "<select class='form-control' name='category' required>
 $aaa .= "</select>";
 
 $sql2 = "SELECT DISTINCT SUPPLIER_ID, COMPANY_NAME FROM supplier order by COMPANY_NAME asc";
-$result2 = mysqli_query($db, $sql2) or die ("Bad SQL: $sql2");
+$result2 = mysqli_query($conn, $sql2) or die ("Bad SQL: $sql2");
 
 $sup = "<select class='form-control' name='supplier' required>
         <option disabled selected hidden>Select Supplier</option>";
@@ -63,7 +63,7 @@ $sup .= "</select>";
 
 <?php                  
     $query = 'SELECT PRODUCT_ID, PRODUCT_CODE, NAME, PRICE, CNAME, DATE_STOCK_IN FROM product p join category c on p.CATEGORY_ID=c.CATEGORY_ID GROUP BY PRODUCT_CODE';
-        $result = mysqli_query($db, $query) or die (mysqli_error($db));
+        $result = mysqli_query($conn, $query) or die (mysqli_error($conn));
       
             while ($row = mysqli_fetch_assoc($result)) {
                                  

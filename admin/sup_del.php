@@ -6,7 +6,7 @@ include'../includes/connection.php';
     	switch ($_GET['type']) {
     		case 'supplier':
     			$query = 'DELETE FROM supplier WHERE SUPPLIER_ID = ' . $_GET['id'];
-    			$result = mysqli_query($db, $query) or die(mysqli_error($db));				
+    			$result = mysqli_query($conn, $query) or die(mysqli_error($conn));				
             ?>
     			<script type="text/javascript">alert("Supplier Successfully Deleted.");window.location = "supplier.php";</script>					
             <?php

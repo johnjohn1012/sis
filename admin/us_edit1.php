@@ -18,7 +18,7 @@ include('../includes/connection.php');
 	 						join location l on l.LOCATION_ID=e.LOCATION_ID
 	 						set e.FIRST_NAME="'.$a.'", e.LAST_NAME="'.$b.'", GENDER="'.$c.'", USERNAME="'.$d.'", PASSWORD = sha1("'.$e.'"),  EMAIL="'.$f.'", l.PROVINCE ="'.$j.'", l.CITY ="'.$k.'", PHONE_NUMBER ="'.$g.'",HIRED_DATE ="'.$i.'" WHERE
 					ID ="'.$zz.'"';
-					$result = mysqli_query($db, $query) or die(mysqli_error($db));							
+					$result = mysqli_query($conn, $query) or die(mysqli_error($conn));							
 ?>
 				<script type="text/javascript">
 	                alert("You've updated your account successfully.");

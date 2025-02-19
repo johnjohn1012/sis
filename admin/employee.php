@@ -5,7 +5,7 @@ include '../includes/sidebar.php';
 $query = 'SELECT ID, t.TYPE
           FROM users u
           JOIN type t ON t.TYPE_ID=u.TYPE_ID WHERE ID = '.$_SESSION['MEMBER_ID'].'';
-$result = mysqli_query($db, $query) or die(mysqli_error($db));
+$result = mysqli_query($conn, $query) or die(mysqli_error($conn));
 
 while ($row = mysqli_fetch_assoc($result)) {
     $Aa = $row['TYPE'];
@@ -38,7 +38,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                 <tbody>
                     <?php
                     $query = 'SELECT EMPLOYEE_ID, FIRST_NAME, LAST_NAME, j.JOB_TITLE FROM employee e JOIN job j ON e.JOB_ID=j.JOB_ID';
-                    $result = mysqli_query($db, $query) or die(mysqli_error($db));
+                    $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo '<tr>';
                         echo '<td>' . $row['FIRST_NAME'] . '</td>';

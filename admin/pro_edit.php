@@ -4,7 +4,7 @@ include'../includes/sidebar.php';
   $query = 'SELECT ID, t.TYPE
             FROM users u
             JOIN type t ON t.TYPE_ID=u.TYPE_ID WHERE ID = '.$_SESSION['MEMBER_ID'].'';
-  $result = mysqli_query($db, $query) or die (mysqli_error($db));
+  $result = mysqli_query($conn, $query) or die (mysqli_error($conn));
   
   while ($row = mysqli_fetch_assoc($result)) {
             $Aa = $row['TYPE'];
@@ -20,7 +20,7 @@ include'../includes/sidebar.php';
   }           
 }
 $sql = "SELECT DISTINCT CNAME, CATEGORY_ID FROM category order by CNAME asc";
-$result = mysqli_query($db, $sql) or die ("Bad SQL: $sql");
+$result = mysqli_query($conn, $sql) or die ("Bad SQL: $sql");
 
 $opt = "<select class='form-control' name='category' required>
         <option value='' disabled selected hidden>Select Category</option>";
@@ -31,7 +31,7 @@ $opt = "<select class='form-control' name='category' required>
 $opt .= "</select>";
 
   $query = 'SELECT PRODUCT_ID,PRODUCT_CODE, NAME, DESCRIPTION, QTY_STOCK, PRICE, c.CNAME FROM product p join category c on p.CATEGORY_ID=c.CATEGORY_ID WHERE PRODUCT_ID ='.$_GET['id'];
-  $result = mysqli_query($db, $query) or die(mysqli_error($db));
+  $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
     while($row = mysqli_fetch_array($result))
     {   
       $zz = $row['PRODUCT_ID'];

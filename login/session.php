@@ -29,7 +29,7 @@ function check_user_role() {
                   WHERE u.ID = ?';
         
         // Prepare and execute the query
-        $stmt = $db->prepare($query);
+        $stmt = $conn->prepare($query);
         $stmt->bind_param('i', $_SESSION['MEMBER_ID']);
         $stmt->execute();
         $stmt->bind_result($userType);

@@ -20,7 +20,7 @@ include'../includes/connection.php';
                     $query = "INSERT INTO product
                               (PRODUCT_ID, PRODUCT_CODE, NAME, DESCRIPTION, QTY_STOCK, ON_HAND, PRICE, CATEGORY_ID, SUPPLIER_ID, DATE_STOCK_IN)
                               VALUES (Null,'{$pc}','{$name}','{$desc}',1,1,{$pr},{$cat},{$supp},'{$dats}')";
-                    mysqli_query($db,$query)or die ('Error in updating product in Database '.$query);
+                    mysqli_query($conn,$query)or die ('Error in updating product in Database '.$query);
                     }
                 break;
               }

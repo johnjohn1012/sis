@@ -4,7 +4,7 @@ include'../includes/sidebar.php';
   $query = 'SELECT ID, t.TYPE
             FROM users u
             JOIN type t ON t.TYPE_ID=u.TYPE_ID WHERE ID = '.$_SESSION['MEMBER_ID'].'';
-  $result = mysqli_query($db, $query) or die (mysqli_error($db));
+  $result = mysqli_query($conn, $query) or die (mysqli_error($conn));
   
   while ($row = mysqli_fetch_assoc($result)) {
             $Aa = $row['TYPE'];
@@ -28,7 +28,7 @@ include'../includes/sidebar.php';
             <div class="card-body">
           <?php 
             $query = 'SELECT PRODUCT_ID, PRODUCT_CODE, NAME,DESCRIPTION, COUNT(`QTY_STOCK`) AS "QTY_STOCK", COUNT(`ON_HAND`) AS "ON_HAND",PRICE, c.CNAME FROM product p join category c on p.CATEGORY_ID=c.CATEGORY_ID WHERE PRODUCT_CODE ='.$_GET['id'];
-            $result = mysqli_query($db, $query) or die(mysqli_error($db));
+            $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
               while($row = mysqli_fetch_array($result))
               {   
                 $zz= $row['PRODUCT_ID'];
@@ -126,7 +126,7 @@ include'../includes/sidebar.php';
 
 <?php                  
     $query = 'SELECT PRODUCT_ID, PRODUCT_CODE, NAME, COUNT("QTY_STOCK") AS QTY_STOCK, COUNT("ON_HAND") AS ON_HAND, CNAME, COMPANY_NAME, p.SUPPLIER_ID, DATE_STOCK_IN FROM product p join category c on p.CATEGORY_ID=c.CATEGORY_ID JOIN supplier s ON p.SUPPLIER_ID=s.SUPPLIER_ID where PRODUCT_CODE ='.$zzz.' GROUP BY `SUPPLIER_ID`, `DATE_STOCK_IN`';
-        $result = mysqli_query($db, $query) or die (mysqli_error($db));
+        $result = mysqli_query($conn, $query) or die (mysqli_error($conn));
       
             while ($row = mysqli_fetch_assoc($result)) {
                                  

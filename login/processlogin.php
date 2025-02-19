@@ -23,7 +23,7 @@ if (isset($_POST['btnlogin'])) {
                 WHERE `USERNAME` = ? AND `PASSWORD` = ?";
 
         // Prepare statement
-        $stmt = $db->prepare($sql);
+        $stmt = $conn->prepare($sql);
         $stmt->bind_param("ss", $users, $h_upass);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -71,6 +71,6 @@ if (isset($_POST['btnlogin'])) {
        
     }
 }
-$db->close();
+$conn->close();
 $stmt->close();
 ?>

@@ -9,7 +9,7 @@ include('../includes/connection.php');
 	 			$query = 'UPDATE customer set FIRST_NAME ="'.$fname.'",
 					LAST_NAME ="'.$lname.'", PHONE_NUMBER="'.$phone.'" WHERE
 					CUST_ID ="'.$zz.'"';
-					$result = mysqli_query($db, $query) or die(mysqli_error($db));
+					$result = mysqli_query($conn, $query) or die(mysqli_error($conn));
 							
 ?>	
 	<script type="text/javascript">

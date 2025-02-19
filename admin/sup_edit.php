@@ -4,7 +4,7 @@ include'../includes/sidebar.php';
   $query = 'SELECT ID, t.TYPE
             FROM users u
             JOIN type t ON t.TYPE_ID=u.TYPE_ID WHERE ID = '.$_SESSION['MEMBER_ID'].'';
-  $result = mysqli_query($db, $query) or die (mysqli_error($db));
+  $result = mysqli_query($conn, $query) or die (mysqli_error($conn));
   
   while ($row = mysqli_fetch_assoc($result)) {
             $Aa = $row['TYPE'];
@@ -20,7 +20,7 @@ include'../includes/sidebar.php';
   }           
 }
   $query = 'SELECT SUPPLIER_ID, COMPANY_NAME,  l.PROVINCE, l.CITY, PHONE_NUMBER FROM supplier e join location l on l.LOCATION_ID=e.LOCATION_ID WHERE SUPPLIER_ID ='.$_GET['id'];
-  $result = mysqli_query($db, $query) or die(mysqli_error($db));
+  $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
     while($row = mysqli_fetch_array($result))
     {   
       $zz = $row['SUPPLIER_ID'];

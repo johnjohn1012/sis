@@ -15,7 +15,7 @@ include'../includes/connection.php';
 					LAST_NAME="'.$lname.'",
 					GENDER="'.$gen.'", EMAIL="'.$email.'", PHONE_NUMBER="'.$phone.'", HIRED_DATE ="'.$hdate.'", l.PROVINCE ="'.$prov.'", l.CITY ="'.$cit.'" WHERE
 					EMPLOYEE_ID ="'.$zz.'"';
-					$result = mysqli_query($db, $query) or die(mysqli_error($db));
+					$result = mysqli_query($conn, $query) or die(mysqli_error($conn));
 
 							
 ?>	

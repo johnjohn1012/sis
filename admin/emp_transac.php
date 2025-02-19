@@ -12,10 +12,10 @@ include'../includes/connection.php';
               $prov = $_POST['province'];
               $cit = $_POST['city'];
               
-              mysqli_query($db,"INSERT INTO location
+              mysqli_query($conn,"INSERT INTO location
                               (LOCATION_ID, PROVINCE, CITY)
                               VALUES (Null,'$prov','$cit')");
-              mysqli_query($db,"INSERT INTO employee
+              mysqli_query($conn,"INSERT INTO employee
                               (EMPLOYEE_ID, FIRST_NAME, LAST_NAME,GENDER, EMAIL, PHONE_NUMBER, JOB_ID, HIRED_DATE, LOCATION_ID)
                               VALUES (Null,'{$fname}','{$lname}','{$gen}','{$email}','{$phone}','{$jobb}','{$hdate}',(SELECT MAX(LOCATION_ID) FROM location))");
               header('location:employee.php');

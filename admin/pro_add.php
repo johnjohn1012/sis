@@ -4,7 +4,7 @@ include'../includes/sidebar.php';
   $query = 'SELECT ID, t.TYPE
             FROM users u
             JOIN type t ON t.TYPE_ID=u.TYPE_ID WHERE ID = '.$_SESSION['MEMBER_ID'].'';
-  $result = mysqli_query($db, $query) or die (mysqli_error($db));
+  $result = mysqli_query($conn, $query) or die (mysqli_error($conn));
   
   while ($row = mysqli_fetch_assoc($result)) {
             $Aa = $row['TYPE'];
@@ -21,7 +21,7 @@ include'../includes/sidebar.php';
 }
             
 $sql = "SELECT DISTINCT CNAME, CATEGORY_ID FROM category order by CNAME asc";
-$result = mysqli_query($db, $sql) or die ("Bad SQL: $sql");
+$result = mysqli_query($conn, $sql) or die ("Bad SQL: $sql");
 
 $opt = "<select class='form-control' name='category'>
         <option disabled selected>Select Category</option>";
@@ -32,7 +32,7 @@ $opt = "<select class='form-control' name='category'>
 $opt .= "</select>";
 
 $sql2 = "SELECT DISTINCT SUPPLIER_ID, COMPANY_NAME FROM supplier order by COMPANY_NAME asc";
-$result2 = mysqli_query($db, $sql2) or die ("Bad SQL: $sql2");
+$result2 = mysqli_query($conn, $sql2) or die ("Bad SQL: $sql2");
 
 $sup = "<select class='form-control' name='supplier'>
         <option disabled selected>Select Supplier</option>";

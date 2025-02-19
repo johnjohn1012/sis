@@ -13,7 +13,7 @@ include'../includes/connection.php';
                     $query = "INSERT INTO users
                               (ID, EMPLOYEE_ID, USERNAME, PASSWORD, TYPE_ID)
                               VALUES (Null,'{$emp}','{$user}',sha1('{$pass}'),'2')";
-                    mysqli_query($db,$query)or die ('Error in updating users in '. $query);
+                    mysqli_query($conn,$query)or die ('Error in updating users in '. $query);
                 break;
               }
             ?>

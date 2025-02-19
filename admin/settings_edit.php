@@ -18,7 +18,7 @@ require_once('session.php');
 	 						join location l on l.LOCATION_ID=e.LOCATION_ID
 	 						set e.FIRST_NAME="'.$a.'", e.LAST_NAME="'.$b.'", GENDER="'.$c.'", USERNAME="'.$d.'", PASSWORD = sha1("'.$e.'"),  EMAIL="'.$f.'", l.PROVINCE ="'.$j.'", l.CITY ="'.$k.'", PHONE_NUMBER ="'.$g.'",HIRED_DATE ="'.$i.'" WHERE
 					ID ="'.$zz.'"';
-					$result = mysqli_query($db, $query) or die(mysqli_error($db));
+					$result = mysqli_query($conn, $query) or die(mysqli_error($conn));
 
 							
 ?>	
@@ -26,7 +26,7 @@ require_once('session.php');
 
                 $sql = 'SELECT ID
                           FROM users';
-                $result2 = mysqli_query($db, $sql) or die (mysqli_error($db));
+                $result2 = mysqli_query($conn, $sql) or die (mysqli_error($conn));
       
                 while ($row = mysqli_fetch_assoc($result2)) {
                           $a = $row['ID'];

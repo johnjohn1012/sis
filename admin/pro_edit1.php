@@ -10,7 +10,7 @@ include('../includes/connection.php');
 	 			$query = 'UPDATE product set NAME="'.$pname.'",
 					DESCRIPTION="'.$desc.'", PRICE="'.$pr.'", CATEGORY_ID ="'.$cat.'" WHERE
 					PRODUCT_CODE ="'.$pc.'"';
-					$result = mysqli_query($db, $query) or die(mysqli_error($db));
+					$result = mysqli_query($conn, $query) or die(mysqli_error($conn));
 
 							
 ?>	

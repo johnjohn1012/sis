@@ -5,7 +5,7 @@ include '../includes/sidebar.php';
 $query = 'SELECT ID, t.TYPE
           FROM users u
           JOIN type t ON t.TYPE_ID=u.TYPE_ID WHERE ID = '.$_SESSION['MEMBER_ID'].'';
-$result = mysqli_query($db, $query) or die (mysqli_error($db));
+$result = mysqli_query($conn, $query) or die (mysqli_error($conn));
 
 while ($row = mysqli_fetch_assoc($result)) {
     $Aa = $row['TYPE'];
@@ -44,7 +44,7 @@ while ($row = mysqli_fetch_assoc($result)) {
               JOIN employee e ON e.EMPLOYEE_ID=u.EMPLOYEE_ID
               JOIN type t ON t.TYPE_ID=u.TYPE_ID
               WHERE u.TYPE_ID=1';
-    $result = mysqli_query($db, $query) or die (mysqli_error($db));
+    $result = mysqli_query($conn, $query) or die (mysqli_error($conn));
 
     while ($row = mysqli_fetch_assoc($result)) {
         echo '<tr>';
@@ -93,7 +93,7 @@ while ($row = mysqli_fetch_assoc($result)) {
               JOIN employee e ON e.EMPLOYEE_ID=u.EMPLOYEE_ID
               JOIN type t ON t.TYPE_ID=u.TYPE_ID
               WHERE u.TYPE_ID=3'; // Assuming 3 is for Stock Clerk
-    $result = mysqli_query($db, $query) or die (mysqli_error($db));
+    $result = mysqli_query($conn, $query) or die (mysqli_error($conn));
 
     while ($row = mysqli_fetch_assoc($result)) {
         echo '<tr>';
@@ -142,7 +142,7 @@ while ($row = mysqli_fetch_assoc($result)) {
               JOIN employee e ON e.EMPLOYEE_ID=u.EMPLOYEE_ID
               JOIN type t ON t.TYPE_ID=u.TYPE_ID
               WHERE u.TYPE_ID=4'; // Assuming 4 is for Cashier
-    $result = mysqli_query($db, $query) or die (mysqli_error($db));
+    $result = mysqli_query($conn, $query) or die (mysqli_error($conn));
 
     while ($row = mysqli_fetch_assoc($result)) {
         echo '<tr>';
@@ -186,7 +186,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                                 FROM employee e
                                 JOIN job j ON j.JOB_ID=e.JOB_ID
                                 ORDER BY e.LAST_NAME ASC";
-                        $res = mysqli_query($db, $sql) or die ("Bad SQL: $sql");
+                        $res = mysqli_query($conn, $sql) or die ("Bad SQL: $sql");
 
                         $opt = "<select class='form-control' name='empid' required>
                                 <option value='' disabled selected hidden>Select Employee</option>";

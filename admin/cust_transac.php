@@ -6,7 +6,7 @@ include'../includes/sidebar.php';
                 $query = 'SELECT ID, t.TYPE
                           FROM users u
                           JOIN type t ON t.TYPE_ID=u.TYPE_ID WHERE ID = '.$_SESSION['MEMBER_ID'].'';
-                $result = mysqli_query($db, $query) or die (mysqli_error($db));
+                $result = mysqli_query($conn, $query) or die (mysqli_error($conn));
       
                 while ($row = mysqli_fetch_assoc($result)) {
                           $Aa = $row['TYPE'];
@@ -35,7 +35,7 @@ if ($Aa=='User'){
                     $query = "INSERT INTO customer
                     (CUST_ID, FIRST_NAME, LAST_NAME, PHONE_NUMBER)
                     VALUES (Null,'{$fname}','{$lname}','{$pn}')";
-                    mysqli_query($db,$query)or die ('Error in updating Database');
+                    mysqli_query($conn,$query)or die ('Error in updating Database');
                 break;
               }
             ?>

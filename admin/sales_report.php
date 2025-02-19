@@ -6,7 +6,7 @@ include'../includes/sidebar.php';
   $query = 'SELECT ID, t.TYPE
             FROM users u
             JOIN type t ON t.TYPE_ID=u.TYPE_ID WHERE ID = '.$_SESSION['MEMBER_ID'].'';
-  $result = mysqli_query($db, $query) or die (mysqli_error($db));
+  $result = mysqli_query($conn, $query) or die (mysqli_error($conn));
 
   while ($row = mysqli_fetch_assoc($result)) {
             $Aa = $row['TYPE'];
@@ -47,7 +47,7 @@ include'../includes/sidebar.php';
               FROM transaction T
               JOIN customer C ON T.CUST_ID = C.CUST_ID
               ORDER BY T.TRANS_D_ID ASC';
-    $result = mysqli_query($db, $query) or die(mysqli_error($db));
+    $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
 
     while ($row = mysqli_fetch_assoc($result)) {
         // Convert the GRANDTOTAL to a float before passing it to number_format()

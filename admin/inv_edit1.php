@@ -6,7 +6,7 @@ include('../includes/connection.php');
 		
 	 			$query = 'UPDATE product set QTY_STOCK="'.$a.'", ON_HAND="'.$b.'" WHERE
 					PRODUCT_ID ="'.$zz.'"';
-					$result = mysqli_query($db, $query) or die(mysqli_error($db));
+					$result = mysqli_query($conn, $query) or die(mysqli_error($conn));
 ?>	
 	<script type="text/javascript">
 			alert("You've Update Product Successfully.");

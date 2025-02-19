@@ -23,7 +23,7 @@ if ($upass == ''){
         join `job` j on e.JOB_ID=j.JOB_ID
         join `type` t ON t.TYPE_ID=u.TYPE_ID
         WHERE  `USERNAME` ='" . $users . "' AND  `PASSWORD` =  '" . $h_upass . "'";
-        $result = $db->query($sql);
+        $result = $conn->query($sql);
 
         if ($result){
         //get the number of results based n the sql statement
@@ -86,10 +86,10 @@ if ($upass == ''){
 
          } else {
                  # code...
-        echo "Error: " . $sql . "<br>" . $db->error;
+        echo "Error: " . $sql . "<br>" . $conn->error;
         }
         
     }       
 } 
- $db->close();
+ $conn->close();
 ?>

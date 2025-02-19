@@ -8,7 +8,7 @@ include('../includes/connection.php');
 		
 	 			$query = 'UPDATE supplier e join location l on l.LOCATION_ID=e.LOCATION_ID set COMPANY_NAME="'.$name.'", l.PROVINCE ="'.$prov.'", l.CITY ="'.$cit.'", PHONE_NUMBER="'.$phone.'" WHERE
 					SUPPLIER_ID ="'.$zz.'"'; 
-					$result = mysqli_query($db, $query) or die(mysqli_error($db));
+					$result = mysqli_query($conn, $query) or die(mysqli_error($conn));
 
 							
 ?>	
