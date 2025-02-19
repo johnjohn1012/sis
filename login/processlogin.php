@@ -1,8 +1,21 @@
 <?php
-
 require('../includes/connection.php');
 require('../login/session.php');
 
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<?php
 if (isset($_POST['btnlogin'])) {
     $users = trim($_POST['user']);
     $upass = trim($_POST['password']);
@@ -43,24 +56,46 @@ if (isset($_POST['btnlogin'])) {
             $_SESSION['CITY'] = $found_user['CITY']; 
             $_SESSION['TYPE'] = $found_user['TYPE'];
 
-            // Redirect users based on their TYPE
+            // Redirect users based on their TYPE with SweetAlert message
             if ($_SESSION['TYPE'] == 'Admin') {
-                header("Location: http://localhost/sis/admin/index.php");
+                echo "<script>
+                        Swal.fire({
+                            title: 'Login Successful!',
+                            text: 'Welcome Admin!',
+                            icon: 'success',
+                            confirmButtonText: 'OK'
+                        }).then(function() {
+                            window.location = 'http://localhost/sis/admin/index.php';
+                        });
+                      </script>";
                 exit();
-
 
             } elseif ($_SESSION['TYPE'] == 'stockclerk') {
-                header("Location: http://localhost/sis/stock_clerk/dashboard/index.php");// need landing page
+                echo "<script>
+                        Swal.fire({
+                            title: 'Login Successful!',
+                            text: 'Welcome Stock Clerk!',
+                            icon: 'success',
+                            confirmButtonText: 'OK'
+                        }).then(function() {
+                            window.location = 'http://localhost/sis/stock_clerk/dashboard/index.php';
+                        });
+                      </script>";
                 exit();
-
 
             } elseif ($_SESSION['TYPE'] == 'cashier') {
-                header("Location: http://localhost/sis/cashier/pos.php");
+                echo "<script>
+                        Swal.fire({
+                            title: 'Login Successful!',
+                            text: 'Welcome Cashier!',
+                            icon: 'success',
+                            confirmButtonText: 'OK'
+                        }).then(function() {
+                            window.location = 'http://localhost/sis/cashier/pos.php';
+                        });
+                      </script>";
                 exit();
-            } 
-            
-            
-            else {
+            } else {
                 header("Location: ../login/login.php"); // Default for other users
                 exit();
             }
@@ -68,9 +103,11 @@ if (isset($_POST['btnlogin'])) {
             echo "<script>alert('Username or Password Not Registered! Contact your administrator.'); window.location = 'login.php';</script>";
             exit();
         }
-       
     }
 }
 $conn->close();
 $stmt->close();
 ?>
+
+</body>
+</html>

@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 
 // 2. Unset all the session variables
 unset($_SESSION['MEMBER_ID']);
@@ -15,6 +14,19 @@ unset($_SESSION['CITY']);
 unset($_SESSION['TYPE']);
 unset($_SESSION['pointofsale']);
 ?>
+
+<!-- SweetAlert2 Script -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script type="text/javascript">
-    window.location = "../login/login.php";
+    // SweetAlert for successful logout
+    Swal.fire({
+        title: 'Logged Out!',
+        text: 'You have successfully logged out.',
+        icon: 'success',
+        confirmButtonText: 'OK'
+    }).then(function() {
+        // Redirect to login page after confirmation
+        window.location = "../login/login.php";
+    });
 </script>
