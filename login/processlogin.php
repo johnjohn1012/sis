@@ -49,12 +49,12 @@ if (isset($_POST['btnlogin'])) {
                 exit();
 
 
-            } elseif ($_SESSION['TYPE'] == 'Stock Clerk') {
-                header("Location: stock_clerk_dashboard.php");// need landing page
+            } elseif ($_SESSION['TYPE'] == 'stockclerk') {
+                header("Location: http://localhost/sis/stock_clerk/dashboard/index.php");// need landing page
                 exit();
 
 
-            } elseif ($_SESSION['TYPE'] == 'Cashier') {
+            } elseif ($_SESSION['TYPE'] == 'cashier') {
                 header("Location: http://localhost/sis/cashier/pos.php");
                 exit();
             } 

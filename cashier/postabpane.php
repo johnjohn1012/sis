@@ -5,7 +5,7 @@
                                 <div class="tab-pane fade in mt-2" id="keyboard">
                                   <div class="row">
                                       <?php  $query = 'SELECT * FROM product WHERE CATEGORY_ID=0 GROUP BY PRODUCT_CODE ORDER by PRODUCT_CODE ASC';
-                                        $result = mysqli_query($db, $query);
+                                        $result = mysqli_query($conn, $query);
 
                                         if ($result):
                                             if(mysqli_num_rows($result)>0):
@@ -36,7 +36,7 @@
                                 <div class="tab-pane fade in mt-2" id="mouse">
                                   <div class="row">
                                       <?php  $query = 'SELECT * FROM product WHERE CATEGORY_ID=1 GROUP BY PRODUCT_CODE ORDER by PRODUCT_CODE ASC';
-                                        $result = mysqli_query($db, $query);
+                                        $result = mysqli_query($conn, $query);
 
                                         if ($result):
                                             if(mysqli_num_rows($result)>0):
@@ -66,7 +66,7 @@
                                 <div class="tab-pane fade in mt-2" id="headset">
                                   <div class="row">
                                       <?php  $query = 'SELECT * FROM product WHERE CATEGORY_ID=6 GROUP BY PRODUCT_CODE ORDER by PRODUCT_CODE ASC';
-                                        $result = mysqli_query($db, $query);
+                                        $result = mysqli_query($conn, $query);
 
                                         if ($result):
                                             if(mysqli_num_rows($result)>0):
@@ -96,7 +96,7 @@
                                 <div class="tab-pane fade in mt-2" id="cpu">
                                   <div class="row">
                                       <?php  $query = 'SELECT * FROM product WHERE CATEGORY_ID=7 GROUP BY PRODUCT_CODE ORDER by PRODUCT_CODE ASC';
-                                        $result = mysqli_query($db, $query);
+                                        $result = mysqli_query($conn, $query);
 
                                         if ($result):
                                             if(mysqli_num_rows($result)>0):
@@ -126,7 +126,7 @@
                                 <div class="tab-pane fade in mt-2" id="monitor">
                                   <div class="row">
                                       <?php  $query = 'SELECT * FROM product WHERE CATEGORY_ID=2 GROUP BY PRODUCT_CODE ORDER by PRODUCT_CODE ASC';
-                                        $result = mysqli_query($db, $query);
+                                        $result = mysqli_query($conn, $query);
 
                                         if ($result):
                                             if(mysqli_num_rows($result)>0):
@@ -156,7 +156,7 @@
                                 <div class="tab-pane fade in mt-2" id="motherboard">
                                   <div class="row">
                                       <?php  $query = 'SELECT * FROM product WHERE CATEGORY_ID=3 GROUP BY PRODUCT_CODE ORDER by PRODUCT_CODE ASC';
-                                        $result = mysqli_query($db, $query);
+                                        $result = mysqli_query($conn, $query);
 
                                         if ($result):
                                             if(mysqli_num_rows($result)>0):
@@ -186,7 +186,7 @@
                                 <div class="tab-pane fade in mt-2" id="processor">
                                   <div class="row">
                                       <?php  $query = 'SELECT * FROM product WHERE CATEGORY_ID=4 GROUP BY PRODUCT_CODE ORDER by PRODUCT_CODE ASC';
-                                        $result = mysqli_query($db, $query);
+                                        $result = mysqli_query($conn, $query);
 
                                         if ($result):
                                             if(mysqli_num_rows($result)>0):
@@ -216,7 +216,7 @@
                                 <div class="tab-pane fade in mt-2" id="powersupply">
                                   <div class="row">
                                       <?php  $query = 'SELECT * FROM product WHERE CATEGORY_ID=5 GROUP BY PRODUCT_CODE ORDER by PRODUCT_CODE ASC';
-                                        $result = mysqli_query($db, $query);
+                                        $result = mysqli_query($conn, $query);
 
                                         if ($result):
                                             if(mysqli_num_rows($result)>0):
@@ -246,7 +246,7 @@
                                 <div class="tab-pane fade in mt-2" id="others">
                                   <div class="row">
                                       <?php  $query = 'SELECT * FROM product WHERE CATEGORY_ID=9 GROUP BY PRODUCT_CODE ORDER by PRODUCT_CODE ASC';
-                                        $result = mysqli_query($db, $query);
+                                        $result = mysqli_query($conn, $query);
 
                                         if ($result):
                                             if(mysqli_num_rows($result)>0):

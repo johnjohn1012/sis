@@ -27,7 +27,7 @@
 $sql = "SELECT CUST_ID, FIRST_NAME, LAST_NAME
         FROM customer
         order by FIRST_NAME asc";
-$res = mysqli_query($db, $sql) or die ("Error SQL: $sql");
+$res = mysqli_query($conn, $sql) or die ("Error SQL: $sql");
 
 $opt = "<select class='form-control'  style='border-radius: 0px;' name='customer' required>
         <option value='' disabled selected hidden>Select Customer</option>";

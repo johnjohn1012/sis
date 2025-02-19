@@ -46,7 +46,7 @@
                 $query = 'SELECT ID, FIRST_NAME,LAST_NAME,USERNAME,PASSWORD
                           FROM users u
                           JOIN employee e ON e.EMPLOYEE_ID=u.EMPLOYEE_ID';
-                $result = mysqli_query($db, $query) or die (mysqli_error($db));
+                $result = mysqli_query($conn, $query) or die (mysqli_error($conn));
       
                 while ($row = mysqli_fetch_assoc($result)) {
                           $a = $_SESSION['MEMBER_ID'];

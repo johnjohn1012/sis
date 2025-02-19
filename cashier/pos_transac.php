@@ -27,13 +27,13 @@ session_start();
                                (`ID`, `TRANS_D_ID`, `PRODUCTS`, `QTY`, `PRICE`, `EMPLOYEE`, `ROLE`)
                                VALUES (Null, '{$today}', '".$_POST['name'][$i-1]."', '".$_POST['quantity'][$i-1]."', '".$_POST['price'][$i-1]."', '{$emp}', '{$rol}')";
 
-                    mysqli_query($db,$query)or die (mysqli_error($db));
+                    mysqli_query($conn,$query)or die (mysqli_error($conn));
 
                     }
                     $query111 = "INSERT INTO `transaction`
                                (`TRANS_ID`, `CUST_ID`, `NUMOFITEMS`, `SUBTOTAL`, `LESSVAT`, `NETVAT`, `ADDVAT`, `GRANDTOTAL`, `CASH`, `DATE`, `TRANS_D_ID`)
                                VALUES (Null,'{$customer}','{$countID}','{$subtotal}','{$lessvat}','{$netvat}','{$addvat}','{$total}','{$cash}','{$date}','{$today}')";
-                    mysqli_query($db,$query111)or die (mysqli_error($db));
+                    mysqli_query($conn,$query111)or die (mysqli_error($conn));
 
                 break;
               }
@@ -77,19 +77,19 @@ session_start();
               //       $query = "INSERT INTO transaction_details
               //                  (`ID`, `PRODUCTS`, `EMPLOYEE`, `ROLE`)
               //                  VALUES (Null, 'here', '{$emp}', '{$rol}')";
-              //       mysqli_query($db,$query)or die ('Error in Database '.$query);
+              //       mysqli_query($conn,$query)or die ('Error in Database '.$query);
               //       $query2 = "INSERT INTO `transaction`
               //                  (`TRANS_ID`, `CUST_ID`, `SUBTOTAL`, `LESSVAT`, `NETVAT`, `ADDVAT`, `GRANDTOTAL`, `CASH`, `DATE`, `TRANS_D_ID`)
               //                  VALUES (Null,'{$customer}','{$subtotal}','{$lessvat}','{$netvat}','{$addvat}','{$total}','{$cash}','{$date}','{$today}'')";
-              //       mysqli_query($db,$query2)or die ('Error in updating Database2 '.$query2);
+              //       mysqli_query($conn,$query2)or die ('Error in updating Database2 '.$query2);
               //   break;
               // }
 
-              // mysqli_query($db,"INSERT INTO transaction_details
+              // mysqli_query($conn,"INSERT INTO transaction_details
               //                 (`ID`, `PRODUCTS`, `EMPLOYEE`, `ROLE`)
               //                 VALUES (Null, 'a', '{$emp}', '{$rol}')");
 
-              // mysqli_query($db,"INSERT INTO `transaction`
+              // mysqli_query($conn,"INSERT INTO `transaction`
               //                 (`TRANS_ID`, `CUST_ID`, `SUBTOTAL`, `LESSVAT`, `NETVAT`, `ADDVAT`, `GRANDTOTAL`, `CASH`, `DATE`, `TRANS_DETAIL_ID`)
               //                 VALUES (Null,'{$customer}',{$subtotal},{$lessvat},{$netvat},{$addvat},{$total},{$cash},'{$date}',(SELECT MAX(ID) FROM transaction_details))");
 

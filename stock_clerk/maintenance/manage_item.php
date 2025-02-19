@@ -4,7 +4,7 @@
 
 include '../includes/connection.php';
 
-include '../includes/connection1.php';
+
 
 include '../includes/sidebar.php';
 
