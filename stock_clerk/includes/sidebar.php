@@ -61,6 +61,7 @@
   <link href="../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 
+
 <body id="page-top">
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -70,6 +71,7 @@
     <!-- Sidebar Brand -->
     <a class="sidebar-brand d-flex align-items-center" href="index.php" style="display: flex; flex-direction: row; gap: 40px;">
         <!-- Logo -->
+         <br>
         <div class="sidebar-brand-icon">
             <img src="../../img/logos.png" alt="Brand Logo" style="width: 76px; height: 76px;">
         </div>
@@ -105,7 +107,7 @@
     <!-- Individual links with icons -->
     <?php
         // Switch to handle active pages dynamically
-        $currentPage = isset($_GET['page']) ? $_GET['page'] : 'dashboard'; // default to 'dashboard'
+        $currentPage = isset($_GET['page']) ? $_GET['page'] : '';
 
         switch ($currentPage) {
             case 'purchase_order':
@@ -135,8 +137,7 @@
             case 'user_list':
                 $activeUserList = 'active';
                 break;
-            default:
-                $activeDashboard = 'active';
+        
         }
     ?>
 
