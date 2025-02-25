@@ -46,6 +46,8 @@
     </div>
   </div>
 
+
+
   <!-- Bootstrap core JavaScript-->
   <script src="../../vendor/jquery/jquery.min.js"></script>
   <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -60,10 +62,6 @@
   <script src="../../vendor/datatables/jquery.dataTables.min.js"></script>
   <script src="../../vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-  <!-- Page level custom scripts -->
-  <script src="../../js/demo/datatables-demo.js"></script>
-  <script src="../../js/city.js"></script> 
-  
 
 <!-- PROFILE OVERLAY NA MODAL -->
 <div id="overlay" onclick="off()">

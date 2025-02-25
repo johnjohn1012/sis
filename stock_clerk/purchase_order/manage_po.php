@@ -1,3 +1,4 @@
+
 <?php 
 
 include '../includes/connection.php';
@@ -8,7 +9,9 @@ include '../includes/sidebar.php';
 
 
 
+
 <?php 
+
 if(isset($_GET['id'])){
     $qry = $conn->query("SELECT p.*,s.name as supplier FROM purchase_order_list p inner join supplier_list s on p.supplier_id = s.id  where p.id = '{$_GET['id']}'");
     if($qry->num_rows >0){
@@ -18,8 +21,6 @@ if(isset($_GET['id'])){
     }
 }
 ?>
-
-
 
 <div class="card card-outline card-primary">
     <div class="card-header">
@@ -62,6 +63,7 @@ if(isset($_GET['id'])){
                                     $cost_arr[$row['id']] = $row['cost'];
                                 endwhile;
                             ?>
+                            
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="item_id" class="control-label">Item</label>
@@ -70,6 +72,7 @@ if(isset($_GET['id'])){
                                 </select>
                             </div>
                         </div>
+
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="unit" class="control-label">Unit</label>
@@ -172,26 +175,19 @@ if(isset($_GET['id'])){
                 </table>
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="remarks" class="text-info control-label">Remarks</label>
-                            <textarea name="remarks" id="remarks" rows="3" class="form-control rounded-0"><?php echo isset($remarks) ? $remarks : '' ?></textarea>
-                        </div>
+           
                     </div>
                 </div>
             </div>
         </form>
     </div>
-    <div class="card-footer py-1 text-center">
-        <button class="btn btn-flat btn-primary" type="submit" form="po-form">Save</button>
-        <a class="btn btn-flat btn-dark" href="index.php">Cancel</a>
-    </div>
-
-
+                <div class="card-footer py-1 text-center">
+                    <button class="btn btn-flat btn-primary" type="submit" form="po-form">Save</button>
+                    <a class="btn btn-flat btn-dark" href="<?php echo 'index.php' ?>">Cancel</a>
+                </div>
 </div>
 
 <?php include '../includes/footer.php' ?>
-
-
 <table id="clone_list" class="d-none">
     <tr>
         <td class="py-1 px-2 text-center">
@@ -215,7 +211,6 @@ if(isset($_GET['id'])){
         </td>
     </tr>
 </table>
-
 
 <script>
     var items = $.parseJSON('<?php echo json_encode($item_arr) ?>')
@@ -307,44 +302,49 @@ if(isset($_GET['id'])){
             })
             $('#supplier_id').attr('readonly','readonly')
         })
-        $('#po-form').submit(function(e){
-			e.preventDefault();
-            var _this = $(this)
-			 $('.err-msg').remove();
-			start_loader();
-			$.ajax({
-				url:_base_url_+"Master.php?f=save_po",
-				data: new FormData($(this)[0]),
-                cache: false,
-                contentType: false,
-                processData: false,
-                method: 'POST',
-                type: 'POST',
-                dataType: 'json',
-				error:err=>{
-					console.log(err)
-					alert_toast("An error occured",'error');
-					end_loader();
-				},
-				success:function(resp){
-					if(resp.status == 'success'){
-						location.replace(_base_url_+"purchase_order.php?page/view_po&id="+resp.id);
-					}else if(resp.status == 'failed' && !!resp.msg){
-                        var el = $('<div>')
-                            el.addClass("alert alert-danger err-msg").text(resp.msg)
-                            _this.prepend(el)
-                            el.show('slow')
-                            end_loader()
-                    }else{
-						alert_toast("An error occured",'error');
-						end_loader();
-                        console.log(resp)
-					}
-                    $('html,body').animate({scrollTop:0},'fast')
-				}
-			})
-		})
 
+        $('#po-form').submit(function(e) {
+    e.preventDefault(); // Prevent the default form submission
+    var _this = $(this); // Reference to the form
+    $('.err-msg').remove(); // Remove any existing error messages
+    start_loader(); // Show a loading indicator (if applicable)
+
+    // Perform the AJAX request
+    $.ajax({
+        url: _base_url_ + "save_po.php", // Point to save_po.php
+        data: new FormData($(this)[0]), // Serialize form data
+        cache: false, // Disable caching
+        contentType: false, // Required for FormData
+        processData: false, // Required for FormData
+        method: 'POST', // Use POST method
+        dataType: 'json', // Expect JSON response
+        error: function(err) {
+            console.log(err); // Log errors to the console
+            alert_toast("An error occurred", 'error'); // Show error toast
+            end_loader(); // Hide loading indicator
+        },
+        success: function(resp) {
+            if (resp.status == 'success') {
+                // Redirect to the purchase order details page on success
+                location.replace(_base_url_ + "purchase_order.php?page/view_po&id=" + resp.id);
+            } else if (resp.status == 'failed' && !!resp.msg) {
+                // Display error message if the request failed
+                var el = $('<div>');
+                el.addClass("alert alert-danger err-msg").text(resp.msg);
+                _this.prepend(el);
+                el.show('slow');
+                end_loader();
+            } else {
+                // Handle other errors
+                alert_toast("An error occurred", 'error');
+                end_loader();
+                console.log(resp);
+            }
+            // Scroll to the top of the page
+            $('html,body').animate({ scrollTop: 0 }, 'fast');
+        }
+    });
+});
         if('<?php echo isset($id) && $id > 0 ?>' == 1){
             calc()
             $('#supplier_id').trigger('change')
@@ -384,3 +384,5 @@ if(isset($_GET['id'])){
 
     }
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
