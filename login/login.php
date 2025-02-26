@@ -22,6 +22,9 @@
   <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   <!-- Custom styles for this template-->
   <link href="../css/sb-admin-2.min.css" rel="stylesheet">
 
@@ -73,6 +76,29 @@
       border-bottom: none;
       padding-bottom: 0;
     }
+
+    /* Error styling for the username field */
+    .error-message {
+      color: red;
+      font-size: 14px;
+    }
+
+    /* Password indicator styles */
+    .password-indicator {
+      height: 5px;
+      width: 100%;
+      border-radius: 5px;
+      margin-top: 5px;
+      background-color: #ccc;
+    }
+
+    .password-indicator.correct {
+      background-color: green;
+    }
+
+    .password-indicator.incorrect {
+      background-color: red;
+    }
   </style>
 
 </head>
@@ -90,17 +116,25 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Welcome to Harah Rubina Del Dios Sales and Inventory!</h1>
                   </div>
+
                   <form class="user" role="form" action="processlogin.php" method="post">
                     <div class="form-group">
                       <input class="form-control form-control-user" placeholder="Username" name="user" type="text" id="username" autofocus required>
+                      <span id="usernameError" class="error-message" style="display:none;">Only letters are allowed</span>
                     </div>
                     <div class="form-group">
                       <input class="form-control form-control-user" placeholder="Password" name="password" type="password" id="password" required>
+                      <div id="passwordIndicator" class="password-indicator"></div>
+                      <span id="passwordError" class="error-message" style="display:none;">Password must be at least 8 characters long</span>
                     </div>
+
+
                     <div class="form-group" style="display: flex; align-items: center; gap: 8px; font-size: 19px; color: #333; flex-direction: row;">
                       <label for="showPassword" style="cursor: pointer; font-weight: 500; margin-bottom: 0;">Show Password</label>
                       <input type="checkbox" id="showPassword" style="width: 20px; height: 20px; cursor: pointer;">
                     </div>
+
+
                     <br>
                     <div class="d-flex justify-content-between">
                       <button class="btn btn-secondary btn-user w-50 me-2" type="button" id="clearFields">Clear Fields</button>
@@ -108,6 +142,8 @@
                     </div>
                     <hr>
                   </form>
+
+
                 </div>
               </div>
             </div>
@@ -126,6 +162,56 @@
     document.getElementById('clearFields').addEventListener('click', function () {
       document.getElementById('username').value = '';
       document.getElementById('password').value = '';
+      document.getElementById('usernameError').style.display = 'none'; // Hide error message
+    });
+
+    // Username input validation: only letters
+    document.getElementById('username').addEventListener('input', function () {
+      let usernameValue = this.value;
+      let usernameError = document.getElementById('usernameError');
+      let regex = /^[A-Za-z]+$/;
+
+      if (!regex.test(usernameValue)) {
+        usernameError.style.display = 'block';
+      } else {
+        usernameError.style.display = 'none';
+      }
+    });
+
+    // Password strength indicator and validation
+    document.getElementById('password').addEventListener('input', function () {
+      let passwordValue = this.value;
+      let passwordIndicator = document.getElementById('passwordIndicator');
+      let passwordError = document.getElementById('passwordError');
+
+      // Check password length: display error if less than 8 characters
+      if (passwordValue.length >= 8) {
+        passwordError.style.display = 'none';  // Hide error message
+        passwordIndicator.classList.remove('incorrect');
+        passwordIndicator.classList.add('correct');
+      } else {
+        passwordError.style.display = 'block';  // Show error message
+        passwordIndicator.classList.remove('correct');
+        passwordIndicator.classList.add('incorrect');
+      }
+    });
+
+    // Prevent right-click and F12 shortcuts
+    document.addEventListener("contextmenu", function (e) {
+      e.preventDefault();
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "F12" || (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "i"))) {
+        e.preventDefault();
+        // Use SweetAlert2 instead of alert
+        Swal.fire({
+          icon: 'warning',
+          title: 'Access Denied',
+          text: 'This page is protected from inspection.',
+          confirmButtonText: 'OK'
+        });
+      }
     });
   </script>
 
