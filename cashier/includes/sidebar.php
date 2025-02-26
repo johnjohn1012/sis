@@ -119,7 +119,7 @@
 
       
       <li class="nav-item">
-        <a class="nav-link" href="index.php">
+        <a class="nav-link" href="order.php">
           <i class="fas fa-fw fa-home"></i>
           <span>Order</span>
         </a>
@@ -127,45 +127,45 @@
 
 
       
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-home"></i>
           <span>Customer</span>
         </a>
-      </li>
+      </li> -->
 
           
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-home"></i>
           <span>Product</span>
         </a>
-      </li>
+      </li> -->
 
 
       
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-home"></i>
           <span>Category</span>
         </a>
-      </li>
+      </li> -->
 
 
 
 
 
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-home"></i>
           <span>Sales</span>
         </a>
-      </li>
+      </li> -->
 
 
       
       <li class="nav-item">
-        <a class="nav-link" href="index.php">
+        <a class="nav-link" href="transaction.php">
           <i class="fas fa-fw fa-home"></i>
           <span>Transaction</span>
         </a>
