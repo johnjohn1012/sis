@@ -99,6 +99,91 @@
     .password-indicator.incorrect {
       background-color: red;
     }
+
+    /* Floating Chatbot Button */
+.chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.chatbot-button {
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
+
+.chatbox {
+  display: none;
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  width: 300px;
+  max-height: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  border: 1px solid #ddd;
+  font-family: 'Arial', sans-serif;
+}
+
+.chatbox-header {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-chat {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.chatbox-content {
+  padding: 10px;
+  height: 250px;
+  overflow-y: auto;
+}
+
+.chatbox-footer {
+  display: flex;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 0 0 8px 8px;
+}
+
+.chatbox-footer input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+}
+
+.send-chat {
+  background-color: #007bff;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  padding: 8px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.send-chat:hover {
+  background-color: #0056b3;
+}
+
   </style>
 
 </head>
@@ -152,6 +237,28 @@
       </div>
     </div>
   </div>
+
+
+  <!-- Chatbot Floating Button -->
+<div id="chatbot" class="chatbot-container">
+  <button id="chatbotButton" class="chatbot-button">
+    Chat
+  </button>
+  <div id="chatbox" class="chatbox">
+    <div class="chatbox-header">
+      <span>Chat with us</span>
+      <button id="closeChat" class="close-chat">X</button>
+    </div>
+    <div class="chatbox-content">
+      <!-- Chat content will go here -->
+    </div>
+    <div class="chatbox-footer">
+      <input type="text" id="chatInput" placeholder="Type a message..." />
+      <button id="sendChat" class="send-chat">Send</button>
+    </div>
+  </div>
+</div>
+
 
   <script>
     document.getElementById('showPassword').addEventListener('change', function () {
@@ -213,6 +320,33 @@
         });
       }
     });
+
+
+    // Open and Close the Chatbox
+document.getElementById("chatbotButton").addEventListener("click", function() {
+  document.getElementById("chatbox").style.display = "block";
+});
+
+// Close the Chatbox when "X" is clicked
+document.getElementById("closeChat").addEventListener("click", function() {
+  document.getElementById("chatbox").style.display = "none";
+});
+
+// Send a message when the "Send" button is clicked
+document.getElementById("sendChat").addEventListener("click", function() {
+  var chatInput = document.getElementById("chatInput").value;
+  if (chatInput.trim()) {
+    var chatContent = document.querySelector(".chatbox-content");
+    var newMessage = document.createElement("div");
+    newMessage.textContent = "You: " + chatInput;
+    chatContent.appendChild(newMessage);
+    chatInput.value = ''; // Clear input field after sending
+
+    // Scroll to the bottom of the chatbox
+    chatContent.scrollTop = chatContent.scrollHeight;
+  }
+});
+
   </script>
 
   <!-- Bootstrap core JavaScript-->
@@ -224,6 +358,9 @@
 
   <!-- Custom scripts for all pages-->
   <script src="../js/sb-admin-2.min.js"></script>
+
+
+  
 
 </body>
 
