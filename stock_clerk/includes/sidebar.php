@@ -210,7 +210,7 @@
 
 <script>
   // Prevent right-click and F12 shortcuts
-  document.addEventListener("contextmenu", function (e) {
+ /* document.addEventListener("contextmenu", function (e) {
     e.preventDefault();
   });
 
@@ -224,5 +224,5 @@
         confirmButtonText: 'OK'
       });
     }
-  });
+  }); */
 </script>

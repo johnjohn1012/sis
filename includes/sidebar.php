@@ -197,7 +197,10 @@
     <!-- Inside includes/header.php or a similar file -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+
 <script>
+
+  /*
   // Prevent right-click and F12 shortcuts
   document.addEventListener("contextmenu", function (e) {
     e.preventDefault();
@@ -214,4 +217,6 @@
       });
     }
   });
+
+  */
 </script>

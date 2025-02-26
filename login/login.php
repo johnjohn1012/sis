@@ -303,7 +303,7 @@
       }
     });
 
-    // Prevent right-click and F12 shortcuts
+ /*   // Prevent right-click and F12 shortcuts
     document.addEventListener("contextmenu", function (e) {
       e.preventDefault();
     });
@@ -320,7 +320,7 @@
         });
       }
     });
-
+*/
 
     // Open and Close the Chatbox
 document.getElementById("chatbotButton").addEventListener("click", function() {
