@@ -2,6 +2,10 @@
   require('../login/session.php');
   confirm_logged_in();
 ?>
+
+
+
+<?php include('includes/connection.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -107,7 +111,7 @@
           
  
       <li class="nav-item">
-        <a class="nav-link" href="index.php">
+        <a class="nav-link" href="pos.php">
           <i class="fas fa-fw fa-home"></i>
           <span>POS</span>
         </a>
