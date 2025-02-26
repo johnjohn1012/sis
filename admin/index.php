@@ -355,3 +355,28 @@ if ($Aa=='User'){
 <?php
 include '../includes/footer.php';
 ?>
+
+
+
+
+<script>
+
+
+// Prevent right-click and F12 shortcuts
+    document.addEventListener("contextmenu", function (e) {
+      e.preventDefault();
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "F12" || (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "i"))) {
+        e.preventDefault();
+        // Use SweetAlert2 instead of alert
+        Swal.fire({
+          icon: 'warning',
+          title: 'Access Denied',
+          text: 'This page is protected from inspection.',
+          confirmButtonText: 'OK'
+        });
+      }
+    });
+  </script>
