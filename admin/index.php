@@ -59,6 +59,7 @@ if ($Aa=='User'){
             </style>
 
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
 <div class="container-fluid">
@@ -279,71 +280,415 @@ if ($Aa=='User'){
                     </div>
                 </div>
             </div>
-            </div>
-
+        </div>
+ 
+                                  <!-- Purchase Order -->
+        <div class="col-md-3 mb-3">
+            <a href="purchase_order.php" style="text-decoration: none; color: inherit;">
+                <div class="card border-left-primary shadow h-100 py-2 custom-card">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-0">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Purchase Order</div>
+                                <div class="h6 mb-0 font-weight-bold text-gray-800">
+                                    2 PO Record(s) <!-- Example data -->
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-box-open fa-3x" style="color: #007bff;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
         </div>
 
-    <div class="row mt-4">
-        <div class="col-md-12">
-            <div class="card shadow mb-4 custom-card">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Business Analytics</h6>
+        <!-- Receiving -->
+        <div class="col-md-3 mb-3">
+            <a href="receiving.php" style="text-decoration: none; color: inherit;">
+                <div class="card border-left-warning shadow h-100 py-2 custom-card">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-0">
+                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Receiving</div>
+                                <div class="h6 mb-0 font-weight-bold text-gray-800">
+                                    6 Record(s) <!-- Example data -->
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-truck-loading fa-3x" style="color: #f39c12;"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </a>
+        </div>
+
+        <!-- Back Order -->
+        <div class="col-md-3 mb-3">
+            <a href="back_order.php" style="text-decoration: none; color: inherit;">
+                <div class="card border-left-info shadow h-100 py-2 custom-card">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-0">
+                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Back Order</div>
+                                <div class="h6 mb-0 font-weight-bold text-gray-800">
+                                    4 Record(s) <!-- Example data -->
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-arrow-left fa-3x" style="color: #17a2b8;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Return List -->
+        <div class="col-md-3 mb-3">
+            <a href="return_list.php" style="text-decoration: none; color: inherit;">
+                <div class="card border-left-danger shadow h-100 py-2 custom-card">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-0">
+                                <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Return List</div>
+                                <div class="h6 mb-0 font-weight-bold text-gray-800">
+                                    1 Record(s) <!-- Example data -->
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-undo fa-3x" style="color: #e74a3b;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Sale List -->
+        <div class="col-md-3 mb-3">
+            <a href="cancelled_orders.php" style="text-decoration: none; color: inherit;">
+                <div class="card border-left-danger shadow h-100 py-2 custom-card">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-0">
+                                <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Order Cancelled</div>
+                                <div class="h6 mb-0 font-weight-bold text-gray-800">
+                                    3 Record(s) <!-- Example data, replace with dynamic PHP data -->
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-times-circle fa-3x" style="color: #e74a3b;"></i> <!-- Red icon for cancelled orders -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Supplier List -->
+        <div class="col-md-3 mb-3">
+            <a href="supplier_list.php" style="text-decoration: none; color: inherit;">
+                <div class="card border-left-info shadow h-100 py-2 custom-card">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-0">
+                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Supplier List</div>
+                                <div class="h6 mb-0 font-weight-bold text-gray-800">
+                                    2 Supplier(s) <!-- Example data -->
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-truck fa-3x" style="color: #17a2b8;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Item List -->
+        <div class="col-md-3 mb-3">
+            <a href="item_list.php" style="text-decoration: none; color: inherit;">
+                <div class="card border-left-warning shadow h-100 py-2 custom-card">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-0">
+                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Item List</div>
+                                <div class="h6 mb-0 font-weight-bold text-gray-800">
+                                    4 Item(s) <!-- Example data -->
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-cogs fa-3x" style="color: #f39c12;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+                                   <!-- Stock Summary -->
+        <div class="col-md-3 mb-3">
+            <div class="card border-left-info shadow h-100 py-2 custom-card">
                 <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="analyticsTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>Product</th>
-                                    <th>Total Sales</th>
-                                    <th>Average Price</th>
-                                    <th>Sold Quantity</th>
-                                    <th>Last Sale Date</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Product A</td>
-                                    <td>1500</td>
-                                    <td>50</td>
-                                    <td>30</td>
-                                    <td>2025-02-10</td>
-                                </tr>
-                                <tr>
-                                    <td>Product B</td>
-                                    <td>2500</td>
-                                    <td>100</td>
-                                    <td>25</td>
-                                    <td>2025-02-09</td>
-                                </tr>
-                                <tr>
-                                    <td>Product C</td>
-                                    <td>1200</td>
-                                    <td>60</td>
-                                    <td>20</td>
-                                    <td>2025-02-08</td>
-                                </tr>
-                                <tr>
-                                    <td>Product D</td>
-                                    <td>3000</td>
-                                    <td>120</td>
-                                    <td>25</td>
-                                    <td>2025-02-07</td>
-                                </tr>
-                                <tr>
-                                    <td>Product E</td>
-                                    <td>1800</td>
-                                    <td>60</td>
-                                    <td>30</td>
-                                    <td>2025-02-06</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-0">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Stock Summary</div>
+                            <div class="h6 mb-0 font-weight-bold text-gray-800">
+                                320 units <!-- Static Example Data -->
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-cogs fa-3x" style="color: #17a2b8;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Customer Total -->
+        <div class="col-md-3 mb-3">
+            <div class="card border-left-info shadow h-100 py-2 custom-card">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-0">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Customer Total</div>
+                            <div class="h6 mb-0 font-weight-bold text-gray-800">
+                                6 Record(s) <!-- Static Example Data -->
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-users fa-3x" style="color: #17a2b8;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Orders -->
+        <div class="col-md-3 mb-3">
+            <div class="card border-left-warning shadow h-100 py-2 custom-card">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-0">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Total Orders</div>
+                            <div class="h6 mb-0 font-weight-bold text-gray-800">
+                                19 Record(s) <!-- Static Example Data -->
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-shopping-cart fa-3x" style="color: #f39c12;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Pending Orders -->
+            <div class="col-md-3 mb-3">
+                <div class="card border-left-danger shadow h-100 py-2 custom-card">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-0">
+                                <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Pending Orders</div>
+                                <div class="h6 mb-0 font-weight-bold text-gray-800">
+                                    5 Record(s) <!-- Static Example Data -->
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-hourglass-half fa-3x" style="color: #e74a3b;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+                  <!-- Completed Orders -->
+        <div class="col-md-3 mb-3">
+            <div class="card border-left-success shadow h-100 py-2 custom-card">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-0">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Completed Orders</div>
+                            <div class="h6 mb-0 font-weight-bold text-gray-800">
+                                14 Record(s) <!-- Static Example Data -->
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-check-circle fa-3x" style="color: #28a745;"></i>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="row">
+    <!-- Bar Chart for Sales vs Orders -->
+    <div class="col-md-6 mb-4">
+        <div class="card shadow mb-4 custom-cardboard">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Sales vs Orders (Bar Chart)</h6>
+            </div>
+            <div class="card-body">
+                <canvas id="salesOrdersChart"></canvas>
+                <script>
+                    var ctx = document.getElementById('salesOrdersChart').getContext('2d');
+                    var salesOrdersChart = new Chart(ctx, {
+                        type: 'bar', // Bar chart type
+                        data: {
+                            labels: ['Total Sales', 'Orders', 'Pending Orders', 'Completed Orders'], // Categories
+                            datasets: [{
+                                label: 'Data',
+                                data: [3625, 19, 5, 14], // Example data: Sales, Orders, Pending Orders, Completed Orders
+                                backgroundColor: ['#007bff', '#ffc107', '#dc3545', '#28a745'], // Color for each bar
+                                borderColor: ['#0056b3', '#e0a800', '#c82333', '#218838'], // Border color for each bar
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+
+                    
+            <!-- Line Chart for Total Sales Over Time -->
+            <div class="col-md-6 mb-3">
+                <div class="card shadow mb-3 custom-cardboard">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Sales Trend Over Time (Line Chart)</h6>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="salesTrendChart"></canvas>
+                        <script>
+                            var ctx = document.getElementById('salesTrendChart').getContext('2d');
+                            var salesTrendChart = new Chart(ctx, {
+                                type: 'line', // Line chart type
+                                data: {
+                                    labels: ['January', 'February', 'March', 'April'], // Time period (e.g., months)
+                                    datasets: [{
+                                        label: 'Total Sales (₱)',
+                                        data: [1500, 1200, 2500, 1800], // Example sales data
+                                        fill: false,
+                                        borderColor: '#007bff', // Line color
+                                        tension: 0.1,
+                                        borderWidth: 2
+                                    }]
+                                },
+                                options: {
+                                    responsive: true,
+                                    scales: {
+                                        x: {
+                                            title: {
+                                                display: true,
+                                                text: 'Months'
+                                            }
+                                        },
+                                        y: {
+                                            title: {
+                                                display: true,
+                                                text: 'Total Sales (₱)'
+                                            },
+                                            beginAtZero: true
+                                        }
+                                    }
+                                }
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+
+
+</div>
+
+
+
+        <div class="row">
+            <!-- Doughnut Chart for Product Categories (e.g., Products, Suppliers) -->
+            <div class="col-md-6 mb-3">
+                <div class="card shadow mb-3 custom-cardboard">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Product Categories (Doughnut Chart)</h6>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="productCategoriesChart"></canvas>
+                        <script>
+                            var ctx = document.getElementById('productCategoriesChart').getContext('2d');
+                            var productCategoriesChart = new Chart(ctx, {
+                                type: 'doughnut', // Doughnut chart type
+                                data: {
+                                    labels: ['Products', 'Suppliers'], // Labels
+                                    datasets: [{
+                                        label: 'Product Categories',
+                                        data: [125, 5], // Example data: Products vs Suppliers
+                                        backgroundColor: ['#17a2b8', '#f39c12'], // Color for each segment
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    responsive: true
+                                }
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+
+
+                <!-- Pie Chart for Order Status (Pending vs Completed) -->
+                <div class="col-md-6 mb-4">
+                    <div class="card shadow mb-4 custom-cardboard">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Order Status (Pie Chart)</h6>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="orderStatusChart"></canvas>
+                            <script>
+                                var ctx = document.getElementById('orderStatusChart').getContext('2d');
+                                var orderStatusChart = new Chart(ctx, {
+                                    type: 'pie', // Pie chart type
+                                    data: {
+                                        labels: ['Completed Orders', 'Pending Orders'], // Labels
+                                        datasets: [{
+                                            label: 'Order Status',
+                                            data: [14, 5], // Example data: Completed vs Pending Orders
+                                            backgroundColor: ['#28a745', '#dc3545'], // Color for each segment
+                                            borderWidth: 1
+                                        }]
+                                    },
+                                    options: {
+                                        responsive: true
+                                    }
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+
+
+
+
+
+
 
 </div>
 
