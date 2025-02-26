@@ -68,8 +68,8 @@ function pre_r($array){
     print_r($array);
     echo '</pre>';
 }
-                ?>
-                <div class="row">
+?>
+<div class="row">
                 <div class="col-lg-12">
                   <div class="card shadow mb-0">
                   <div class="card-header py-2">
@@ -173,26 +173,87 @@ function pre_r($array){
                   $total = $total + ($product['quantity'] * $product['price']);
              endforeach;  
         ?>
-
-
         <?php  
         endif;
         ?>  
         </table> 
-        
-
-
          </div>
-
-
-
-       </div> 
-
-         
+       </div>     
+           
        <?php
-include 'posside.php';
+include 'posside.php';?>
+<div style="clear:both"></div>  
+<br />
+<div class="row">
+  <div class="card shadow mb-4 col-md-12">
+    <div class="card-header py-3 bg-white">
+      <h4 class="m-2 font-weight-bold text-warning">Pending Orders</h4>
+    </div>
+
+    <div class="row">    
+      <div class="card-body col-md-9">
+        <div class="table-responsive">
+          <table class="table">    
+            <tr>  
+              <th width="55%">Product Name</th>  
+              <th width="10%">Quantity</th>  
+              <th width="15%">Price</th>  
+              <th width="15%">Total</th>  
+              <th width="5%">Action</th>  
+            </tr>  
+            <?php  
+
+            if(!empty($_SESSION['pendingOrders'])):  
+                
+                 foreach($_SESSION['pendingOrders'] as $key => $product): 
+            ?>  
+            <tr>  
+              <td>
+                <?php echo $product['name']; ?>
+              </td>  
+
+               <td>
+                <?php echo $product['quantity']; ?>
+              </td>  
+
+               <td>
+                ₱ <?php echo number_format($product['price']); ?>
+              </td>  
+
+               <td>
+                ₱ <?php echo number_format($product['quantity'] * $product['price'], 2); ?></td>  
+               <td>
+                   <a href="pos.php?action=removePending&id=<?php echo $product['id']; ?>">
+                        <div class="btn bg-gradient-danger btn-danger"><i class="fas fa-fw fa-trash"></i></div>
+                   </a>
+               </td>  
+            </tr>
+            <?php  
+                 endforeach;  
+            ?>
+            <?php  
+            endif;
+            ?>  
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<?php
+
+// Add logic to move orders to pending
+if(filter_input(INPUT_GET, 'action') == 'moveToPending') {
+    foreach($_SESSION['pointofsale'] as $product) {
+        $_SESSION['pendingOrders'][] = $product;
+    }
+    unset($_SESSION['pointofsale']);
+}
 
 ?>
+
+
 <?php
 
 include '../includes/footer.php';
