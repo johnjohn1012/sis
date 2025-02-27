@@ -1,12 +1,9 @@
 
 admin
 user: clemenz
-pass: 1234
-
+pass: 12345678
 users
 username: clemenzusergirl
-pass: 1234
-
+pass: 12345678
 username: clemenzuserboy
-pass: 1234
-
+pass: 12345678
