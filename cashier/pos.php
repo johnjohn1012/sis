@@ -256,5 +256,5 @@ if(filter_input(INPUT_GET, 'action') == 'moveToPending') {
 
 <?php
 
-include '../includes/footer.php';
+include 'includes/footer.php';
 ?>

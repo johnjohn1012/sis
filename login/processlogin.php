@@ -1,6 +1,6 @@
 <?php
-require('../includes/connection.php');
-require('../login/session.php');
+require('connection.php');
+require('session.php');
 ?>
 
 <!DOCTYPE html>
