@@ -27,7 +27,7 @@ include 'includes/sidebar.php';
                                 </div>
                             </div>
                             <div class="col-auto">
-                                <i href="customer.php" class="fas fa-users fa-3x" style="color: #007bff;"></i>
+                                <i href="purchase_order/index.php" class="fas fa-users fa-3x" style="color: #007bff;"></i>
                             </div>
                         </div>
                     </div>

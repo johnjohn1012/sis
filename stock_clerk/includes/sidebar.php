@@ -112,9 +112,9 @@
           
  
       <li class="nav-item">
-        <a class="nav-link" href="pos.php">
+        <a class="nav-link" href="purchase_po.php">
           <i class="fas fa-fw fa-home"></i>
-          <span>POS</span>
+          <span>Purchase Order</span>
         </a>
       </li>
 
