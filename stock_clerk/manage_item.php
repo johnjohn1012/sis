@@ -2,11 +2,11 @@
 
 
 
-include '../includes/connection.php';
+include 'includes/connection.php';
 
 
 
-include '../includes/sidebar.php';
+include 'includes/sidebar.php';
 
 
 if(isset($_GET['id']) && $_GET['id'] > 0){

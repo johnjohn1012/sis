@@ -1,8 +1,8 @@
 <?php
 // Include necessary files for connection and sidebar
 
-include '../includes/connection.php';
-include '../includes/sidebar.php'; 
+include 'includes/connection.php';
+include 'includes/sidebar.php'; 
 
 // Debugging start
 ini_set('display_errors', 1);
@@ -185,12 +185,12 @@ if (isset($_GET['id'])) {
     </div>
     <div class="card-footer py-1 text-center">
         <button class="btn btn-flat btn-primary" type="submit" form="return-form">Save</button>
-        <a class="btn btn-flat btn-dark" href="index.php">Cancel</a>
+        <a class="btn btn-flat btn-dark" href="return.php">Cancel</a>
     </div>
 </div>
 
 
-<?php include '../includes/footer.php'; ?>
+<?php include 'includes/footer.php'; ?>
 
 <table id="clone_list" class="d-none">
     <tr>

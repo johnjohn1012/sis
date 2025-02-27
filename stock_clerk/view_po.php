@@ -1,7 +1,7 @@
 <?php 
 
-include '../includes/connection.php';
-include '../includes/sidebar.php';
+include 'includes/connection.php';
+include 'includes/sidebar.php';
 
 ?>
 
@@ -115,13 +115,13 @@ if($qry->num_rows > 0){
     <div class="card-footer py-1 text-center">
         <button class="btn btn-flat btn-success no-print" type="button" id="print">Print</button>
         <a class="btn btn-flat btn-primary no-print" href="manage_po.php?id=<?php echo isset($id) ? $id : ''; ?>">Edit</a>
-        <a class="btn btn-flat btn-dark no-print" href="index.php">Back To List</a>
+        <a class="btn btn-flat btn-dark no-print" href="purchase_po.php">Back To List</a>
 
     </div>
 </div>
 
 <?php
-include '../includes/footer.php';
+include 'includes/footer.php';
 ?>
 
 <script>

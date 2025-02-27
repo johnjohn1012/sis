@@ -66,7 +66,7 @@ include 'includes/sidebar.php';
                             <td class="center">
                                 <div class="d-flex justify-content-center">
                                     <?php if ($row['status'] == 0): ?>
-                                        <a class="btn btn-sm btn-primary mr-1" href="../receiving/manage_receiving.php?po_id=<?php echo $row['id']; ?>" data-id="<?php echo $row['id']; ?>"><span class="fa fa-boxes text-dark"></span> Receive</a>
+                                        <a class="btn btn-sm btn-primary mr-1" href="receiving/manage_receiving.php?po_id=<?php echo $row['id']; ?>" data-id="<?php echo $row['id']; ?>"><span class="fa fa-boxes text-dark"></span> Receive</a>
                                     <?php endif; ?>
                                     <a class="btn btn-sm btn-info mr-1" href="view_po.php?id=<?php echo $row['id']; ?>" data-id="<?php echo $row['id']; ?>"><span class="fa fa-eye text-dark"></span> View</a>
                                     <a class="btn btn-sm btn-warning mr-1" href="manage_po.php?id=<?php echo $row['id']; ?>" data-id="<?php echo $row['id']; ?>"><span class="fa fa-edit text-primary"></span> Edit</a>
@@ -116,7 +116,7 @@ include 'includes/sidebar.php';
     function delete_po($id){
         start_loader();
         $.ajax({
-            url: "../classes/Master.php?page=delete_po",  // Use the correct path here
+            url: "classes/Master.php?page=delete_po",  // Use the correct path here
             method: "POST",
             data: {id: $id},
             dataType: "json",

@@ -110,74 +110,56 @@
       </div>
 
           
- 
       <li class="nav-item">
-        <a class="nav-link" href="purchase_po.php">
-          <i class="fas fa-fw fa-home"></i>
-          <span>Purchase Order</span>
-        </a>
-      </li>
+  <a class="nav-link" href="purchase_po.php">
+    <i class="fas fa-fw fa-clipboard-list"></i>
+    <span>Purchase Order</span>
+  </a>
+</li>
 
-      
-      <li class="nav-item">
-        <a class="nav-link" href="order.php">
-          <i class="fas fa-fw fa-home"></i>
-          <span>Order</span>
-        </a>
-      </li>
+<li class="nav-item">
+  <a class="nav-link" href="receiving.php">
+    <i class="fas fa-fw fa-box-open"></i>
+    <span>Receiving Order</span>
+  </a>
+</li>
 
+<li class="nav-item">
+  <a class="nav-link" href="back_bo.php">
+    <i class="fas fa-fw fa-undo"></i>
+    <span>Back Order</span>
+  </a>
+</li>
 
-      
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="index.php">
-          <i class="fas fa-fw fa-home"></i>
-          <span>Customer</span>
-        </a>
-      </li> -->
-
-          
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="index.php">
-          <i class="fas fa-fw fa-home"></i>
-          <span>Product</span>
-        </a>
-      </li> -->
+<li class="nav-item">
+  <a class="nav-link" href="return.php">
+    <i class="fas fa-fw fa-exchange-alt"></i>
+    <span>Return Order</span>
+  </a>
+</li>
 
 
-      
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="index.php">
-          <i class="fas fa-fw fa-home"></i>
-          <span>Category</span>
-        </a>
-      </li> -->
+<li class="nav-item">
+  <a class="nav-link" href="stocks.php">
+    <i class="fas fa-fw fa-warehouse"></i>
+    <span>Stocks</span>
+  </a>
+</li>
 
 
+<li class="nav-item">
+  <a class="nav-link" href="supplier.php">
+    <i class="fas fa-fw fa-truck"></i>
+    <span>Supplier List</span>
+  </a>
+</li>
 
-
-
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="index.php">
-          <i class="fas fa-fw fa-home"></i>
-          <span>Sales</span>
-        </a>
-      </li> -->
-
-
-      
-      <li class="nav-item">
-        <a class="nav-link" href="transaction.php">
-          <i class="fas fa-fw fa-home"></i>
-          <span>Transaction</span>
-        </a>
-      </li>
-
-
-  
-
-  
-
-    
+<li class="nav-item">
+  <a class="nav-link" href="item.php">
+    <i class="fas fa-fw fa-cogs"></i>
+    <span>Items</span>
+  </a>
+</li>
 
 
 

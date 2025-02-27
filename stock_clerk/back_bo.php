@@ -1,6 +1,6 @@
 <?php
-include '../includes/connection.php';
-include '../includes/sidebar.php';
+include 'includes/connection.php';
+include 'includes/sidebar.php';
 
 ?>
 
@@ -60,10 +60,10 @@ include '../includes/sidebar.php';
                             </td>
                             <td class="text-center">
                                 <?php if($row['status'] == 0): ?>
-                                    <a class="dropdown-item" href="../receiving/manage_receiving.php?bo_id=<?php echo $row['id']; ?>" data-id="<?php echo $row['id']; ?>"><span class="fa fa-boxes text-dark"></span> Receive</a>
+                                    <a class="dropdown-item" href="receiving/manage_receiving.php?bo_id=<?php echo $row['id']; ?>" data-id="<?php echo $row['id']; ?>"><span class="fa fa-boxes text-dark"></span> Receive</a>
                                     <div class="dropdown-divider"></div>
                                 <?php endif; ?>
-                                <a class="dropdown-item" href="../back_order/view_bo.php?id=<?php echo $row['id']; ?>" data-id="<?php echo $row['id']; ?>"><span class="fa fa-eye text-dark"></span> View</a>
+                                <a class="dropdown-item" href="back_order/view_bo.php?id=<?php echo $row['id']; ?>" data-id="<?php echo $row['id']; ?>"><span class="fa fa-eye text-dark"></span> View</a>
                             </td>
                         </tr>
                     <?php endwhile; ?>
@@ -73,7 +73,7 @@ include '../includes/sidebar.php';
     </div>
 </div>
 
-<?php include '../includes/footer.php'; ?>
+<?php include 'includes/footer.php'; ?>
 
 <script>
     $(document).ready(function(){

@@ -12,7 +12,7 @@ include 'includes/sidebar.php';
 
         <!-- Purchase Order Card -->
         <div class="col-md-3 mb-3">
-            <a href="customer.php" style="text-decoration: none; color: inherit;">
+            <a href="purchase_po.php" style="text-decoration: none; color: inherit;">
                 <div class="card border-left-primary shadow h-100 py-2 custom-card">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
@@ -101,28 +101,6 @@ include 'includes/sidebar.php';
             </a>
         </div>
 
-        <!-- Sales Records Card -->
-        <div class="col-md-3 mb-3">
-            <a href="sales.php" style="text-decoration: none; color: inherit;">
-                <div class="card border-left-success shadow h-100 py-2 custom-card">
-                    <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-0">
-                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Sales Records</div>
-                                <div class="h6 mb-0 font-weight-bold text-gray-800">
-                                    <?php echo $conn->query("SELECT * FROM `sales_list`")->num_rows; ?>
-                                    Record(s)
-                                </div>
-                            </div>
-                            <div class="col-auto">
-                                <i href="sales.php" class="fas fa-file-invoice-dollar fa-3x" style="color: #28a745;"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-
         <!-- Suppliers Card -->
         <div class="col-md-3 mb-3">
             <a href="suppliers.php" style="text-decoration: none; color: inherit;">
@@ -167,27 +145,8 @@ include 'includes/sidebar.php';
             </a>
         </div>
 
-        <!-- Users Card -->
-        <div class="col-md-3 mb-3">
-            <a href="users.php" style="text-decoration: none; color: inherit;">
-                <div class="card border-left-teal shadow h-100 py-2 custom-card">
-                    <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-0">
-                                <div class="text-xs font-weight-bold text-teal text-uppercase mb-1">Users</div>
-                                <div class="h6 mb-0 font-weight-bold text-gray-800">
-                                    <?php echo $conn->query("SELECT * FROM `users` WHERE id != 1")->num_rows; ?>
-                                    User(s)
-                                </div>
-                            </div>
-                            <div class="col-auto">
-                                <i href="users.php" class="fas fa-users fa-3x" style="color: #20c997;"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
+
+
     </div>
 
 

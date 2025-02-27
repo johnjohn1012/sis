@@ -1,6 +1,6 @@
 <?php 
-include '../includes/connection.php';
-include '../includes/sidebar.php';
+include 'includes/connection.php';
+include 'includes/sidebar.php';
 
 ?>
 
@@ -183,13 +183,13 @@ if(isset($_GET['id'])){
     </div>
     <div class="card-footer py-1 text-center">
         <button class="btn btn-flat btn-primary" type="submit" form="po-form">Save</button>
-        <a class="btn btn-flat btn-dark" href="index.php">Cancel</a>
+        <a class="btn btn-flat btn-dark" href="back_bo.php">Cancel</a>
     </div>
 
 
 </div>
 
-<?php include '../includes/footer.php' ?>
+<?php include 'includes/footer.php' ?>
 
 
 <table id="clone_list" class="d-none">

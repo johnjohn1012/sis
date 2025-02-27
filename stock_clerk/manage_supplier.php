@@ -1,7 +1,7 @@
 <?php
 
-include '../includes/connection.php';
-include '../includes/sidebar.php';
+include 'includes/connection.php';
+include 'includes/sidebar.php';
 
 
 
@@ -52,7 +52,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 </div>
 
 
-<?php include '../includes/footer.php'; ?>
+<?php include 'includes/footer.php'; ?>
 
 <script>
 	$(document).ready(function(){
@@ -62,7 +62,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 			 $('.err-msg').remove();
 			start_loader();
 			$.ajax({
-				url:_base_url_+"../includes/Master.php?f=save_supplier",
+				url:_base_url_+"includes/Master.php?f=save_supplier",
 				data: new FormData($(this)[0]),
                 cache: false,
                 contentType: false,

@@ -1,8 +1,8 @@
 
 <?php
-include '../includes/connection.php';
+include 'includes/connection.php';
 
-include '../includes/sidebar.php';
+include 'includes/sidebar.php';
 
 
 
@@ -120,7 +120,7 @@ if($qry->num_rows >0){
     </div>
 </div>
 
-<?php include '../includes/footer.php';?>
+<?php include 'includes/footer.php';?>
 
 
 <table id="clone_list" class="d-none">

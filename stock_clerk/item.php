@@ -1,9 +1,9 @@
 <?php 
-include '../includes/connection.php';
+include 'includes/connection.php';
 
 
 
-include '../includes/sidebar.php';
+include 'includes/sidebar.php';
 
 ?>
 
@@ -75,7 +75,7 @@ include '../includes/sidebar.php';
 	</div>
 </div>
 
-<?php include '../includes/footer.php'; ?>
+<?php include 'includes/footer.php'; ?>
 
 
 <script>
