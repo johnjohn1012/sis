@@ -132,7 +132,7 @@ if (isset($_POST['btnlogin'])) {
                             icon: 'success',
                             confirmButtonText: 'OK'
                         }).then(function() {
-                            window.location = 'http://localhost/sis/stock_clerk/dashboard/index.php';
+                            window.location = 'http://localhost/sis/stock_clerk/index.php';
                         });
                       </script>";
                 exit();
@@ -150,7 +150,7 @@ if (isset($_POST['btnlogin'])) {
                       </script>";
                 exit();
             } else {
-                header("Location: ../login/login.php"); // Default for other users
+                header("Location: login.php"); // Default for other users
                 exit();
             }
         } 

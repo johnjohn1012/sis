@@ -604,7 +604,7 @@ Class Master extends DBConnection {
 
 $Master = new Master();
 $action = !isset($_GET['f']) ? 'none' : strtolower($_GET['f']);
-$sysset = new SystemSettings();
+
 switch ($action) {
 	case 'save_supplier':
 		echo $Master->save_supplier();

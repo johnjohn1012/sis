@@ -103,7 +103,7 @@
                     document.body.style.opacity = "0";  // Fade out the page
 
                     setTimeout(() => {
-                        window.location.href = 'login/login.php';  // Redirect after the transition
+                        window.location.href = 'http://localhost/sis/login/login.php';  // Redirect after the transition
                     }, 900); // Wait for 1 second (matching the duration of the rotation and fade-out)
                 }
             });

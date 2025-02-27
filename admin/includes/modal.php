@@ -52,7 +52,7 @@ window.onload = function() {
       <div class="modal-footer">
         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
         <!-- Logout link that triggers logout.php -->
-        <a class="btn btn-primary" href="logout.php">Logout</a>
+        <a class="btn btn-primary" href="http://localhost/sis/login/login.php">Logout</a>
       </div>
     </div>
   </div>

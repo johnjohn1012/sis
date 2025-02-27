@@ -173,7 +173,7 @@ if($qry->num_rows >0){
             _el.append(_head)
             _el.append('<div class="d-flex justify-content-center">'+
                       '<div class="col-1 text-right">'+
-                      '<img src="<?php echo validate_image($_settings->info('logo')) ?>" width="65px" height="65px" />'+
+      
                       '</div>'+
                       '<div class="col-10">'+
                       '<h4 class="text-center"><?php echo $_settings->info('name') ?></h4>'+

@@ -1,5 +1,5 @@
 <?php 
-    require('../login/session.php'); 
+    require('session.php'); 
     if (logged_in()) {
         header("Location: login.php"); // Redirect to the appropriate page
         exit();

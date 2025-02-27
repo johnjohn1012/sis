@@ -88,8 +88,8 @@ if($qry->num_rows >0){
     </div>
     <div class="card-footer py-1 text-center">
         <button class="btn btn-flat btn-success" type="button" id="print">Print</button>
-        <a class="btn btn-flat btn-primary" href="<?php echo base_url.'/admin?page=return/manage_return&id='.(isset($id) ? $id : '') ?>">Edit</a>
-        <a class="btn btn-flat btn-dark" href="<?php echo base_url.'/admin?page=return' ?>">Back To List</a>
+        <a class="btn btn-flat btn-primary" href="'/admin?page=return/manage_return&id='.(isset($id) ? $id : '') ?>">Edit</a>
+        <a class="btn btn-flat btn-dark" href="'/admin?page=return' ?>">Back To List</a>
     </div>
 </div>
 <table id="clone_list" class="d-none">
@@ -128,7 +128,7 @@ if($qry->num_rows >0){
             _el.append(_head)
             _el.append('<div class="d-flex justify-content-center">'+
                       '<div class="col-1 text-right">'+
-                      '<img src="<?php echo validate_image($_settings->info('logo')) ?>" width="65px" height="65px" />'+
+                    
                       '</div>'+
                       '<div class="col-10">'+
                       '<h4 class="text-center"><?php echo $_settings->info('name') ?></h4>'+
