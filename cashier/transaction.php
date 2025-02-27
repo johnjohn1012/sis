@@ -1,6 +1,6 @@
 <?php
-include './includes/sidebar.php';
-include('./includes/connection.php'); 
+include 'includes/sidebar.php';
+include('includes/connection.php'); 
 ?>
 
 <!-- Cashier Dashboard -->
@@ -10,7 +10,7 @@ include('./includes/connection.php');
 </div>
 
 <?php
-include '../includes/footer.php';
+include 'includes/footer.php';
 ?>
 
 <style>
