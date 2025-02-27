@@ -1,8 +1,7 @@
 
 <?php
 include 'includes/connection.php';
-
-include 'includes/sidebar.php';
+include 'includes/inventory_connection.php';include 'includes/sidebar.php';
 
 
 
