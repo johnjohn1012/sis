@@ -89,98 +89,117 @@
       <hr class="sidebar-divider my-0">
       <br>
 
-  
       <div class="sidebar-heading">
-        HOME
-      </div>
+  HOME
+</div>
 
-      <li class="nav-item">
-        <a class="nav-link" href="index.php">
-          <i class="fas fa-fw fa-home"></i>
-          <span>Dashboard</span>
-        </a>
-      </li>
+<li class="nav-item">
+  <a class="nav-link" href="index.php">
+    <i class="fas fa-fw fa-home"></i>
+    <span>Dashboard</span>
+  </a>
+</li>
 
-      <hr class="sidebar-divider">
+<hr class="sidebar-divider">
 
- 
-      <div class="sidebar-heading">
-        MASTER LIST
-      </div>
-
-          
- 
-      <li class="nav-item">
-        <a class="nav-link" href="pos.php">
-          <i class="fas fa-fw fa-home"></i>
-          <span>POS</span>
-        </a>
-      </li>
-
-      
-      <li class="nav-item">
-        <a class="nav-link" href="order.php">
-          <i class="fas fa-fw fa-home"></i>
-          <span>Order</span>
-        </a>
-      </li>
+<div class="sidebar-heading">
+  MASTER LIST
+</div>
 
 
-      
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="index.php">
-          <i class="fas fa-fw fa-home"></i>
-          <span>Customer</span>
-        </a>
-      </li> -->
 
-          
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="index.php">
-          <i class="fas fa-fw fa-home"></i>
-          <span>Product</span>
-        </a>
-      </li> -->
+<li class="nav-item">
+  <a class="nav-link" href="pos.php">
+    <i class="fas fa-fw fa-cash-register"></i>
+    <span>POS</span>
+  </a>
+</li>
 
 
-      
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="index.php">
-          <i class="fas fa-fw fa-home"></i>
-          <span>Category</span>
-        </a>
-      </li> -->
+<li class="nav-item">
+  <a class="nav-link" href="customers.php">
+    <i class="fas fa-fw fa-users"></i>
+    <span>Customers</span>
+  </a>
+</li>
+
+
+
+
+<li class="nav-item">
+  <a class="nav-link" href="products.php">
+    <i class="fas fa-fw fa-cogs"></i>
+    <span>Products</span>
+  </a>
+</li>
+
+
+
+
+<li class="nav-item">
+  <a class="nav-link" href="orders.php">
+    <i class="fas fa-fw fa-box"></i>
+    <span>Orders</span>
+  </a>
+</li>
 
 
 
 
 
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="index.php">
-          <i class="fas fa-fw fa-home"></i>
-          <span>Sales</span>
-        </a>
-      </li> -->
+<li class="nav-item">
+  <a class="nav-link" href="payments.php">
+    <i class="fas fa-fw fa-credit-card"></i>
+    <span>Payments</span>
+  </a>
+</li>
 
-
-      
-      <li class="nav-item">
-        <a class="nav-link" href="transaction.php">
-          <i class="fas fa-fw fa-home"></i>
-          <span>Transaction</span>
-        </a>
-      </li>
-
-
-  
-
-  
-
-    
+<li class="nav-item">
+  <a class="nav-link" href="transaction.php">
+    <i class="fas fa-fw fa-exchange-alt"></i>
+    <span>Transaction </span>
+  </a>
+</li>
 
 
 
-      <hr class="sidebar-divider d-none d-md-block">
+
+<li class="nav-item">
+  <a class="nav-link" href="receipts.php">
+    <i class="fas fa-fw fa-file-invoice"></i>
+    <span>Receipts</span>
+  </a>
+</li>
+
+
+
+<div class="sidebar-heading">
+  REPORTING
+</div>
+
+<li class="nav-item">
+  <a class="nav-link" href="report_orders.php">
+    <i class="fas fa-fw fa-chart-line"></i>
+    <span>Orders Report</span>
+  </a>
+</li>
+
+<li class="nav-item">
+  <a class="nav-link" href="report_payments.php">
+    <i class="fas fa-fw fa-chart-pie"></i>
+    <span>Payments Report</span>
+  </a>
+</li>
+
+<li class="nav-item">
+  <a class="nav-link" href="transaction.php">
+    <i class="fas fa-fw fa-exchange-alt"></i>
+    <span>Transaction Report</span>
+  </a>
+</li>
+
+<hr class="sidebar-divider">
+
 
 
       <!-- Sidebar Toggler -->
