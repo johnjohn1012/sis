@@ -51,7 +51,7 @@ require('session.php');
 
 
         body {
-            background: url('../img/bg-harah.jpg') no-repeat center center fixed;
+            background: url('../admin/assets/img/bg-harah.jpg') no-repeat center center fixed;
             background-size: cover;
         }
 

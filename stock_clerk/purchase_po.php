@@ -4,7 +4,6 @@
 include 'includes/inventory_connection.php';
 include 'includes/sidebar.php';
 
-
 ?>
 
 
