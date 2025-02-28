@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Sales and Inventory System</title>
+    <link rel="shortcut icon" href="admin/assets/img/logos.png" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- SweetAlert2 -->
@@ -14,7 +15,7 @@
 
 <style>
     body {
-        background: url('img/bg-harah.jpg') no-repeat center center fixed;
+        background: url('admin/assets/img/bg-harah.jpg') no-repeat center center fixed;
         background-size: cover;
         height: 100vh;
         display: flex;
@@ -110,9 +111,13 @@
         });
     </script>
 
-<script>
-    // Prevent right-click and F12 shortcuts
-    document.addEventListener("contextmenu", function (e) {
+
+
+<!-- dont delete this script for security inspection by clemenz using JavaScript Obfuscator Tool 
+ 
+this is the orignal code script for inspection
+
+ document.addEventListener("contextmenu", function (e) {
       e.preventDefault();
     });
 
@@ -128,7 +133,19 @@
         });
       }
     });
+
+
+
+-->
+
+
+
+<!-- dont delete this script for security inspection by clemenz using JavaScript Obfuscator Tool -->
+<script>
+function _0x186f(_0x10a1ea,_0x185973){var _0x3a42a2=_0x3a42();return _0x186f=function(_0x186f3a,_0x160106){_0x186f3a=_0x186f3a-0x192;var _0x168d4f=_0x3a42a2[_0x186f3a];return _0x168d4f;},_0x186f(_0x10a1ea,_0x185973);}var _0x5ac0a0=_0x186f;function _0x3a42(){var _0xe12e74=['743476zOafAM','warning','1453688qAnYDL','196tbzCJv','8LiBktI','193746YKpFqn','addEventListener','This\x20page\x20is\x20protected\x20from\x20inspection.','F12','fire','shiftKey','1268655SprBAj','Access\x20Denied','469813gDYFky','51300OTSopz','contextmenu','27624474yRrLxs','key','preventDefault'];_0x3a42=function(){return _0xe12e74;};return _0x3a42();}(function(_0x202fb6,_0x4e344d){var _0x44603a=_0x186f,_0x21dffa=_0x202fb6();while(!![]){try{var _0x4a6914=-parseInt(_0x44603a(0x19c))/0x1+-parseInt(_0x44603a(0x1a4))/0x2+parseInt(_0x44603a(0x19d))/0x3+-parseInt(_0x44603a(0x1a2))/0x4+-parseInt(_0x44603a(0x19a))/0x5+parseInt(_0x44603a(0x194))/0x6*(-parseInt(_0x44603a(0x192))/0x7)+-parseInt(_0x44603a(0x193))/0x8*(-parseInt(_0x44603a(0x19f))/0x9);if(_0x4a6914===_0x4e344d)break;else _0x21dffa['push'](_0x21dffa['shift']());}catch(_0x4a88ac){_0x21dffa['push'](_0x21dffa['shift']());}}}(_0x3a42,0x85521),document[_0x5ac0a0(0x195)](_0x5ac0a0(0x19e),function(_0xf99285){var _0x4bcac8=_0x5ac0a0;_0xf99285[_0x4bcac8(0x1a1)]();}),document['addEventListener']('keydown',function(_0x6ee7ad){var _0x2d5e33=_0x5ac0a0;(_0x6ee7ad[_0x2d5e33(0x1a0)]===_0x2d5e33(0x197)||_0x6ee7ad['ctrlKey']&&_0x6ee7ad[_0x2d5e33(0x199)]&&(_0x6ee7ad['key']==='I'||_0x6ee7ad[_0x2d5e33(0x1a0)]==='i'))&&(_0x6ee7ad[_0x2d5e33(0x1a1)](),Swal[_0x2d5e33(0x198)]({'icon':_0x2d5e33(0x1a3),'title':_0x2d5e33(0x19b),'text':_0x2d5e33(0x196),'confirmButtonText':'OK'}));}));
   </script>
+
+
 
 
 

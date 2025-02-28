@@ -33,9 +33,9 @@
                 <img class="img-profile rounded-circle"
                 <?php
                   if($_SESSION['GENDER']=='Male'){
-                    echo 'src="../img/boy.png"';
+                    echo 'src="assets/img/boy.png"';
                   }else{
-                    echo 'src="../img/girl.png"';
+                    echo 'src="assets/img/girl.png"';
                   }
                 ?>>
 

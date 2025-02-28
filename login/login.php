@@ -16,21 +16,21 @@
   <meta name="author" content="">
 
   <title>HRDD Sales And Inventory</title>
-  <link rel="shortcut icon" href="../img/logos.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../admin/assets/img/logos.png" type="image/x-icon">
 
   <!-- Custom fonts for this template-->
-  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="../admin/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- SweetAlert2 -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <!-- Custom styles for this template-->
-  <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="../admin/assets/css/sb-admin-2.min.css" rel="stylesheet">
 
   <style>
     body {
-      background: url('../img/bg-harah.jpg') no-repeat center center fixed;
+      background: url('../admin/assets/img/bg-harah.jpg') no-repeat center center fixed;
       background-size: cover;
       height: 100vh;
       display: flex;
@@ -210,7 +210,7 @@
                     <div class="form-group">
                       <input class="form-control form-control-user" placeholder="Password" name="password" type="password" id="password" required>
                       <div id="passwordIndicator" class="password-indicator"></div>
-                      <span id="passwordError" class="error-message" style="display:none;">Password must be at least 8 characters long</span>
+                      <span id="passwordError" class="error-message" style="display:none;">Your password value is 8 characters long</span>
                     </div>
 
 
@@ -253,7 +253,7 @@
       <!-- Chat content will go here -->
     </div>
     <div class="chatbox-footer">
-      <input type="text" id="chatInput" placeholder="Type a message..." />
+      <input type="text" id="chatInput" placeholder="Type a message" />
       <button id="sendChat" class="send-chat">Send</button>
     </div>
   </div>
@@ -350,14 +350,14 @@ document.getElementById("sendChat").addEventListener("click", function() {
   </script>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="../vendor/jquery/jquery.min.js"></script>
-  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../admin/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="../admin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="../admin/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="../js/sb-admin-2.min.js"></script>
+  <script src="../admin/assets/js/sb-admin-2.min.js"></script>
 
 
   
